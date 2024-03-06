@@ -21,7 +21,7 @@
     
     
       
-        <title>Open AD Kit: Containerized Workloads for Autoware - Autoware Documentation</title>
+        <title>Open AD Kit: containerized workloads for Autoware - Autoware Documentation</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Open AD Kit: Containerized Workloads for Autoware
+              Open AD Kit: containerized workloads for Autoware
             
           </span>
         </div>
@@ -548,12 +548,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Open AD Kit: Containerized Workloads for Autoware
+          Open AD Kit: containerized workloads for Autoware
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Open AD Kit: Containerized Workloads for Autoware
+        Open AD Kit: containerized workloads for Autoware
       </a>
       
         
@@ -588,14 +588,14 @@
         
           <li class="md-nav__item">
   <a href="#runtime-setup" class="md-nav__link">
-    Runtime Setup
+    Runtime setup
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#development-setup" class="md-nav__link">
-    Development Setup
+    Development setup
   </a>
   
 </li>
@@ -6713,14 +6713,14 @@
         
           <li class="md-nav__item">
   <a href="#runtime-setup" class="md-nav__link">
-    Runtime Setup
+    Runtime setup
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#development-setup" class="md-nav__link">
-    Development Setup
+    Development setup
   </a>
   
 </li>
@@ -6768,7 +6768,7 @@
   
 
 
-<div><h1 id="open-ad-kit-containerized-workloads-for-autoware">Open AD Kit: Containerized Workloads for Autoware<a class="headerlink" href="#open-ad-kit-containerized-workloads-for-autoware" title="Permanent link">#</a></h1>
+<div><h1 id="open-ad-kit-containerized-workloads-for-autoware">Open AD Kit: containerized workloads for Autoware<a class="headerlink" href="#open-ad-kit-containerized-workloads-for-autoware" title="Permanent link">#</a></h1>
 <p>Open AD Kit offers two types of Docker image to let you get started with Autoware quickly: <code>devel</code> and <code>runtime</code>.</p>
 <ol>
 <li>The <code>devel</code> image enables you to develop Autoware without setting up the local development environment.</li>
@@ -6795,7 +6795,7 @@
 <p><abbr title="Graphics Processing Unit">GPU</abbr> acceleration is required for some features such as object detection and traffic light detection/classification. For details of how to enable these features without a <abbr title="Graphics Processing Unit">GPU</abbr>, refer to the <a href="../../../how-to-guides/others/running-autoware-without-cuda/">Running Autoware without CUDA</a>.</p>
 </div>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h2>
-<h3 id="runtime-setup">Runtime Setup<a class="headerlink" href="#runtime-setup" title="Permanent link">#</a></h3>
+<h3 id="runtime-setup">Runtime setup<a class="headerlink" href="#runtime-setup" title="Permanent link">#</a></h3>
 <p>You can use <code>run.sh</code> to run the Autoware runtime container with the map data:</p>
 <div class="highlight"><pre><span></span><code>./docker/run.sh<span class="w"> </span>--map-path<span class="w"> </span>path_to_map_data
 </code></pre></div>
@@ -6806,18 +6806,18 @@
 <p>For more launch options you can edit the launch command with <code>--launch-cmd</code> option:</p>
 <div class="highlight"><pre><span></span><code>./docker/run.sh<span class="w"> </span>--map-path<span class="w"> </span>path_to_map_data<span class="w"> </span>--launch-cmd<span class="w"> </span><span class="s2">"ros2 launch autoware_launch autoware.launch.xml map_path:=/autoware_map vehicle_model:=sample_vehicle sensor_model:=sample_sensor_kit"</span>
 </code></pre></div>
-<h4 id="run-autoware-simulator">Run Autoware simulator<a class="headerlink" href="#run-autoware-simulator" title="Permanent link">#</a></h4>
-<p>Inside the container, you can run the Autoware simulation by following these tutorials:</p>
+<h4 id="run-the-autoware-tutorials">Run the Autoware tutorials<a class="headerlink" href="#run-the-autoware-tutorials" title="Permanent link">#</a></h4>
+<p>Inside the container, you can run the Autoware tutorials by following these links:</p>
 <p><a href="../../../tutorials/ad-hoc-simulation/planning-simulation/">Planning Simulation</a></p>
 <p><a href="../../../tutorials/ad-hoc-simulation/rosbag-replay-simulation/">Rosbag Replay Simulation</a>.</p>
-<h3 id="development-setup">Development Setup<a class="headerlink" href="#development-setup" title="Permanent link">#</a></h3>
+<h3 id="development-setup">Development setup<a class="headerlink" href="#development-setup" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>./docker/run.sh<span class="w"> </span>--devel
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>By default workspace mounted on the container will be current directory, you can change the workspace path by <code>--workspace path_to_workspace</code>. For development environments without NVIDIA <abbr title="Graphics Processing Unit">GPU</abbr> support use <code>--no-nvidia</code>.</p>
 </div>
-<h4 id="how-to-setup-a-workspace">How to Setup a Workspace<a class="headerlink" href="#how-to-setup-a-workspace" title="Permanent link">#</a></h4>
+<h4 id="how-to-set-up-a-workspace">How to set up a workspace<a class="headerlink" href="#how-to-set-up-a-workspace" title="Permanent link">#</a></h4>
 <ol>
 <li>
 <p>Create the <code>src</code> directory and clone repositories into it.</p>
@@ -6849,11 +6849,11 @@ vcs<span class="w"> </span>import<span class="w"> </span>src<span class="w"> </s
 vcs<span class="w"> </span>pull<span class="w"> </span>src
 </code></pre></div>
 </blockquote>
-<h4 id="using-vs-code-remote-containers-for-development">Using VS Code Remote Containers for Development<a class="headerlink" href="#using-vs-code-remote-containers-for-development" title="Permanent link">#</a></h4>
+<h4 id="using-vs-code-remote-containers-for-development">Using VS Code remote containers for development<a class="headerlink" href="#using-vs-code-remote-containers-for-development" title="Permanent link">#</a></h4>
 <p>Using the <a href="https://code.visualstudio.com/">Visual Studio Code</a> with the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote - Containers</a> extension, you can develop Autoware in the containerized environment with ease.</p>
 <p>Get the Visual Studio Code's <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote - Containers</a> extension.
 And reopen the workspace in the container by selecting <code>Remote-Containers: Reopen in Container</code> from the Command Palette (<code>F1</code>).</p>
-<p>By default devcontainer assumes NVIDIA <abbr title="Graphics Processing Unit">GPU</abbr> support, you can change this by deleting these lines within <code>.devcontainer/devcontainer.json</code>:</p>
+<p>By default, devcontainer assumes NVIDIA <abbr title="Graphics Processing Unit">GPU</abbr> support, you can change this by deleting these lines within <code>.devcontainer/devcontainer.json</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">"hostRequirements"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">"gpu"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="w">    </span><span class="p">},</span>
