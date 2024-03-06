@@ -539,7 +539,7 @@
   
     <li class="md-nav__item">
       <a href="../docker-installation/" class="md-nav__link">
-        Docker installation
+        Open AD Kit: containerized workloads for Autoware
       </a>
     </li>
   
@@ -623,14 +623,14 @@
         
           <li class="md-nav__item">
   <a href="#integration-with-autoware-source-installation" class="md-nav__link">
-    Integration with Autoware Source Installation
+    Integration with Autoware source installation
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#getting-started-with-autoware-build-gui" class="md-nav__link">
-    Getting Started with Autoware Build GUI
+    Getting started with Autoware Build GUI
   </a>
   
 </li>
@@ -6991,14 +6991,14 @@
         
           <li class="md-nav__item">
   <a href="#integration-with-autoware-source-installation" class="md-nav__link">
-    Integration with Autoware Source Installation
+    Integration with Autoware source installation
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#getting-started-with-autoware-build-gui" class="md-nav__link">
-    Getting Started with Autoware Build GUI
+    Getting started with Autoware Build GUI
   </a>
   
 </li>
@@ -7055,7 +7055,7 @@
 sudo<span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>git
 </code></pre></div>
 <blockquote>
-<p>Note: If you wish to use <abbr title="Robot Operating System">ROS</abbr> 2 Galactic on Ubuntu 20.04, refer to installation instruction from <a href="https://autowarefoundation.github.io/autoware-documentation/galactic/installation/autoware/source-installation/">galactic</a> branch, but be aware that Galactic version of Autoware might not have latest features.</p>
+<p>Note: If you wish to use <abbr title="Robot Operating System">ROS</abbr> 2 Galactic on Ubuntu 20.04, refer to installation instruction from <a href="https://autowarefoundation.github.io/autoware-documentation/galactic/installation/autoware/source-installation/">galactic</a> branch, but be aware that Galactic version of Autoware might not have the latest features.</p>
 </blockquote>
 <h2 id="how-to-set-up-a-development-environment">How to set up a development environment<a class="headerlink" href="#how-to-set-up-a-development-environment" title="Permanent link">#</a></h2>
 <ol>
@@ -7085,17 +7085,17 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </
 <p class="admonition-title">Note</p>
 <p>The following items will be automatically installed. If the ansible script doesn't work or if you already have different versions of dependent libraries installed, please install the following items manually.</p>
 <ul>
+<li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/build_tools#manual-installation">Install Build Tools</a></li>
+<li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/dev_tools#manual-installation">Install Dev Tools</a></li>
+<li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/gdown#manual-installation">Install gdown</a></li>
+<li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/geographiclib#manual-installation">Install geographiclib</a></li>
+<li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/pacmod#manual-installation">Install pacmod</a></li>
+<li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/rmw_implementation#manual-installation">Install the RMW Implementation</a></li>
 <li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/ros2#manual-installation">Install <abbr title="Robot Operating System">ROS</abbr> 2</a></li>
 <li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/ros2_dev_tools#manual-installation">Install <abbr title="Robot Operating System">ROS</abbr> 2 Dev Tools</a></li>
-<li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/rmw_implementation#manual-installation">Install the RMW Implementation</a></li>
-<li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/pacmod#manual-installation">Install pacmod</a></li>
-<li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/autoware_core#manual-installation">Install Autoware Core dependencies</a></li>
-<li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/autoware_universe#manual-installation">Install Autoware Universe dependencies</a></li>
-<li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/pre_commit#manual-installation">Install pre-commit dependencies</a></li>
-<li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/cuda#manual-installation">Install Nvidia CUDA</a></li>
 <li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/tensorrt#manual-installation">Install Nvidia cuDNN and TensorRT</a></li>
+<li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/artifacts">Download the Artifacts</a> (for perception inference)</li>
 </ul>
-<p>If you didn't use ansible script you will need to download some package artifacts as explained in <a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/artifacts">Manual loading of artifacts</a>. Otherwise some packages (mostly from perception) will not be able to run as they need these artifacts for the inference.</p>
 </div>
 <h2 id="how-to-set-up-a-workspace">How to set up a workspace<a class="headerlink" href="#how-to-set-up-a-workspace" title="Permanent link">#</a></h2>
 <div class="admonition info">
@@ -7170,14 +7170,14 @@ rosdep<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> 
 </ol>
 <h2 id="using-autoware-build-gui">Using Autoware Build GUI<a class="headerlink" href="#using-autoware-build-gui" title="Permanent link">#</a></h2>
 <p>In addition to the traditional command-line methods of building Autoware packages, developers and users can leverage the Autoware Build GUI for a more streamlined and user-friendly experience. This GUI application simplifies the process of building and managing Autoware packages.</p>
-<h3 id="integration-with-autoware-source-installation">Integration with Autoware Source Installation<a class="headerlink" href="#integration-with-autoware-source-installation" title="Permanent link">#</a></h3>
+<h3 id="integration-with-autoware-source-installation">Integration with Autoware source installation<a class="headerlink" href="#integration-with-autoware-source-installation" title="Permanent link">#</a></h3>
 <p>When using the Autoware Build GUI in conjunction with the traditional source installation process:</p>
 <ul>
 <li><strong>Initial Setup</strong>: Follow the standard Autoware source installation guide to set up your environment and workspace.</li>
 <li><strong>Using the GUI</strong>: Once the initial setup is complete, you can use the Autoware Build GUI to manage subsequent builds and package updates.</li>
 </ul>
 <p>This integration offers a more accessible approach to building and managing Autoware packages, catering to both new users and experienced developers.</p>
-<h3 id="getting-started-with-autoware-build-gui">Getting Started with Autoware Build GUI<a class="headerlink" href="#getting-started-with-autoware-build-gui" title="Permanent link">#</a></h3>
+<h3 id="getting-started-with-autoware-build-gui">Getting started with Autoware Build GUI<a class="headerlink" href="#getting-started-with-autoware-build-gui" title="Permanent link">#</a></h3>
 <ol>
 <li><strong>Installation:</strong> Ensure you have installed the Autoware Build GUI. <a href="https://github.com/autowarefoundation/autoware-build-gui#installation">Installation instructions</a>.</li>
 <li><strong>Launching the App</strong>: Once installed, launch the Autoware Build GUI.
@@ -7226,7 +7226,7 @@ rosdep<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> 
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../docker-installation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Docker installation" rel="prev">
+          <a href="../docker-installation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Open AD Kit: containerized workloads for Autoware" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -7235,7 +7235,7 @@ rosdep<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> 
                 Previous
               </span>
               <div class="md-ellipsis">
-                Docker installation
+                Open AD Kit: containerized workloads for Autoware
               </div>
             </div>
           </a>

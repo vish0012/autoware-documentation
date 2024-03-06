@@ -1201,16 +1201,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://autowarefoundation.github.io/autoware-documentation/latest/installation/autoware/docker-installation-devel/</loc>
-         <lastmod>2024-03-06</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/autoware-documentation/latest/installation/autoware/docker-installation-prebuilt/</loc>
-         <lastmod>2024-03-06</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://autowarefoundation.github.io/autoware-documentation/latest/installation/autoware/docker-installation/</loc>
          <lastmod>2024-03-06</lastmod>
          <changefreq>daily</changefreq>

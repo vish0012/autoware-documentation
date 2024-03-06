@@ -539,7 +539,7 @@
   
     <li class="md-nav__item">
       <a href="autoware/docker-installation/" class="md-nav__link">
-        Docker installation
+        Open AD Kit: containerized workloads for Autoware
       </a>
     </li>
   
@@ -6965,28 +6965,25 @@
 <p>Autoware is scalable and can be customized to work with distributed or less powerful hardware.
 The minimum hardware requirements given below are just a general recommendation.
 However, performance will be improved with more cores, RAM and a higher-spec graphics card or <abbr title="Graphics Processing Unit">GPU</abbr> core.</p>
+<p>Although <abbr title="Graphics Processing Unit">GPU</abbr> is not required to run basic functionality, it is mandatory to enable the following neural network related functions:
+    - LiDAR based object detection
+    - Camera based object detection
+    - Traffic light detection and classification</p>
 </div>
 <ul>
 <li>CPU with 8 cores</li>
 <li>16GB RAM</li>
 <li>[Optional] NVIDIA <abbr title="Graphics Processing Unit">GPU</abbr> (4GB RAM)</li>
 </ul>
-<blockquote>
-<p>Although <abbr title="Graphics Processing Unit">GPU</abbr> is not required to run basic functionality, it is mandatory to enable the following neural network related functions:</p>
-<ul>
-<li>LiDAR based object detection</li>
-<li>Camera based object detection</li>
-<li>Traffic light detection and classification</li>
-</ul>
-</blockquote>
 <p>For details of how to enable object detection and traffic light detection/classification without a <abbr title="Graphics Processing Unit">GPU</abbr>, refer to the <a href="../how-to-guides/others/running-autoware-without-cuda/">Running Autoware without CUDA</a>.</p>
 <h2 id="installing-autoware">Installing Autoware<a class="headerlink" href="#installing-autoware" title="Permanent link">#</a></h2>
 <p>There are two ways to set up Autoware. Choose one according to your preference.</p>
 <p>If any issues occur during installation, refer to the <a href="../support">Support page</a>.</p>
 <h3 id="1-docker-installation">1. Docker installation<a class="headerlink" href="#1-docker-installation" title="Permanent link">#</a></h3>
-<p>Docker can ensure that all developers in a project have a common, consistent development environment.
-It is recommended for beginners, casual users, people who are unfamiliar with Ubuntu.</p>
-<p>For more information, refer to the <a href="autoware/docker-installation/">Docker installation guide</a>.</p>
+<p>Autoware's Open AD Kit containers enables you to
+run Autoware easily on your host machine ensuring same environment for all deployments without installing any dependencies. Full Guide on <a href="autoware/docker-installation/">Docker Installation Setup</a>.</p>
+<p><a href="https://autoware.org/open-ad-kit/">Open AD Kit</a> is also the First <a href="https://www.soafee.io/about/charter">SOAFEE Blueprint</a> for autonomous driving that offers extensible modular containers for making it easier to run Autoware's AD stack on distributed systems. Full Guide on <a href="https://autowarefoundation.github.io/open-ad-kit-docs/openadkit_v3/version-3.0/">Open AD Kit Setup</a>.</p>
+<p>Developer containers are also available for developers making it easier to build Autoware from source and ensuring same environment for all developers.</p>
 <h3 id="2-source-installation">2. Source installation<a class="headerlink" href="#2-source-installation" title="Permanent link">#</a></h3>
 <p>Source installation is for the cases where more granular control of the installation environment is needed.
 It is recommended for experienced users or people who want to customize their environment.
@@ -7042,13 +7039,13 @@ For example, to run an end-to-end simulation you need to install an appropriate 
         
         
           
-          <a href="autoware/docker-installation/" class="md-footer__link md-footer__link--next" aria-label="Next: Docker installation" rel="next">
+          <a href="autoware/docker-installation/" class="md-footer__link md-footer__link--next" aria-label="Next: Open AD Kit: containerized workloads for Autoware" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Docker installation
+                Open AD Kit: containerized workloads for Autoware
               </div>
             </div>
             <div class="md-footer__button md-icon">
