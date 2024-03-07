@@ -7055,13 +7055,13 @@
 <p>You can use <code>run.sh</code> to run the Autoware runtime container with the map data:</p>
 <div class="highlight"><pre><span></span><code>./docker/run.sh<span class="w"> </span>--map-path<span class="w"> </span>path_to_map_data
 </code></pre></div>
+<p>For more launch options, you can append a custom launch command instead of using the default launch command <code>ros2 launch autoware_launch autoware.launch.xml</code>:</p>
+<div class="highlight"><pre><span></span><code>./docker/run.sh<span class="w"> </span>--map-path<span class="w"> </span>path_to_map_data<span class="w"> </span>ros2<span class="w"> </span>launch<span class="w"> </span>autoware_launch<span class="w"> </span>autoware.launch.xml<span class="w"> </span>map_path:<span class="o">=</span>/autoware_map<span class="w"> </span>vehicle_model:<span class="o">=</span>sample_vehicle<span class="w"> </span>sensor_model:<span class="o">=</span>sample_sensor_kit
+</code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>You can use <code>--no-nvidia</code> to run without NVIDIA <abbr title="Graphics Processing Unit">GPU</abbr> support, and <code>--headless</code> to run without display that means no RViz visualization.</p>
 </div>
-<p>For more launch options you can edit the launch command with <code>--launch-cmd</code> option:</p>
-<div class="highlight"><pre><span></span><code>./docker/run.sh<span class="w"> </span>--map-path<span class="w"> </span>path_to_map_data<span class="w"> </span>--launch-cmd<span class="w"> </span><span class="s2">"ros2 launch autoware_launch autoware.launch.xml map_path:=/autoware_map vehicle_model:=sample_vehicle sensor_model:=sample_sensor_kit"</span>
-</code></pre></div>
 <h4 id="run-the-autoware-tutorials">Run the Autoware tutorials<a class="headerlink" href="#run-the-autoware-tutorials" title="Permanent link">#</a></h4>
 <p>Inside the container, you can run the Autoware tutorials by following these links:</p>
 <p><a href="../../../tutorials/ad-hoc-simulation/planning-simulation/">Planning Simulation</a></p>
@@ -7109,11 +7109,7 @@ vcs<span class="w"> </span>pull<span class="w"> </span>src
 <p>Using the <a href="https://code.visualstudio.com/">Visual Studio Code</a> with the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote - Containers</a> extension, you can develop Autoware in the containerized environment with ease.</p>
 <p>Get the Visual Studio Code's <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote - Containers</a> extension.
 And reopen the workspace in the container by selecting <code>Remote-Containers: Reopen in Container</code> from the Command Palette (<code>F1</code>).</p>
-<p>By default, devcontainer assumes NVIDIA <abbr title="Graphics Processing Unit">GPU</abbr> support, you can change this by deleting these lines within <code>.devcontainer/devcontainer.json</code>:</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Under Construction</p>
-</div>
+<p>You can choose Autoware or Autoware-cuda image to develop with or without CUDA support.</p>
 <h2 id="building-docker-images-from-scratch">Building Docker images from scratch<a class="headerlink" href="#building-docker-images-from-scratch" title="Permanent link">#</a></h2>
 <p>If you want to build these images locally for development purposes, run the following command:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>autoware/
