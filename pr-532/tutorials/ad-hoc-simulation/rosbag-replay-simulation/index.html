@@ -7085,8 +7085,11 @@ ros2<span class="w"> </span>launch<span class="w"> </span>autoware_launch<span c
 <p>Note that you cannot use <code>~</code> instead of <code>$HOME</code> here.</p>
 <p><img alt="after-autoware-launch" src="../images/rosbag-replay/after-autoware-launch.png"></p>
 <!-- prettier-ignore-start -->
+
 <p>!!! warning</p>
-<p>You might encounter error and warning messages in the terminal before playing the <code>rosbag</code>. This is normal behavior. These should cease once the <code>rosbag</code> is played and proper initialization takes place</p>
+<div class="codehilite"><pre><span></span><code> You might encounter error and warning messages in the terminal before playing the `rosbag`. This is normal behavior. These should cease once the `rosbag` is played and proper initialization takes place
+</code></pre></div>
+
 <!-- prettier-ignore-end -->
 
 </li>
@@ -7098,7 +7101,9 @@ ros2<span class="w"> </span>bag<span class="w"> </span>play<span class="w"> </sp
 <!-- prettier-ignore-start -->
 
 <p>!!! warning</p>
-<p>Due to the discrepancy between the timestamp in the <code>rosbag</code> and the current system timestamp, Autoware may generate warning messages in the terminal alerting to this mismatch. This is normal behavior.</p>
+<div class="codehilite"><pre><span></span><code> Due to the discrepancy between the timestamp in the `rosbag` and the current system timestamp, Autoware may generate warning messages in the terminal alerting to this mismatch. This is normal behavior.
+</code></pre></div>
+
 <!-- prettier-ignore-end -->
 
 <p><img alt="after-rosbag-play" src="../images/rosbag-replay/after-rosbag-play.png"></p>
