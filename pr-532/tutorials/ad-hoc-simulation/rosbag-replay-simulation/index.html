@@ -7029,18 +7029,14 @@
 <ol>
 <li>
 <p>Download and unpack a sample map.</p>
-<ul>
-<li>You can also download <a href="https://drive.google.com/file/d/1A-8BvYRX3DhSzkAnOcGWFw5T30xTlwZI/view?usp=sharing">the map</a> manually.</li>
-</ul>
+<p>- You can also download <a href="https://drive.google.com/file/d/1A-8BvYRX3DhSzkAnOcGWFw5T30xTlwZI/view?usp=sharing">the map</a> manually.</p>
 <div class="highlight"><pre><span></span><code>gdown<span class="w"> </span>-O<span class="w"> </span>~/autoware_map/<span class="w"> </span><span class="s1">'https://docs.google.com/uc?export=download&amp;id=1A-8BvYRX3DhSzkAnOcGWFw5T30xTlwZI'</span>
 unzip<span class="w"> </span>-d<span class="w"> </span>~/autoware_map/<span class="w"> </span>~/autoware_map/sample-map-rosbag.zip
 </code></pre></div>
 </li>
 <li>
 <p>Download the sample rosbag files.</p>
-<ul>
-<li>You can also download <a href="https://drive.google.com/file/d/1VnwJx9tI3kI_cTLzP61ktuAJ1ChgygpG/view?usp=sharing">the rosbag files</a> manually.</li>
-</ul>
+<p>- You can also download <a href="https://drive.google.com/file/d/1VnwJx9tI3kI_cTLzP61ktuAJ1ChgygpG/view?usp=sharing">the rosbag files</a> manually.</p>
 <div class="highlight"><pre><span></span><code>gdown<span class="w"> </span>-O<span class="w"> </span>~/autoware_map/<span class="w"> </span><span class="s1">'https://docs.google.com/uc?export=download&amp;id=1VnwJx9tI3kI_cTLzP61ktuAJ1ChgygpG'</span>
 unzip<span class="w"> </span>-d<span class="w"> </span>~/autoware_map/<span class="w"> </span>~/autoware_map/sample-rosbag.zip
 </code></pre></div>
@@ -7059,7 +7055,7 @@ traffic_light_fine_detector
 traffic_light_ssd_fine_detector
 yabloc_pose_initializer
 </code></pre></div>
-<p>If not, please, follow <a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/artifacts">Manual downloading of artifacts</a>.</p>
+<p>- If not, please, follow <a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/artifacts">Manual downloading of artifacts</a>.</p>
 </li>
 </ol>
 <h3 id="note">Note<a class="headerlink" href="#note" title="Permanent link">#</a></h3>
@@ -7094,14 +7090,12 @@ ros2<span class="w"> </span>launch<span class="w"> </span>autoware_launch<span c
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/autoware/install/setup.bash
 ros2<span class="w"> </span>bag<span class="w"> </span>play<span class="w"> </span>~/autoware_map/sample-rosbag/sample.db3<span class="w"> </span>-r<span class="w"> </span><span class="m">0</span>.2<span class="w"> </span>-s<span class="w"> </span>sqlite3
 </code></pre></div>
-</li>
-</ol>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Due to the discrepancy between the timestamp in the <code>rosbag</code> and the current system timestamp, Autoware may generate warning messages in the terminal alerting to this mismatch. This is normal behavior.</p>
-</div>
+<p>!!! warning</p>
+<div class="codehilite"><pre><span></span><code> Due to the discrepancy between the timestamp in the `rosbag` and the current system timestamp, Autoware may generate warning messages in the terminal alerting to this mismatch. This is normal behavior.
+</code></pre></div>
+
 <p><img alt="after-rosbag-play" src="../images/rosbag-replay/after-rosbag-play.png"></p>
-<ol>
+</li>
 <li>
 <p>To focus the view on the ego vehicle, change the <code>Target Frame</code> in the RViz Views panel from <code>viewer</code> to <code>base_link</code>.</p>
 <p><img alt="change-target-frame" src="../images/rosbag-replay/change-target-frame.png"></p>
@@ -7121,19 +7115,19 @@ ros2<span class="w"> </span>bag<span class="w"> </span>play<span class="w"> </sp
 </li>
 <li>
 <p><strong>Launching the GUI:</strong> Open the Autoware Launch GUI from your applications menu.
-   <img alt="GUI_screenshot_for_launching" src="../images/rosbag-replay/launch-gui/launch_gui_main.png"></p>
+    <img alt="GUI_screenshot_for_launching" src="../images/rosbag-replay/launch-gui/launch_gui_main.png"></p>
 </li>
 </ol>
 <h3 id="launching-a-logging-simulation">Launching a Logging Simulation<a class="headerlink" href="#launching-a-logging-simulation" title="Permanent link">#</a></h3>
 <ol>
 <li><strong>Set Autoware Path:</strong> In the GUI, set the path to your Autoware installation.
-   <img alt="GUI_screenshot_for_setting_Autoware_path" src="../images/rosbag-replay/launch-gui/launch_gui_setup.png"></li>
+    <img alt="GUI_screenshot_for_setting_Autoware_path" src="../images/rosbag-replay/launch-gui/launch_gui_setup.png"></li>
 <li><strong>Select Launch File:</strong> Choose <code>logging_simulator.launch.xml</code> for the lane driving scenario.
-   <img alt="GUI screenshot for selecting launch file" src="../images/rosbag-replay/launch-gui/selecting_launch_file.png"></li>
+    <img alt="GUI screenshot for selecting launch file" src="../images/rosbag-replay/launch-gui/selecting_launch_file.png"></li>
 <li>
 <p><strong>Customize Parameters:</strong> Adjust parameters such as <code>map_path</code>, <code>vehicle_model</code>, and <code>sensor_model</code> as needed.</p>
 <p><img alt="GUI screenshot for customizing parameters" src="../images/rosbag-replay/launch-gui/customizing-parameters1.png">
- <img alt="GUI screenshot for customizing parameters" src="../images/rosbag-replay/launch-gui/customizing-parameters2.png"></p>
+  <img alt="GUI screenshot for customizing parameters" src="../images/rosbag-replay/launch-gui/customizing-parameters2.png"></p>
 </li>
 <li>
 <p><strong>Start Simulation:</strong> Click the launch button to start the simulation and have access to all the logs.</p>
