@@ -6973,7 +6973,7 @@ We can modify localization launch arguments at tier4_localization_component.laun
   You can use YabLoc as a camera-based localization method.
   For more details on YabLoc,
   please refer to the <a href="https://github.com/autowarefoundation/autoware.universe/blob/main/localization/yabloc/README.md">README of YabLoc</a> in autoware.universe.
-  Also, you can use Eagleye as a <abbr title="Global Navigation Satellite System">GNSS</abbr> &amp; <abbr title="Inertial Measurement Unit">IMU</abbr> &amp; wheel odometry-based localization method. For more details on Eagleye, please refer to the <a href="./eagleye">Eagleye</a>.</p>
+  Also, you can use Eagleye as a <abbr title="Global Navigation Satellite System">GNSS</abbr> &amp; <abbr title="Inertial Measurement Unit">IMU</abbr> &amp; wheel odometry-based localization method. For more details on Eagleye, please refer to the <a href="eagleye/">Eagleye</a>.</p>
 <p>You can set <code>pose_source</code> argument on <code>tier4_localization_component.launch.xml</code>,
 for example, if you want to use eagleye as pose_source,
 you need to update <code>tier4_localization_component.launch.xml</code> like:</p>
@@ -6990,7 +6990,7 @@ you need to update <code>tier4_localization_component.launch.xml</code> like:</p
 <p><strong><code>twist_source:</code></strong> This argument specifies the twist_estimator, currently supporting <code>gyro_odom</code> (default), and <code>eagleye</code>.
   By default,
   Autoware launches <a href="https://github.com/autowarefoundation/autoware.universe/tree/main/localization/gyro_odometer">gyro_odometer</a> for twist estimator.
-  Also, you can use eagleye for the twist source, please refer to the <a href="./eagleye">Eagleye</a>.
+  Also, you can use eagleye for the twist source, please refer to the <a href="eagleye/">Eagleye</a>.
   If you want to change your twist source to eagleye, you can update <code>tier4_localization_component.launch.xml</code> like:</p>
 <div class="highlight"><pre><span></span><code><span class="gd">- &lt;arg name="twist_source" default="gyro_odom" description="select twist_estimator. gyro_odom, eagleye"/&gt;</span>
 <span class="gi">+ &lt;arg name="twist_source" default="eagleye" description="select twist_estimator. gyro_odom, eagleye"/&gt;</span>
