@@ -14,7 +14,7 @@
         <link rel="prev" href="../01-supp-intra-process-comm/">
       
       
-        <link rel="next" href="../../../../discussion-guidelines/">
+        <link rel="next" href="../../../../testing-guidelines/">
       
       <link rel="icon" href="../../../../../assets/images/autoware-foundation.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.20">
@@ -6120,6 +6120,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_7_3_3" id="__nav_7_3_3_label" tabindex="0">
@@ -6255,6 +6257,163 @@
       <a href="../../topic-namespaces/" class="md-nav__link">
         Topic namespaces
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_3_10" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Topic message handling</a>
+          
+            <label for="__nav_7_3_3_10">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_7_3_3_10_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_7_3_3_10">
+          <span class="md-nav__icon md-icon"></span>
+          Topic message handling
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-supp-intra-process-comm/" class="md-nav__link">
+        [supplement] Obtain a received message through intra-process communication
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          [supplement] Use rclcpp::WaitSet
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        [supplement] Use rclcpp::WaitSet
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-rclcppwaitset" class="md-nav__link">
+    What is rclcpp::WaitSet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coding-method" class="md-nav__link">
+    Coding method
+  </a>
+  
+    <nav class="md-nav" aria-label="Coding method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-declare-and-initialize-waitset" class="md-nav__link">
+    1. declare and initialize WaitSet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-register-trigger-subscription-timer-and-so-on-to-waitset" class="md-nav__link">
+    2. register trigger (Subscription, Timer, and so on) to WaitSet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-verify-waitset-result" class="md-nav__link">
+    3. verify WaitSet result
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6957,7 +7116,7 @@
 
 <div><h1 id="supplement-use-rclcppwaitset">[supplement] Use rclcpp::WaitSet<a class="headerlink" href="#supplement-use-rclcppwaitset" title="Permanent link">#</a></h1>
 <h2 id="what-is-rclcppwaitset">What is <code>rclcpp::WaitSet</code><a class="headerlink" href="#what-is-rclcppwaitset" title="Permanent link">#</a></h2>
-<p>As explained in <a href="../00-topic-message-handling/#call-take-method-of-subscription-object">call take() method of Subscription object</a>, <code>take()</code> method is irreversible. Once <code>take()</code> method is executed, Subscription object state changes and undo can not be applied, therefore Subscription object can not be restored to previous state. You can use <code>rclcpp::WaitSet</code> in advance to call <code>take()</code> so that a message is received after verifying it is in Subscription Queue.
+<p>As explained in <a href="./index#call-take-method-of-subscription-object">call take() method of Subscription object</a>, <code>take()</code> method is irreversible. Once <code>take()</code> method is executed, Subscription object state changes and undo can not be applied, therefore Subscription object can not be restored to previous state. You can use <code>rclcpp::WaitSet</code> in advance to call <code>take()</code> so that a message is received after verifying it is in Subscription Queue.
 Here is a sample code in which <code>wait_set_.wait()</code> tells you that a message has already been received and can be obtained by <code>take()</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="w">      </span><span class="k">auto</span><span class="w"> </span><span class="n">wait_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wait_set_</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
 <span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">wait_result</span><span class="p">.</span><span class="n">kind</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">WaitResultKind</span><span class="o">::</span><span class="n">Ready</span><span class="w"> </span><span class="o">&amp;&amp;</span>
@@ -7109,13 +7268,13 @@ if <code>wait_result.kind() == rclcpp::WaitResultKind::Ready</code> is <code>tru
         
         
           
-          <a href="../../../../discussion-guidelines/" class="md-footer__link md-footer__link--next" aria-label="Next: Discussion guidelines" rel="next">
+          <a href="../../../../testing-guidelines/" class="md-footer__link md-footer__link--next" aria-label="Next: Testing guidelines" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Discussion guidelines
+                Testing guidelines
               </div>
             </div>
             <div class="md-footer__button md-icon">
