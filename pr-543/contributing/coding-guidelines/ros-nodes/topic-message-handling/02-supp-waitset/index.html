@@ -7161,10 +7161,6 @@ Below is excerption from <a href="https://github.com/takam5f2/ros2_subscription_
 <p><code>rlcpp::WaitSet</code> object can be configured during runtime. It is not thread-safe as explained <a href="https://docs.ros.org/en/ros2_packages/humble/api/rclcpp/generated/typedef_namespacerclcpp_1ad6fb19c154de27e92430309d2da25ac3.html">the API specification</a>
 Thread-safe <code>WaitSet</code> are prepared by the <code>rclcpp</code> package as listed below.</p>
 <ul>
-<li><a href="https://docs.ros.org/en/ros2_packages/humble/api/rclcpp/generated/typedef_namespacerclcpp_1ad6fb19c154de27e92430309d2da25ac3.html">Typedef rclcpp::WaitSet</a><ul>
-<li>Subscription, Timer, and so on can be registered to WaitSet at any time</li>
-</ul>
-</li>
 <li><a href="https://docs.ros.org/en/ros2_packages/humble/api/rclcpp/generated/typedef_namespacerclcpp_1acaec573e71549fd3078644e18e7f7127.html">Typedef rclcpp::ThreadSafeWaitSet</a><ul>
 <li>Subscription, Timer, and so on can be registered to WaitSet only in thread-safe state</li>
 <li>sample code is here: <a href="https://github.com/ros2/examples/blob/rolling/rclcpp/wait_set/src/thread_safe_wait_set.cpp">examples/rclcpp/wait_set/src/thread_safe_wait_set.cpp at rolling · ros2/examples</a></li>
@@ -7192,7 +7188,7 @@ Below is excerption from <a href="https://github.com/takam5f2/ros2_subscription_
 <span class="w">      </span><span class="n">wait_set_</span><span class="p">.</span><span class="n">add_subscription</span><span class="p">(</span><span class="n">subscription</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
-<p>In code above, created subscriptions are registered to <code>WaitSet</code> by <code>add_subscription()</code>.
+<p>In the code above, created subscriptions are registered to the <code>wait_set_</code> object by <code>add_subscription()</code> method.
 You can also register another type of trigger to WaitSet by which a callback function registered to Subscription is invoked, such as Timer, Service, or Action.
 A sample code to register Timer trigger is here.</p>
 <div class="highlight"><pre><span></span><code><span class="n">wait_set_</span><span class="p">.</span><span class="n">add_timer</span><span class="p">(</span><span class="n">much_slower_timer_</span><span class="p">);</span>
