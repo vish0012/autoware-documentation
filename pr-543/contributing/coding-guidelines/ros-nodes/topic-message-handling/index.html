@@ -7091,8 +7091,8 @@ In this case, a topic message is not obtained by a subscription callback. To be 
 </code></pre></div>
 <p>By using this manner, following advantages are achieved.</p>
 <ul>
-<li>it can reduce invocations of subscription callback functions which is relatively expensive</li>
-<li>there is no need to take a topic message which is not read</li>
+<li>It can reduce invocations of subscription callback functions</li>
+<li>There is no need to take a topic message, which a main logic does not consume, from a subscription</li>
 <li>there is no need of exclusive lock between a subscription callback thread and a timer callback thread</li>
 </ul>
 <h2 id="methods-to-handle-topic-message-data">Methods to handle topic message data<a class="headerlink" href="#methods-to-handle-topic-message-data" title="Permanent link">#</a></h2>
