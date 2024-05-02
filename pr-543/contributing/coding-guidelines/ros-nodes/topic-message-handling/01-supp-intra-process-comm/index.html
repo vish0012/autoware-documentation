@@ -7116,8 +7116,8 @@ You can run the program as below. If you set <code>true</code> to <code>use_intr
 <p><code>if (intra_process_sub-&gt;is_ready(nullptr) == true) {</code></p>
 <ul>
 <li>the statement checks if a message has already been received through intra-process communication</li>
-<li>the argument of <code>is_ready()</code> is of rcl_wait_set_t type, but because the argument is not used inside <code>is_ready()</code>, <code>nullptr</code> is used tentatively<ul>
-<li>using <code>nullptr</code> is a workaround at this point of time, because it is not preferable</li>
+<li>the argument of <code>is_ready()</code> is of <code>rcl_wait_set_t</code> type, but because the argument is not used inside <code>is_ready()</code>, <code>nullptr</code> is used tentatively<ul>
+<li>using <code>nullptr</code> is a workaround at the present because it is does not have any intention.</li>
 </ul>
 </li>
 </ul>
@@ -7127,7 +7127,7 @@ You can run the program as below. If you set <code>true</code> to <code>use_intr
 <li>
 <p><code>std::shared_ptr&lt;void&gt; data = intra_process_sub-&gt;take_data();</code></p>
 <ul>
-<li>obtain a topic message</li>
+<li>this statement means to obtain a topic message from subscriptions for intra-process communication.</li>
 <li><code>intra_process_sub-&gt;take_data()</code> does not return Boolean value which indicates a message is received successfully or not, therefore it is needed to verify it by calling <code>is_ready()</code> in advance</li>
 </ul>
 </li>
