@@ -7096,7 +7096,7 @@ In this case, a topic message is not obtained by a subscription callback. To be 
 <li>There is no mandatory thread waking for the callback function, which leads to multi-threaded programming, data races and exclusive locking</li>
 </ul>
 <h2 id="methods-to-handle-topic-message-data">Methods to handle topic message data<a class="headerlink" href="#methods-to-handle-topic-message-data" title="Permanent link">#</a></h2>
-<p>We will explain four methods including the enhanced method.</p>
+<p>This section introduces four manners including the recommended ones.</p>
 <h3 id="1-obtain-data-by-calling-subscription-take">1. obtain data by calling <code>Subscription-&gt;take()</code><a class="headerlink" href="#1-obtain-data-by-calling-subscription-take" title="Permanent link">#</a></h3>
 <p>To use the enhanced method using <code>Subscription-&gt;take()</code>, you need to do two things below basically.</p>
 <ol>
