@@ -6988,25 +6988,25 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#typical-message-handling-method-usually-used" class="md-nav__link">
-    Typical message handling method usually used
+  <a href="#typical-message-handling-manner-usually-used" class="md-nav__link">
+    Typical message handling manner usually used
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#enhanced-method" class="md-nav__link">
-    Enhanced method
+  <a href="#recommended-manner" class="md-nav__link">
+    Recommended manner
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#methods-to-handle-topic-message-data" class="md-nav__link">
-    Methods to handle topic message data
+  <a href="#manners-to-handle-topic-message-data" class="md-nav__link">
+    Manners to handle topic message data
   </a>
   
-    <nav class="md-nav" aria-label="Methods to handle topic message data">
+    <nav class="md-nav" aria-label="Manners to handle topic message data">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -7018,21 +7018,21 @@
         
           <li class="md-nav__item">
   <a href="#2-obtain-multiple-data-stored-in-subscription-queue" class="md-nav__link">
-    2. obtain multiple data stored in Subscription Queue
+    2. Obtain multiple data stored in Subscription Queue
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#3-obtain-data-by-calling-subscription-take-and-then-call-a-callback-function" class="md-nav__link">
-    3. obtain data by calling Subscription-&gt;take and then call a callback function
+    3. Obtain data by calling Subscription-&gt;take and then call a callback function
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#4-obtain-data-by-a-callback-function" class="md-nav__link">
-    4. obtain data by a callback function
+    4. Obtain data by a callback function
   </a>
   
 </li>
@@ -7069,10 +7069,10 @@
 
 <div><h1 id="topic-message-handling-guideline">Topic message handling guideline<a class="headerlink" href="#topic-message-handling-guideline" title="Permanent link">#</a></h1>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h2>
-<p>Here is coding guideline for a topic message handling in Autoware. It includes the recommended manner than conventional one, which is roughly explained in <a href="https://github.com/orgs/autowarefoundation/discussions/4612">Discussions page</a>. Refer to the page to understand the basic concept of the enhanced method.
+<p>Here is coding guideline for a topic message handling in Autoware. It includes the recommended manner than conventional one, which is roughly explained in <a href="https://github.com/orgs/autowarefoundation/discussions/4612">Discussions page</a>. Refer to the page to understand the basic concept of the recommended manner.
 You can find sample source codes in <a href="https://github.com/takam5f2/ros2_subscription_examples">ros2_subscription_examples</a> referred from this document.</p>
-<h2 id="typical-message-handling-method-usually-used">Typical message handling method usually used<a class="headerlink" href="#typical-message-handling-method-usually-used" title="Permanent link">#</a></h2>
-<p>At first, let us see a typical message handling method usually used.
+<h2 id="typical-message-handling-manner-usually-used">Typical message handling manner usually used<a class="headerlink" href="#typical-message-handling-manner-usually-used" title="Permanent link">#</a></h2>
+<p>At first, let us see a typical message handling manner usually used.
 <a href="https://docs.ros.org/en/rolling/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Cpp-Publisher-And-Subscriber.html#write-the-subscriber-node"><abbr title="Robot Operating System">ROS</abbr> 2 Tutorials</a> is one of the most cited references for <abbr title="Robot Operating System">ROS</abbr> 2 applications, including Autoware.
 It implicitly recommends that messages received by subscriptions should be referred and processed by a dedicated callback function. Autoware follows that manner thoroughly.</p>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="n">steer_sub_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">create_subscription</span><span class="o">&lt;</span><span class="n">SteeringReport</span><span class="o">&gt;</span><span class="p">(</span>
@@ -7080,8 +7080,8 @@ It implicitly recommends that messages received by subscriptions should be refer
 <span class="w">    </span><span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="n">SteeringReport</span><span class="o">::</span><span class="n">SharedPtr</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">current_steer_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">msg</span><span class="o">-&gt;</span><span class="n">steering_tire_angle</span><span class="p">;</span><span class="w"> </span><span class="p">});</span>
 </code></pre></div>
 <p>In the code above, when a topic message whose name is <code>input/steering</code> is received, an anonymous function whose description is <code>{current_steer_ = msg-&gt;steering_tier_angle;}</code> is executed as a callback in a thread. The callback function is always executed when the message is received, which leads to waste computing resource if the message is not always necessary. Besides, it costs thread-wakeup overhead just to take a message.</p>
-<h2 id="enhanced-method">Enhanced method<a class="headerlink" href="#enhanced-method" title="Permanent link">#</a></h2>
-<p>There is an enhanced method to take a message using <code>Subscription-&gt;take()</code> method only when it is needed.
+<h2 id="recommended-manner">Recommended manner<a class="headerlink" href="#recommended-manner" title="Permanent link">#</a></h2>
+<p>There is a recommended manner to take a message using <code>Subscription-&gt;take()</code> method only when it is needed.
 The sample code given below shows that <code>Subscription-&gt;take()</code> method is called during execution of any callback function. In most cases, <code>Subscription-&gt;take()</code> method is called before a received message is consumed by a main logic.
 In this case, a topic message is retrieved from the subscription queue, the queue embedded in the subscription object, instead of using a callback function. To be exact, you need to program your code so that a callback function is not called automatically.</p>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="n">SteeringReport</span><span class="o">::</span><span class="n">SharedPtr</span><span class="w"> </span><span class="n">msg</span><span class="p">;</span>
@@ -7095,10 +7095,10 @@ In this case, a topic message is retrieved from the subscription queue, the queu
 <li>There is no need to take a topic message, which a main logic does not consume, from a subscription</li>
 <li>There is no mandatory thread waking for the callback function, which leads to multi-threaded programming, data races and exclusive locking</li>
 </ul>
-<h2 id="methods-to-handle-topic-message-data">Methods to handle topic message data<a class="headerlink" href="#methods-to-handle-topic-message-data" title="Permanent link">#</a></h2>
+<h2 id="manners-to-handle-topic-message-data">Manners to handle topic message data<a class="headerlink" href="#manners-to-handle-topic-message-data" title="Permanent link">#</a></h2>
 <p>This section introduces four manners including the recommended ones.</p>
 <h3 id="1-obtain-data-by-calling-subscription-take">1. Obtain data by calling <code>Subscription-&gt;take()</code><a class="headerlink" href="#1-obtain-data-by-calling-subscription-take" title="Permanent link">#</a></h3>
-<p>To use the enhanced method using <code>Subscription-&gt;take()</code>, you need to do two things below basically.</p>
+<p>To use the recommended manner using <code>Subscription-&gt;take()</code>, you need to do two things below basically.</p>
 <ol>
 <li>Prevent calling a callback function when a topic message is received</li>
 <li>Call <code>take()</code> method of Subscription object when a topic message is needed</li>
@@ -7167,8 +7167,8 @@ You need to use <code>take_serialized()</code> method instead of <code>take()</c
 <p class="admonition-title">Note</p>
 </div>
 <p><abbr title="Robot Operating System">ROS</abbr> 2's <code>rclcpp</code> supports <code>rclcpp::LoanedMessage</code> as well as <code>rclcpp::SerializedMessage</code>. If <a href="https://design.ros2.org/articles/zero_copy.html">zero copy communication via loaned messages</a> is introduced to Autoware, <code>take_loaned()</code> method should be used for communication via loaned messages instead. In this document, the explanation of <code>take_loaned()</code> method is omitted because it is not used for Autoware in the present (May. 2024).</p>
-<h3 id="2-obtain-multiple-data-stored-in-subscription-queue">2. obtain multiple data stored in Subscription Queue<a class="headerlink" href="#2-obtain-multiple-data-stored-in-subscription-queue" title="Permanent link">#</a></h3>
-<p>The subscription object can hold multiple messages in its queue if multiple queue size is configured with QoS setting. The conventional manner with callback function usage force a callback function to run per message. In other words, there is a constraints; a single cycle of callback function processes a single message . Note that in the conventional manner if there are one or more messages in Subscription Queue, the oldest one is taken and a thread is assigned to execute a callback function, which continues until the queue becomes empty.
+<h3 id="2-obtain-multiple-data-stored-in-subscription-queue">2. Obtain multiple data stored in Subscription Queue<a class="headerlink" href="#2-obtain-multiple-data-stored-in-subscription-queue" title="Permanent link">#</a></h3>
+<p>The subscription object can hold multiple messages in its queue if multiple queue size is configured with QoS setting. The conventional manner with callback function usage force a callback function to run per message. In other words, there is a constraints; a single cycle of callback function processes a single message . Note that in the conventional manner if there are one or more messages in the subscription queue, the oldest one is taken and a thread is assigned to execute a callback function, which continues until the queue becomes empty.
 <code>take()</code> method would mitigate the constraint. <code>take()</code> method can be called in multiple iterations, so that single cycle of callback function processes multiple messages taken by <code>take()</code> methods.</p>
 <p>Here is a sample code excerpted from <a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/simple_examples/src/timer_batch_listener.cpp">ros2_subscription_examples/simple_examples/src/timer_batch_listener.cpp</a> in which <code>take()</code> method is called consecutively.</p>
 <div class="highlight"><pre><span></span><code><span class="w">      </span><span class="n">std_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">String</span><span class="w"> </span><span class="n">msg</span><span class="p">;</span>
@@ -7182,7 +7182,7 @@ You need to use <code>take_serialized()</code> method instead of <code>take()</c
 Note that you need to determine size of a subscription queue considering both frequency of a callback function and that of a message reception. For example, if a callback function is invoked at 10Hz and topic messages are received at 50Hz, the size of the subscription queue must be at least 5 not to lose received messages.</p>
 <p>Assigning a thread to execute a callback function per message will cause performance overhead. You can use the manner introduced in this section to avoid the unexpected overhead.
 The manner will be effective if there is a large difference between reception frequency and consumption frequency. For example, even if a message, like a CAN message, is received at higher than 100 Hz, a user logic consumes messages at slower frequency like 10 Hz. In such case, the user logic should retrieve the required number of messages with <code>take()</code> method to avoid the unexpected overhead.</p>
-<h3 id="3-obtain-data-by-calling-subscription-take-and-then-call-a-callback-function">3. obtain data by calling <code>Subscription-&gt;take</code> and then call a callback function<a class="headerlink" href="#3-obtain-data-by-calling-subscription-take-and-then-call-a-callback-function" title="Permanent link">#</a></h3>
+<h3 id="3-obtain-data-by-calling-subscription-take-and-then-call-a-callback-function">3. Obtain data by calling <code>Subscription-&gt;take</code> and then call a callback function<a class="headerlink" href="#3-obtain-data-by-calling-subscription-take-and-then-call-a-callback-function" title="Permanent link">#</a></h3>
 <p>You can combine the <code>take()</code> (strictly <code>take_type_erased()</code>) method and the callback function to process received messages in a consistent way. Using this combination does not require waking up a thread.
 Here is a sample code excerpted from <a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/simple_examples/src/timer_listener_using_callback.cpp">ros2_subscription_examples/simple_examples/src/timer_listener_using_callback.cpp</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="w">      </span><span class="k">auto</span><span class="w"> </span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sub_</span><span class="o">-&gt;</span><span class="n">create_message</span><span class="p">();</span>
@@ -7193,12 +7193,12 @@ Here is a sample code excerpted from <a href="https://github.com/takam5f2/ros2_s
 <p>In the code above, a message is taken by <code>take_type_erased()</code> method before calling a registered callback function via <code>handle_message()</code> method. Note that you need to use <code>take_type_erased()</code> instead of <code>take()</code>. <code>take_type_erased()</code> needs <code>void</code> type data as its first argument. You need to use <code>get()</code> method to convert <code>msg</code> whose type is <code>shared_ptr&lt;void&gt;</code> to <code>void</code> type. Then <code>handle_message()</code> method is called with the obtained message. A registered callback function is called inside of <code>handle_message()</code>.
 You don't need to take care of message type which is passed to <code>take_type_erased()</code> and <code>handle_message()</code>. You can define the message variable as <code>auto msg = sub_-&gt;create_message();</code>.
 You can also refer to <a href="http://docs.ros.org/en/humble/p/rclcpp/generated/classrclcpp_1_1SubscriptionBase.html#_CPPv4N6rclcpp16SubscriptionBase16take_type_erasedEPvRN6rclcpp11MessageInfoE">API document</a> as for <code>create_message()</code>, <code>take_type_erased()</code> and <code>handle_message()</code>.</p>
-<h3 id="4-obtain-data-by-a-callback-function">4. obtain data by a callback function<a class="headerlink" href="#4-obtain-data-by-a-callback-function" title="Permanent link">#</a></h3>
+<h3 id="4-obtain-data-by-a-callback-function">4. Obtain data by a callback function<a class="headerlink" href="#4-obtain-data-by-a-callback-function" title="Permanent link">#</a></h3>
 <p>A conventional manner used typically in <abbr title="Robot Operating System">ROS</abbr> 2 application, a message reference using a callback function, is available. If you don't use a callback group with <code>automatically_add_to_executor_with_node = false</code>, a registered callback function is called automatically by Executor when a topic message is received.
-One of advantages of this method is you don't need to take care whether a topic message is passed through inter-process or intra-process. Remind that <code>take()</code> can only be used in case of inter-process communication via DDS, while another manner provided by <code>rlclcpp</code> can be used for intra-process communication via <code>rlclcpp</code>.</p>
+One of advantages of this manner is you don't need to take care whether a topic message is passed through inter-process or intra-process. Remind that <code>take()</code> can only be used in case of inter-process communication via DDS, while another manner provided by <code>rlclcpp</code> can be used for intra-process communication via <code>rlclcpp</code>.</p>
 <h2 id="appendix">Appendix<a class="headerlink" href="#appendix" title="Permanent link">#</a></h2>
 <p>A callback function is used to obtain a topic message in many of <abbr title="Robot Operating System">ROS</abbr> 2 applications as if it is a rule or a custom. As this document page explained, you can use <code>Subscription-&gt;take()</code> method to obtain a topic message without calling a subscription callback function.
-This method is also documented in <a href="https://docs.ros.org/en/humble/p/rclcpp/generated/classrclcpp_1_1Subscription.html#_CPPv4N6rclcpp12Subscription4takeER14ROSMessageTypeRN6rclcpp11MessageInfoE">Template Class Subscription — rclcpp 16.0.8 documentation</a>.
+This manner is also documented in <a href="https://docs.ros.org/en/humble/p/rclcpp/generated/classrclcpp_1_1Subscription.html#_CPPv4N6rclcpp12Subscription4takeER14ROSMessageTypeRN6rclcpp11MessageInfoE">Template Class Subscription — rclcpp 16.0.8 documentation</a>.
 Many of <abbr title="Robot Operating System">ROS</abbr> 2 users may feel anxious to use <code>take()</code> method because they may not be so familiar with it and there is a lack of documentation about <code>take()</code>, but it is widely used in Executor implementation as in <a href="https://github.com/ros2/rclcpp/blob/47c977d1bc82fc76dd21f870bcd3ea473eca2f59/rclcpp/src/rclcpp/executor.cpp#L643-L648">rclcpp/executor.cpp</a> shown below. Therefore it turns out that you use <code>take()</code> method indirectly whether you know it or not.</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">subscription</span><span class="o">-&gt;</span><span class="n">create_message</span><span class="p">();</span>
 <span class="w">    </span><span class="n">take_and_do_error_handling</span><span class="p">(</span>
