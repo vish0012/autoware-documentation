@@ -6920,23 +6920,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#where-to-find-the-codeowners-files" class="md-nav__link">
-    Where to find the CODEOWNERS files
+  <a href="#locating-codeowners-files" class="md-nav__link">
+    Locating CODEOWNERS files
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-is-the-codeowners-file-maintained" class="md-nav__link">
-    How is the CODEOWNERS file maintained?
+  <a href="#maintenance-of-codeowners" class="md-nav__link">
+    Maintenance of CODEOWNERS
   </a>
   
-    <nav class="md-nav" aria-label="How is the CODEOWNERS file maintained?">
+    <nav class="md-nav" aria-label="Maintenance of CODEOWNERS">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#autoware-universe-repository" class="md-nav__link">
-    Autoware Universe repository
+  <a href="#special-case-for-the-autoware-universe-repository" class="md-nav__link">
+    Special case for the Autoware Universe repository
   </a>
   
 </li>
@@ -6947,8 +6947,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#code-owner-responsibilities" class="md-nav__link">
-    Code Owner responsibilities
+  <a href="#responsibilities-of-code-owners" class="md-nav__link">
+    Responsibilities of code owners
   </a>
   
 </li>
@@ -6962,22 +6962,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#my-pull-request-is-not-getting-reviewed-by-the-code-owners" class="md-nav__link">
-    My pull request is not getting reviewed by the code owners
+  <a href="#unreviewed-pull-requests" class="md-nav__link">
+    Unreviewed pull requests
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#i-am-the-only-code-owner-and-ive-made-a-pull-request" class="md-nav__link">
-    I am the only code owner, and I've made a pull request
+  <a href="#pr-author-is-the-only-code-owner" class="md-nav__link">
+    PR author is the only code owner
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#i-am-not-a-code-owner-but-i-want-to-review-a-pull-request" class="md-nav__link">
-    I am not a code owner, but I want to review a pull request
+  <a href="#non-code-owners-reviewing-prs" class="md-nav__link">
+    Non-Code Owners Reviewing PRs
   </a>
   
 </li>
@@ -7006,63 +7006,49 @@
 
 
 <div><h1 id="code-owners">Code owners<a class="headerlink" href="#code-owners" title="Permanent link">#</a></h1>
-<p>Autoware project uses multiple <code>CODEOWNERS</code> files to define the code owners throughout the repository.</p>
-<p>Please go through the <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners">GitHub documentation on code owners</a> to understand how the code owners are defined and how they are used in the repository.</p>
+<p>The Autoware project uses multiple <code>CODEOWNERS</code> files to specify owners throughout the repository. For a detailed understanding of code owners, visit the <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners">GitHub documentation on code owners</a>.</p>
 <h2 id="purpose-and-function-of-the-codeowners-file">Purpose and function of the <code>CODEOWNERS</code> file<a class="headerlink" href="#purpose-and-function-of-the-codeowners-file" title="Permanent link">#</a></h2>
-<p>The <code>CODEOWNERS</code> file serves a crucial role in the review process of pull requests within a repository. Its primary functions include:</p>
+<p>The <code>CODEOWNERS</code> file plays a vital role in managing pull requests (PRs) by:</p>
 <ul>
-<li><strong>Automated Review Requests</strong>: It automatically assigns review requests to designated code owners when a pull request is initiated. These owners are typically individuals or teams responsible for specific sections of the codebase.</li>
+<li><strong>Automating Review Requests</strong>: Automatically assigns PRs to responsible individuals or teams.</li>
+<li><strong>Enforcing Merge Approval</strong>: Prevents PR merging without approvals from designated code owners or repository maintainers, ensuring thorough review.</li>
+<li><strong>Maintaining Quality Control</strong>: Helps sustain code quality and consistency by requiring review from knowledgeable individuals or teams.</li>
 </ul>
-<ul>
-<li><strong>Merge Approval Requirement</strong>: A pull request typically cannot be merged without approval from either a designated code owner or a repository maintainer. This ensures that changes undergo thorough scrutiny by individuals familiar with the affected code.</li>
-</ul>
-<ul>
-<li><strong>Quality Control</strong>: By requiring review from appropriate individuals or teams, the <code>CODEOWNERS</code> file helps maintain code quality and consistency across the project. This ensures that proposed changes align with project standards and best practices.</li>
-</ul>
-<h2 id="where-to-find-the-codeowners-files">Where to find the <code>CODEOWNERS</code> files<a class="headerlink" href="#where-to-find-the-codeowners-files" title="Permanent link">#</a></h2>
-<p>Autoware project is composed of multiple repositories.
-You can refer to <a href="https://github.com/autowarefoundation/autoware/blob/main/autoware.repos"><code>autoware.repos</code> file</a> for the list of repositories and their directories.</p>
-<p>Each repository can have its own <code>CODEOWNERS</code> file.
-The <code>CODEOWNERS</code> file is located in the <code>.github</code> directory of the repository.</p>
-<h2 id="how-is-the-codeowners-file-maintained">How is the <code>CODEOWNERS</code> file maintained?<a class="headerlink" href="#how-is-the-codeowners-file-maintained" title="Permanent link">#</a></h2>
-<p>In most cases, the <code>CODEOWNERS</code> file is maintained by the repository maintainers.</p>
-<p>A PR can be made to the <code>CODEOWNERS</code> file to add or remove code owners.</p>
-<h3 id="autoware-universe-repository">Autoware Universe repository<a class="headerlink" href="#autoware-universe-repository" title="Permanent link">#</a></h3>
+<h2 id="locating-codeowners-files">Locating <code>CODEOWNERS</code> files<a class="headerlink" href="#locating-codeowners-files" title="Permanent link">#</a></h2>
+<p><code>CODEOWNERS</code> files are found in the <code>.github</code> directory across multiple repositories of the Autoware project. The <a href="https://github.com/autowarefoundation/autoware/blob/main/autoware.repos"><code>autoware.repos</code> file</a> lists these repositories and their directories.</p>
+<h2 id="maintenance-of-codeowners">Maintenance of <code>CODEOWNERS</code><a class="headerlink" href="#maintenance-of-codeowners" title="Permanent link">#</a></h2>
+<p>Generally, repository maintainers handle the updates to <code>CODEOWNERS</code> files. To propose changes, submit a PR to modify the file.</p>
+<h3 id="special-case-for-the-autoware-universe-repository">Special case for the Autoware Universe repository<a class="headerlink" href="#special-case-for-the-autoware-universe-repository" title="Permanent link">#</a></h3>
 <p>In the <a href="https://github.com/autowarefoundation/autoware.universe">autoware.universe</a> repository, maintenance of the <code>CODEOWNERS</code> file is automated by the CI.</p>
 <p><a href="https://github.com/autowarefoundation/autoware.universe/actions/workflows/update-codeowners-from-packages.yaml">This workflow</a> updates the <code>CODEOWNERS</code> file based on the <code>maintainer</code> information in the <code>package.xml</code> files of the packages in the repository.</p>
-<p>So, in order to change the code owners in the <code>autoware.universe</code> repository:</p>
+<p>In order to change the code owners for a package in the <code>autoware.universe</code> repository:</p>
 <ol>
-<li>Open up a PR to modify the <code>maintainer</code> information in the <code>package.xml</code> file of the package.</li>
-<li>Have the PR merged by existing maintainers.</li>
-<li>Wait for the CI workflow to run and update the <code>CODEOWNERS</code> file and automatically generate a PR. (Currently it runs every midnight UTC)<ul>
-<li>If it is urgent, a maintainer can run the workflow manually.</li>
-</ul>
-</li>
-<li>Ask for a maintainer to merge the PR generated by the CI.<ul>
+<li>Modify the <code>maintainer</code> information in the <code>package.xml</code> file via a PR.</li>
+<li>Once merged, the CI workflow runs at midnight UTC (or can be triggered manually by a maintainer) to update the <code>CODEOWNERS</code> file and create a PR.</li>
+<li>A maintainer then needs to merge the CI-generated PR to finalize the update.<ul>
 <li><strong>Example Automated PR:</strong> <a href="https://github.com/autowarefoundation/autoware.universe/pull/6866">chore: update CODEOWNERS #6866</a></li>
 </ul>
 </li>
-<li>Once the PR is merged, the code owners will be updated.</li>
 </ol>
-<h2 id="code-owner-responsibilities">Code Owner responsibilities<a class="headerlink" href="#code-owner-responsibilities" title="Permanent link">#</a></h2>
-<p>Code owners are responsible for reviewing the pull requests that are assigned to them.</p>
-<p>They are expected to review the pull requests within a reasonable time frame.</p>
-<p>For pull requests that hasn't received any review <u><strong>within a week</strong></u>, the maintainers hold the right to review and merge the pull request.</p>
+<h2 id="responsibilities-of-code-owners">Responsibilities of code owners<a class="headerlink" href="#responsibilities-of-code-owners" title="Permanent link">#</a></h2>
+<p>Code owners should review assigned PRs promptly.
+If a PR remains unreviewed for <strong>over a week</strong>, maintainers may intervene to review and possibly merge it.</p>
 <h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">#</a></h2>
-<h3 id="my-pull-request-is-not-getting-reviewed-by-the-code-owners">My pull request is not getting reviewed by the code owners<a class="headerlink" href="#my-pull-request-is-not-getting-reviewed-by-the-code-owners" title="Permanent link">#</a></h3>
-<p>If your pull request has not been reviewed by the code owners, you can take the following steps:</p>
+<h3 id="unreviewed-pull-requests">Unreviewed pull requests<a class="headerlink" href="#unreviewed-pull-requests" title="Permanent link">#</a></h3>
+<p>If your PR hasn't been reviewed:</p>
 <ul>
-<li>🏹 <strong>Directly Address the Code Owners:</strong> Mention them in a comment on the pull request 📫 to bring it to their attention.</li>
-<li>⏳ <strong>Follow Up After a Week:</strong> If there's no response within a week, reach out to the project maintainers <em>(<code>@autoware-maintainers</code> GitHub handle)</em> asking for a review 📝.</li>
-<li>📢 <strong>Escalate if Necessary:</strong> If your requests continue to go unanswered, you may escalate the issue by posting a message in the <a href="../../../support/support-guidelines/#discord">Autoware Discord channel</a> 🚨. Remember, maintainers often juggle numerous responsibilities, so patience is appreciated🙇.</li>
+<li>🏹 <strong>Directly Address Code Owners</strong>: Comment on the PR to alert the owners.</li>
+<li>⏳ <strong>Follow Up After a Week</strong>: If unreviewed after a week, add a comment under the PR and tag the <code>@autoware-maintainers</code>.</li>
+<li>📢 <strong>Escalate if Necessary</strong>: If your requests continue to go unanswered, you may escalate the issue by posting a message in the <a href="../../../support/support-guidelines/#discord">Autoware Discord channel</a> 🚨. Remember, maintainers often juggle numerous responsibilities, so patience is appreciated🙇.</li>
 </ul>
-<h3 id="i-am-the-only-code-owner-and-ive-made-a-pull-request">I am the only code owner, and I've made a pull request<a class="headerlink" href="#i-am-the-only-code-owner-and-ive-made-a-pull-request" title="Permanent link">#</a></h3>
+<h3 id="pr-author-is-the-only-code-owner">PR author is the only code owner<a class="headerlink" href="#pr-author-is-the-only-code-owner" title="Permanent link">#</a></h3>
+<p>If you, as the only code owner, authored a PR:</p>
 <ul>
-<li>Ask the <code>@autoware-maintainers</code> for review by mentioning them in a comment on the pull request.</li>
-<li>Maintainers will look for additional maintainers to prevent this situation in the future.</li>
-<li>They also have the right to review and merge the pull request.</li>
+<li>Request a review by tagging <code>@autoware-maintainers</code>.</li>
+<li>The maintainers will consider appointing additional maintainers to avoid such conflicts.</li>
 </ul>
-<h3 id="i-am-not-a-code-owner-but-i-want-to-review-a-pull-request">I am not a code owner, but I want to review a pull request<a class="headerlink" href="#i-am-not-a-code-owner-but-i-want-to-review-a-pull-request" title="Permanent link">#</a></h3>
+<h3 id="non-code-owners-reviewing-prs">Non-Code Owners Reviewing PRs<a class="headerlink" href="#non-code-owners-reviewing-prs" title="Permanent link">#</a></h3>
+<p>Anyone can review a PR:</p>
 <ul>
 <li>You can review any pull request and provide your feedback.</li>
 <li>Your review might not be enough to merge the pull request, but it will help the code owners and maintainers to make a decision.</li>
