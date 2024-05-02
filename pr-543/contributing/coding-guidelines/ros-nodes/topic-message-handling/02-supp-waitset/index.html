@@ -7139,7 +7139,7 @@ If your code needs to proceed after several types of messages got together, usin
 <span class="w">        </span><span class="n">received_all_mesages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
 <span class="w">      </span><span class="p">}</span>
 </code></pre></div>
-<p>In code above, unless <code>rclcpp::WaitSet</code> is used, it is difficult to verify that all needed messages get together.</p>
+<p>In the code above, unless <code>rclcpp::WaitSet</code> is used, it is impossible to verify arrival of all needed messages without changing state of the subscription objects.</p>
 <h2 id="coding-method">Coding method<a class="headerlink" href="#coding-method" title="Permanent link">#</a></h2>
 <p>We will explain coding method of <code>rclcpp::WaitSet</code> using a sample code below.</p>
 <ul>
