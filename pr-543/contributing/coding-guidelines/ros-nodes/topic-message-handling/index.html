@@ -7162,7 +7162,7 @@ You need to use <code>take_serialized()</code> method instead of <code>take()</c
 <span class="w">        </span><span class="k">return</span><span class="p">;</span>
 <span class="w">      </span><span class="p">}</span>
 </code></pre></div>
-<p>In code above, <code>msg</code> is created by <code>create_serialized_message()</code> to store a received message, whose type is <code>std::shared_ptr&lt;rclcpp::SerializedMessage&gt;</code>. You can obtain a message of Serialized Message type by <code>take_serialized()</code> method. Note that <code>take_serialized()</code> method needs reference type data as its first argument therefore you need to convert <code>msg</code> type using <code>*</code>.</p>
+<p>In the code above, <code>msg</code> is created by <code>create_serialized_message()</code> to store a received message, whose type is <code>std::shared_ptr&lt;rclcpp::SerializedMessage&gt;</code>. You can obtain a message of Serialized Message type by <code>take_serialized()</code> method. Note that <code>take_serialized()</code> method needs reference type data as its first argument therefore you need to convert <code>msg</code> type using <code>*</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 </div>
