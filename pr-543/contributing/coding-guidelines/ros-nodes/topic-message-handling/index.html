@@ -7206,8 +7206,11 @@ Many of <abbr title="Robot Operating System">ROS</abbr> 2 users may feel anxious
 <span class="w">      </span><span class="p">[</span><span class="o">&amp;</span><span class="p">]()</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="n">subscription</span><span class="o">-&gt;</span><span class="n">take_type_erased</span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span><span class="w"> </span><span class="n">message_info</span><span class="p">);},</span>
 <span class="w">      </span><span class="p">[</span><span class="o">&amp;</span><span class="p">]()</span><span class="w"> </span><span class="p">{</span><span class="n">subscription</span><span class="o">-&gt;</span><span class="n">handle_message</span><span class="p">(</span><span class="n">message</span><span class="p">,</span><span class="w"> </span><span class="n">message_info</span><span class="p">);});</span>
 </code></pre></div>
-<p>Note: Strictly speaking, <code>take_type_erased()</code> method is called in Executor implementation instead of <code>take()</code>.
-But <code>take_type_erased()</code> is called inside of <code>take()</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Strictly speaking, <code>take_type_erased()</code> method is called in the Executor, but not <code>take()</code> method.</p>
+</div>
+<p>But <code>take_type_erased()</code> is called inside of <code>take()</code>.</p>
 <p>If Executor is programmed to call a callback function, Executor itself determines when to do it. Because Executor calls a callback function with best-effort basis basically, it can occur that a message is not referred to or processed when it is needed in a node. Therefore it is desirable to call <code>take()</code> method directly <strong>to ensue that a message is referred to or processed at the intended time.</strong></p>
 <!-- prettier-ignore --></div>
 
