@@ -146,6 +146,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-543/contributing/pull-request-guidelines/code-owners/</loc>
+         <lastmod>2024-05-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware-documentation/pr-543/contributing/pull-request-guidelines/commit-guidelines/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
@@ -312,6 +317,11 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware-documentation/pr-543/design/autoware-interfaces/ad-api/features/cooperation/</loc>
+         <lastmod>2024-05-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-543/design/autoware-interfaces/ad-api/features/diagnostics/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -501,6 +511,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-543/design/autoware-interfaces/ad-api/list/api/system/diagnostics/status/</loc>
+         <lastmod>2024-05-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-543/design/autoware-interfaces/ad-api/list/api/system/diagnostics/struct/</loc>
+         <lastmod>2024-05-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware-documentation/pr-543/design/autoware-interfaces/ad-api/list/api/vehicle/dimensions/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
@@ -562,6 +582,31 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware-documentation/pr-543/design/autoware-interfaces/ad-api/types/autoware_adapi_v1_msgs/msg/CooperationStatus/</loc>
+         <lastmod>2024-05-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-543/design/autoware-interfaces/ad-api/types/autoware_adapi_v1_msgs/msg/DiagGraphStatus/</loc>
+         <lastmod>2024-05-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-543/design/autoware-interfaces/ad-api/types/autoware_adapi_v1_msgs/msg/DiagGraphStruct/</loc>
+         <lastmod>2024-05-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-543/design/autoware-interfaces/ad-api/types/autoware_adapi_v1_msgs/msg/DiagLinkStruct/</loc>
+         <lastmod>2024-05-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-543/design/autoware-interfaces/ad-api/types/autoware_adapi_v1_msgs/msg/DiagNodeStatus/</loc>
+         <lastmod>2024-05-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-543/design/autoware-interfaces/ad-api/types/autoware_adapi_v1_msgs/msg/DiagNodeStruct/</loc>
          <lastmod>2024-05-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
