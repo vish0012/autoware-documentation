@@ -7009,9 +7009,16 @@
 <p>Autoware project uses multiple <code>CODEOWNERS</code> files to define the code owners throughout the repository.</p>
 <p>Please go through the <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners">GitHub documentation on code owners</a> to understand how the code owners are defined and how they are used in the repository.</p>
 <h2 id="purpose-and-function-of-the-codeowners-file">Purpose and function of the <code>CODEOWNERS</code> file<a class="headerlink" href="#purpose-and-function-of-the-codeowners-file" title="Permanent link">#</a></h2>
-<p>They are used to automatically request reviews from the code owners when a pull request is created.</p>
-<p>Without an approval without either a code owner or a maintainer, the pull request cannot be merged.</p>
-<p>Aim is to ensure that the code is reviewed by the appropriate people before it is merged.</p>
+<p>The <code>CODEOWNERS</code> file serves a crucial role in the review process of pull requests within a repository. Its primary functions include:</p>
+<ul>
+<li><strong>Automated Review Requests</strong>: It automatically assigns review requests to designated code owners when a pull request is initiated. These owners are typically individuals or teams responsible for specific sections of the codebase.</li>
+</ul>
+<ul>
+<li><strong>Merge Approval Requirement</strong>: A pull request typically cannot be merged without approval from either a designated code owner or a repository maintainer. This ensures that changes undergo thorough scrutiny by individuals familiar with the affected code.</li>
+</ul>
+<ul>
+<li><strong>Quality Control</strong>: By requiring review from appropriate individuals or teams, the <code>CODEOWNERS</code> file helps maintain code quality and consistency across the project. This ensures that proposed changes align with project standards and best practices.</li>
+</ul>
 <h2 id="where-to-find-the-codeowners-files">Where to find the <code>CODEOWNERS</code> files<a class="headerlink" href="#where-to-find-the-codeowners-files" title="Permanent link">#</a></h2>
 <p>Autoware project is composed of multiple repositories.
 You can refer to <a href="https://github.com/autowarefoundation/autoware/blob/main/autoware.repos"><code>autoware.repos</code> file</a> for the list of repositories and their directories.</p>
