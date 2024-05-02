@@ -7140,7 +7140,7 @@ Here is a sample code in which <code>wait_set_.wait()</code> tells you that a me
 </code></pre></div>
 <p>In the code above, unless <code>rclcpp::WaitSet</code> is used, it is impossible to verify arrival of all needed messages without changing state of the subscription objects.</p>
 <h2 id="coding-method">Coding method<a class="headerlink" href="#coding-method" title="Permanent link">#</a></h2>
-<p>We will explain coding method of <code>rclcpp::WaitSet</code> using a sample code below.</p>
+<p>This section explains the coding manner using <code>rclcpp::WaitSet</code> with a sample code below.</p>
 <ul>
 <li><a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/waitset_examples/src/talker_triple.cpp">ros2_subscription_examples/waitset_examples/src/talker_triple.cpp at main · takam5f2/ros2_subscription_examples</a><ul>
 <li>it publishes <code>/chatter</code> per one second, <code>/slower_chatter</code> per two seconds, and <code>/slowest_chatter</code> per three seconds periodically</li>
@@ -7158,7 +7158,8 @@ Here is a sample code in which <code>wait_set_.wait()</code> tells you that a me
 Below is excerption from <a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/waitset_examples/src/timer_listener_triple_async.cpp">ros2_subscription_examples/waitset_examples/src/timer_listener_triple_async.cpp at main · takam5f2/ros2_subscription_examples</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="n">rclcpp</span><span class="o">::</span><span class="n">WaitSet</span><span class="w"> </span><span class="n">wait_set_</span><span class="p">;</span>
 </code></pre></div>
-<p>Note that there are three types of <code>WaitSet</code> as below.</p>
+<p><code>rlcpp::WaitSet</code> object can be configured during runtime. It is not thread-safe as explained <a href="https://docs.ros.org/en/ros2_packages/humble/api/rclcpp/generated/typedef_namespacerclcpp_1ad6fb19c154de27e92430309d2da25ac3.html">the API specification</a>
+Thread-safe <code>WaitSet</code> are prepared by the <code>rclcpp</code> package as listed below.</p>
 <ul>
 <li><a href="https://docs.ros.org/en/ros2_packages/humble/api/rclcpp/generated/typedef_namespacerclcpp_1ad6fb19c154de27e92430309d2da25ac3.html">Typedef rclcpp::WaitSet</a><ul>
 <li>Subscription, Timer, and so on can be registered to WaitSet at any time</li>
