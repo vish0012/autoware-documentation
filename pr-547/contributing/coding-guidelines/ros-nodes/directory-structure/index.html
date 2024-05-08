@@ -7230,10 +7230,14 @@
 <ul>
 <li>Put the header files in the <code>include</code> directory under the <code>src</code> directory.</li>
 <li>The source file exporting the node should:<ul>
-<li>have <code>_node</code> suffix.
-    - <strong>Rationale:</strong> To distinguish from other source files.</li>
-<li><strong>NOT</strong> have <code>_autoware</code> prefix.
-    - <strong>Rationale:</strong> To avoid verbosity.</li>
+<li>have <code>_node</code> suffix.<ul>
+<li><strong>Rationale:</strong> To distinguish from other source files.</li>
+</ul>
+</li>
+<li><strong>NOT</strong> have <code>_autoware</code> prefix.<ul>
+<li><strong>Rationale:</strong> To avoid verbosity.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>See <a href="../../class-design.md">Classes</a> for more details on how to construct <code>gnss_poser_node.hpp</code> and <code>gnss_poser_node.cpp</code> files.</li>
