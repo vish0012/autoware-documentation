@@ -6240,6 +6240,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#entire-structure" class="md-nav__link">
+    Entire structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#package-name" class="md-nav__link">
     Package name
   </a>
@@ -7040,6 +7047,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#entire-structure" class="md-nav__link">
+    Entire structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#package-name" class="md-nav__link">
     Package name
   </a>
@@ -7122,6 +7136,47 @@
 <p>This document describes the directory structure of <abbr title="Robot Operating System">ROS</abbr> nodes within Autoware.</p>
 <p>We'll use the package <code>autoware_gnss_poser</code> as an example.</p>
 <h2 id="c-package">C++ package<a class="headerlink" href="#c-package" title="Permanent link">#</a></h2>
+<h3 id="entire-structure">Entire structure<a class="headerlink" href="#entire-structure" title="Permanent link">#</a></h3>
+<ul>
+<li>This is a reference on how the entire package might be structured.</li>
+<li>A package may not have all the directories shown here.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>autoware_gnss_poser
+├─ package.xml
+├─ CMakeLists.txt
+├─ README.md
+│
+├─ config
+│   ├─ gnss_poser.param.yaml
+│   └─ another_non_ros_config.yaml
+│
+├─ schema
+│   └─ gnss_poser.schema.json
+│
+├─ doc
+│   ├─ foo_document.md
+│   └─ foo_diagram.svg
+│
+├─ include  # for exporting headers
+│   └─ autoware
+│       └─ gnss_poser
+│           └─ exported_header.hpp
+│
+├─ src
+│   ├─ include
+│   │   ├─ gnss_poser_node.hpp
+│   │   └─ foo.hpp
+│   ├─ gnss_poser_node.cpp
+│   └─ bar.cpp
+│
+├─ launch
+│   ├─ gnss_poser.launch.xml
+│   └─ gnss_poser.launch.py
+│
+└─ test
+    ├─ test_foo.hpp  # or place under an `include` folder here
+    └─ test_foo.cpp
+</code></pre></div>
 <h3 id="package-name">Package name<a class="headerlink" href="#package-name" title="Permanent link">#</a></h3>
 <ul>
 <li>All the packages in Autoware should be prefixed with <code>autoware_</code>.</li>
@@ -7202,7 +7257,7 @@
 <li><abbr title="Robot Operating System">ROS</abbr> parameters uses the extension <code>.param.yaml</code>.</li>
 <li>Non-<abbr title="Robot Operating System">ROS</abbr> parameters use the extension <code>.yaml</code>.</li>
 </ul>
-<p>Rationale: Different linting rules are used for <abbr title="Robot Operating System">ROS</abbr> parameters and non-<abbr title="Robot Operating System">ROS</abbr> parameters.</p>
+<p><strong>Rationale:</strong> Different linting rules are used for <abbr title="Robot Operating System">ROS</abbr> parameters and non-<abbr title="Robot Operating System">ROS</abbr> parameters.</p>
 <h4 id="schema"><code>schema</code><a class="headerlink" href="#schema" title="Permanent link">#</a></h4>
 <p>Place parameter definition files. See <a href="../parameters/">Parameters</a> for details.</p>
 <h3 id="doc"><code>doc</code><a class="headerlink" href="#doc" title="Permanent link">#</a></h3>
@@ -7251,7 +7306,7 @@
 </code></pre></div>
 <ul>
 <li><code>autoware_gnss_poser/include</code> folder should contain <strong>ONLY</strong> the <code>autoware</code> folder.<ul>
-<li><strong>Rationale:</strong> When installing <abbr title="Robot Operating System">ROS</abbr> debian packages, the headers are copied to the <code>/opt/ros/humble/include/</code> directory. This structure is used to avoid conflicts with non-Autoware packages.</li>
+<li><strong>Rationale:</strong> When installing <abbr title="Robot Operating System">ROS</abbr> debian packages, the headers are copied to the <code>/opt/ros/$ROS_DISTRO/include/</code> directory. This structure is used to avoid conflicts with non-Autoware packages.</li>
 </ul>
 </li>
 <li><code>autoware_gnss_poser/include/autoware</code> folder should contain <strong>ONLY</strong> the <code>gnss_poser</code> folder.<ul>
@@ -7283,7 +7338,7 @@ this <code>include</code> folder will be exported to the <code>install</code> fo
 <h3 id="test"><code>test</code><a class="headerlink" href="#test" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>autoware_gnss_poser
 └─ test
-    ├─ test_foo.hpp # or place under an `include` folder here
+    ├─ test_foo.hpp  # or place under an `include` folder here
     └─ test_foo.cpp
 </code></pre></div>
 <p>Place source files for testing. See <a href="../../../testing-guidelines/unit-testing/">unit testing</a> for details.</p>
