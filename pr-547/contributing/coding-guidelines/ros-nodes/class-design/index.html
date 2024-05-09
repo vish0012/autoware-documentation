@@ -7072,7 +7072,7 @@
 </code></pre></div>
 <h4 id="gnss_poser_nodecpp"><code>gnss_poser_node.cpp</code><a class="headerlink" href="#gnss_poser_nodecpp" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code><span class="n">GNSSPoserNode</span><span class="o">::</span><span class="n">GNSSPoserNode</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">NodeOptions</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">node_options</span><span class="p">)</span>
-<span class="o">:</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="s">"gnss_poser_node"</span><span class="p">,</span><span class="w"> </span><span class="n">node_options</span><span class="p">)</span>
+<span class="o">:</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="s">"gnss_poser"</span><span class="p">,</span><span class="w"> </span><span class="n">node_options</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">  </span><span class="p">...</span>
 <span class="p">}</span>
@@ -7084,8 +7084,11 @@
 <li>The constructor should take <code>rclcpp::NodeOptions</code> as an argument.</li>
 <li>Default node name:<ul>
 <li>should not have <code>autoware_</code> prefix.</li>
-<li>should have <code>_node</code> suffix.</li>
-<li><strong>Example:</strong> <code>gnss_poser_node</code>.</li>
+<li>should <strong>NOT</strong> have <code>_node</code> suffix.<ul>
+<li><strong>Rationale:</strong> Node names are useful in the runtime. And output of <code>ros2 node list</code> will show only nodes anyway. Having <code>_node</code> is redundant.</li>
+</ul>
+</li>
+<li><strong>Example:</strong> <code>gnss_poser</code>.</li>
 </ul>
 </li>
 </ul>
