@@ -7248,10 +7248,12 @@
 </li>
 </ul>
 <h5 id="exporting-a-standalone-node-executable">Exporting a standalone node executable<a class="headerlink" href="#exporting-a-standalone-node-executable" title="Permanent link">#</a></h5>
-<p>Assuming:
-- <code>src/gnss_poser.cpp</code> has the <code>GNSSPoserNode</code> class.
-- <code>src/gnss_poser_node.cpp</code> has the <code>main</code> function.
-- There is no composable node component registration.</p>
+<p>Assuming:</p>
+<ul>
+<li><code>src/gnss_poser.cpp</code> has the <code>GNSSPoserNode</code> class.</li>
+<li><code>src/gnss_poser_node.cpp</code> has the <code>main</code> function.</li>
+<li>There is no composable node component registration.</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="nb">ament_auto_add_library</span><span class="p">(</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="w"> </span><span class="s">SHARED</span>
 <span class="w">  </span><span class="s">src/gnss_poser.cpp</span>
 <span class="p">)</span>
