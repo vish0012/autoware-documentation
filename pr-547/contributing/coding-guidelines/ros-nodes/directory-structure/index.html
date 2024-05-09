@@ -7230,7 +7230,9 @@
 </ul>
 </li>
 </ul>
-<h5 id="exporting-a-composable-node-as-a-standalone-node-executable">Exporting a composable node as a standalone node executable<a class="headerlink" href="#exporting-a-composable-node-as-a-standalone-node-executable" title="Permanent link">#</a></h5>
+<h5 id="exporting-a-composable-node-component-executables">Exporting a composable node component executables<a class="headerlink" href="#exporting-a-composable-node-component-executables" title="Permanent link">#</a></h5>
+<p>For best practices and system efficiency, it is recommended to primarily use composable node components.</p>
+<p>This method facilitates easier deployment and maintenance within <abbr title="Robot Operating System">ROS</abbr> environments.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">ament_auto_add_library</span><span class="p">(</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="w"> </span><span class="s">SHARED</span>
 <span class="w">  </span><span class="s">src/gnss_poser_node.cpp</span>
 <span class="p">)</span>
@@ -7241,8 +7243,34 @@
 <span class="p">)</span>
 </code></pre></div>
 <ul>
-<li>The composable node executable should have <code>_node</code> suffix.</li>
-<li>The composable node executable should start with <code>${PROJECT_NAME}</code></li>
+<li>If you are building:<ul>
+<li><strong>only a single composable node component,</strong> the executable name should start with <code>${PROJECT_NAME}</code></li>
+<li><strong>multiple composable node components,</strong> the executable name is up to the developer.</li>
+</ul>
+</li>
+<li>All composable node component executables should have the <code>_node</code> suffix.</li>
+</ul>
+<h5 id="exporting-a-standalone-node-executable-without-composition-discouraged-for-most-cases">Exporting a standalone node executable without composition <em>(discouraged for most cases)</em><a class="headerlink" href="#exporting-a-standalone-node-executable-without-composition-discouraged-for-most-cases" title="Permanent link">#</a></h5>
+<p>Use of standalone executables <strong>should be limited</strong> to cases where specific needs such as debugging or tooling are required.</p>
+<p><a href="#exporting-a-composable-node-component-executables">Exporting a composable node component executables</a> is generally preferred for standard operational use due its flexibility and scalability within the <abbr title="Robot Operating System">ROS</abbr> ecosystem.</p>
+<p>Assuming:</p>
+<ul>
+<li><code>src/gnss_poser.cpp</code> has the <code>GNSSPoserNode</code> class.</li>
+<li><code>src/gnss_poser_node.cpp</code> has the <code>main</code> function.</li>
+<li>There is no composable node component registration.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nb">ament_auto_add_library</span><span class="p">(</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="w"> </span><span class="s">SHARED</span>
+<span class="w">  </span><span class="s">src/gnss_poser.cpp</span>
+<span class="p">)</span>
+
+<span class="nb">ament_auto_add_executable</span><span class="p">(</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="s">_node</span><span class="w"> </span><span class="s">src/gnss_poser_node.cpp</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>The node executable:<ul>
+<li>should have <code>_node</code> suffix.</li>
+<li>should start with `${PROJECT_NAME}</li>
+</ul>
+</li>
 </ul>
 <h3 id="config-and-schema"><code>config</code> and <code>schema</code><a class="headerlink" href="#config-and-schema" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>autoware_gnss_poser
