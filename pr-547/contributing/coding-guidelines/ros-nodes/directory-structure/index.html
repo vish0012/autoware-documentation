@@ -7281,21 +7281,33 @@
     │   └─ foo.hpp
     │─ gnss_poser_node.cpp
     └─ bar.cpp
+
+OR
+
+autoware_gnss_poser
+└─ src
+    ├─ gnss_poser_node.hpp
+    ├─ gnss_poser_node.cpp
+    ├─ foo.hpp
+    └─ bar.cpp
 </code></pre></div>
 <ul>
-<li>Put the header files in the <code>include</code> directory under the <code>src</code> directory.</li>
 <li>The source file exporting the node should:<ul>
 <li>have <code>_node</code> suffix.<ul>
 <li><strong>Rationale:</strong> To distinguish from other source files.</li>
 </ul>
 </li>
-<li><strong>NOT</strong> have <code>_autoware</code> prefix.<ul>
+<li><strong>NOT</strong> have <code>autoware_</code> prefix.<ul>
 <li><strong>Rationale:</strong> To avoid verbosity.</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>See <a href="../../class-design.md">Classes</a> for more details on how to construct <code>gnss_poser_node.hpp</code> and <code>gnss_poser_node.cpp</code> files.</li>
+<li>It is up to developer how to organize the source files under <code>src</code>.<ul>
+<li><strong>Note:</strong> The <code>include</code> folder under <code>src</code> is optional.</li>
+</ul>
+</li>
 </ul>
 <h4 id="exporting-headers">Exporting headers<a class="headerlink" href="#exporting-headers" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code>autoware_gnss_poser
