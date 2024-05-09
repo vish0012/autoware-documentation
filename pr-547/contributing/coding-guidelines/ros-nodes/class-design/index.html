@@ -7058,7 +7058,7 @@
 </code></pre></div>
 <ul>
 <li>Everything should be under <code>autoware::gnss_poser</code> namespace.</li>
-<li>Closing braces should contain a comment with the namespace name.</li>
+<li>Closing braces must contain a comment with the namespace name. (Automated with <code>cpplint</code>)</li>
 </ul>
 <h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">#</a></h2>
 <h3 id="nodes">Nodes<a class="headerlink" href="#nodes" title="Permanent link">#</a></h3>
@@ -7080,8 +7080,8 @@
 <ul>
 <li>The class name should be in <code>CamelCase</code>.</li>
 <li>Node classes should inherit from <code>rclcpp::Node</code>.</li>
-<li>The constructor should be explicit.</li>
-<li>The constructor should take <code>rclcpp::NodeOptions</code> as an argument.</li>
+<li>The constructor must be marked be explicit.</li>
+<li>The constructor must take <code>rclcpp::NodeOptions</code> as an argument.</li>
 <li>Default node name:<ul>
 <li>should not have <code>autoware_</code> prefix.</li>
 <li>should <strong>NOT</strong> have <code>_node</code> suffix.<ul>
