@@ -7160,7 +7160,7 @@ You can run the program as below. If you set <code>true</code> to <code>use_intr
 <p><code>std::shared_ptr&lt;void&gt; data = intra_process_sub-&gt;take_data();</code></p>
 <ul>
 <li>This statement means to obtain a topic message from subscriptions for intra-process communication.</li>
-<li><code>intra_process_sub-&gt;take_data()</code> does not return Boolean value which indicates a message is received successfully or not, therefore it is needed to verify it by calling <code>is_ready()</code> in advance</li>
+<li><code>intra_process_sub-&gt;take_data()</code> does not return a boolean value indicating whether a message is received successfully or not, so it is necessary to check this by calling <code>is_ready()</code> beforehand</li>
 </ul>
 </li>
 </ul>
