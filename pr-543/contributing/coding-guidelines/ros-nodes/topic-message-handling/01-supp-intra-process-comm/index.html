@@ -7148,7 +7148,7 @@ You can run the program as below. If you set <code>true</code> to <code>use_intr
 <p><code>if (intra_process_sub-&gt;is_ready(nullptr) == true) {</code></p>
 <ul>
 <li>The statement checks if a message has already been received through intra-process communication</li>
-<li>the argument of <code>is_ready()</code> is of <code>rcl_wait_set_t</code> type, but because the argument is not used inside <code>is_ready()</code>, <code>nullptr</code> is used tentatively<ul>
+<li>The argument of <code>is_ready()</code> is of type <code>rcl_wait_set_t</code> type, but because the argument is not used within <code>is_ready()</code>, <code>nullptr</code> is used for the moment.<ul>
 <li>using <code>nullptr</code> is a workaround at the present because it does not have any intention.</li>
 </ul>
 </li>
