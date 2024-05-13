@@ -7190,7 +7190,7 @@ The following sample code shows how <code>wait_set_.wait()</code> tells you that
 Below is excerption from <a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/waitset_examples/src/timer_listener_triple_async.cpp">ros2_subscription_examples/waitset_examples/src/timer_listener_triple_async.cpp at main · takam5f2/ros2_subscription_examples</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="n">rclcpp</span><span class="o">::</span><span class="n">WaitSet</span><span class="w"> </span><span class="n">wait_set_</span><span class="p">;</span>
 </code></pre></div>
-<p><code>rlcpp::WaitSet</code> object can be configured during runtime. It is not thread-safe as explained <a href="https://docs.ros.org/en/ros2_packages/humble/api/rclcpp/generated/typedef_namespacerclcpp_1ad6fb19c154de27e92430309d2da25ac3.html">the API specification</a>
+<p>The <code>rclcpp::WaitSet</code> object can be configured during runtime. It is not thread-safe as explained in<a href="https://docs.ros.org/en/ros2_packages/humble/api/rclcpp/generated/typedef_namespacerclcpp_1ad6fb19c154de27e92430309d2da25ac3.html"><em>API specification of <code>rclcpp::WaitSet</code></em></a>
 Thread-safe <code>WaitSet</code> are prepared by the <code>rclcpp</code> package as listed below.</p>
 <ul>
 <li><a href="https://docs.ros.org/en/ros2_packages/humble/api/rclcpp/generated/typedef_namespacerclcpp_1acaec573e71549fd3078644e18e7f7127.html">Typedef rclcpp::ThreadSafeWaitSet</a><ul>
