@@ -6345,7 +6345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="02-supp-waitset/" class="md-nav__link">
+      <a href="02-supp-wait_set/" class="md-nav__link">
         [supplement] Use rclcpp::WaitSet
       </a>
     </li>
@@ -7177,7 +7177,7 @@ When <code>take(msg, msg_info)</code> is called, if the size of the subscription
 <p class="admonition-title">Note</p>
 </div>
 <p>You can check the presence of incoming message with the returned value of <code>take()</code> method. However, you have to take care of destructive nature of take() method. <code>take()</code> method changes the subscription queue. Besides, <code>take()</code> method is irreversible while there is no undo operation against <code>take()</code> method. Checking the incoming message with only <code>take()</code> method always changes the subscription queue. If you want to check without changing the subscription queue, rclcpp::WaitSet is recommended.
-Refer to <a href="02-supp-waitset/">[supplement] Use rclcpp::WaitSet</a> for more detail.</p>
+Refer to <a href="02-supp-wait_set/">[supplement] Use rclcpp::WaitSet</a> for more detail.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 </div>
