@@ -7130,7 +7130,7 @@ In this case, a topic message is retrieved from the subscription queue, the queu
 <h2 id="manners-to-handle-topic-message-data">Manners to handle topic message data<a class="headerlink" href="#manners-to-handle-topic-message-data" title="Permanent link">#</a></h2>
 <p>This section introduces four manners, including the recommended ones.</p>
 <h3 id="1-obtain-data-by-calling-subscription-take">1. Obtain data by calling <code>Subscription-&gt;take()</code><a class="headerlink" href="#1-obtain-data-by-calling-subscription-take" title="Permanent link">#</a></h3>
-<p>To use the recommended manner using <code>Subscription-&gt;take()</code>, you need to do two things below basically.</p>
+<p>To use the recommended manner using <code>Subscription-&gt;take()</code>, you basically need to do two things below.</p>
 <ol>
 <li>Prevent calling a callback function when a topic message is received</li>
 <li>Call <code>take()</code> method of Subscription object when a topic message is needed</li>
