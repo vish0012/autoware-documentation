@@ -8,20 +8,20 @@
       
       
       
-        <link rel="canonical" href="https://autowarefoundation.github.io/autoware-documentation/pr-543/contributing/coding-guidelines/ros-nodes/topic-message-handling/01-supp-intra-process-comm/">
+        <link rel="canonical" href="https://autowarefoundation.github.io/autoware-documentation/pr-543/contributing/coding-guidelines/ros-nodes/topic-message-handling/supp-wait_set/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../supp-intra-process-comm/">
       
       
-        <link rel="next" href="../02-supp-wait_set/">
+        <link rel="next" href="../../../../testing-guidelines/">
       
       <link rel="icon" href="../../../../../assets/images/autoware-foundation.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.20">
     
     
       
-        <title>[supplement] Obtain a received message through intra-process communication - Autoware Documentation</title>
+        <title>[supplement] Use rclcpp::WaitSet - Autoware Documentation</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#supplement-obtain-a-received-message-through-intra-process-communication" class="md-skip">
+        <a href="#supplement-use-rclcppwaitset" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              [supplement] Obtain a received message through intra-process communication
+              [supplement] Use rclcpp::WaitSet
             
           </span>
         </div>
@@ -6329,6 +6329,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../supp-intra-process-comm/" class="md-nav__link">
+        [supplement] Obtain a received message through intra-process communication
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -6341,12 +6355,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          [supplement] Obtain a received message through intra-process communication
+          [supplement] Use rclcpp::WaitSet
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        [supplement] Obtain a received message through intra-process communication
+        [supplement] Use rclcpp::WaitSet
       </a>
       
         
@@ -6365,8 +6379,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#topic-message-handling-in-intra-process-communication" class="md-nav__link">
-    Topic message handling in intra-process communication
+  <a href="#what-is-rclcppwaitset" class="md-nav__link">
+    What is rclcpp::WaitSet
   </a>
   
 </li>
@@ -6376,26 +6390,39 @@
     Coding manner
   </a>
   
+    <nav class="md-nav" aria-label="Coding manner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-declare-and-initialize-waitset" class="md-nav__link">
+    1. Declare and initialize WaitSet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-register-trigger-subscription-timer-and-so-on-to-waitset" class="md-nav__link">
+    2. Register trigger (Subscription, Timer, and so on) to WaitSet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-verify-waitset-result" class="md-nav__link">
+    3. Verify WaitSet result
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02-supp-wait_set/" class="md-nav__link">
-        [supplement] Use rclcpp::WaitSet
-      </a>
     </li>
   
 
@@ -7061,8 +7088,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#topic-message-handling-in-intra-process-communication" class="md-nav__link">
-    Topic message handling in intra-process communication
+  <a href="#what-is-rclcppwaitset" class="md-nav__link">
+    What is rclcpp::WaitSet
   </a>
   
 </li>
@@ -7071,6 +7098,33 @@
   <a href="#coding-manner" class="md-nav__link">
     Coding manner
   </a>
+  
+    <nav class="md-nav" aria-label="Coding manner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-declare-and-initialize-waitset" class="md-nav__link">
+    1. Declare and initialize WaitSet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-register-trigger-subscription-timer-and-so-on-to-waitset" class="md-nav__link">
+    2. Register trigger (Subscription, Timer, and so on) to WaitSet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-verify-waitset-result" class="md-nav__link">
+    3. Verify WaitSet result
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -7092,85 +7146,117 @@
   
 
 
-<div><h1 id="supplement-obtain-a-received-message-through-intra-process-communication">[supplement] Obtain a received message through intra-process communication<a class="headerlink" href="#supplement-obtain-a-received-message-through-intra-process-communication" title="Permanent link">#</a></h1>
-<h2 id="topic-message-handling-in-intra-process-communication">Topic message handling in intra-process communication<a class="headerlink" href="#topic-message-handling-in-intra-process-communication" title="Permanent link">#</a></h2>
-<p><code>rclcpp</code> supports intra-process communication. As explained in <a href="../"><em>Topic message handling guideline</em></a>, <code>take()</code> method can not be used in the case of intra-process communication. <code>take()</code> can not return a topic message which is received through inter-process communication.<br>
-However, methods for intra-process communication are provided, similar to the methods for inter-process communication described in <a href="../#3-obtain-data-by-calling-subscription-take-and-then-call-a-callback-function"><em>obtain data by calling Subscription-&gt;take and then call a callback function</em></a>.
-<code>take_data()</code> method is provided to obtain a received data in the case of intra-process communication and the received data must be processed through <code>execute()</code> method. The return value of <code>take_data()</code> is based on the complicated data structure, <code>execute()</code> method should be used along with <code>take_data()</code> method.
-Refer to <a href="http://docs.ros.org/en/humble/p/rclcpp/generated/classrclcpp_1_1experimental_1_1SubscriptionIntraProcess.html#_CPPv4N6rclcpp12experimental24SubscriptionIntraProcess9take_dataEv"><em>Template Class SubscriptionIntraProcess — rclcpp 16.0.8 documentation</em></a> for <code>take_data()</code> and <code>execute()</code> for more detail.</p>
+<div><h1 id="supplement-use-rclcppwaitset">[supplement] Use rclcpp::WaitSet<a class="headerlink" href="#supplement-use-rclcppwaitset" title="Permanent link">#</a></h1>
+<h2 id="what-is-rclcppwaitset">What is <code>rclcpp::WaitSet</code><a class="headerlink" href="#what-is-rclcppwaitset" title="Permanent link">#</a></h2>
+<p>As explained in <a href="../#call-take-method-of-subscription-object"><em>call take() method of Subscription object</em></a>, the <code>take()</code> method is irreversible. Once the <code>take()</code> method is executed, a state of a subscription object changes. Because there is no undo operation against the <code>take()</code> method, the subscription object can not be restored to its previous state. You can use the <code>rclcpp::WaitSet</code> before calling the <code>take()</code> to check the arrival of an incoming message in the subscription queue.
+The following sample code shows how the <code>wait_set_.wait()</code> tells you that a message has already been received and can be obtained by the <code>take()</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="k">auto</span><span class="w"> </span><span class="n">wait_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wait_set_</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">wait_result</span><span class="p">.</span><span class="n">kind</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">WaitResultKind</span><span class="o">::</span><span class="n">Ready</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">          </span><span class="n">wait_result</span><span class="p">.</span><span class="n">get_wait_set</span><span class="p">().</span><span class="n">get_rcl_wait_set</span><span class="p">().</span><span class="n">subscriptions</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">sub_</span><span class="o">-&gt;</span><span class="n">take</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span><span class="w"> </span><span class="n">msg_info</span><span class="p">);</span>
+<span class="w">            </span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">get_logger</span><span class="p">(),</span><span class="w"> </span><span class="s">"Catch message"</span><span class="p">);</span>
+<span class="w">            </span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">get_logger</span><span class="p">(),</span><span class="w"> </span><span class="s">"I heard: [%s]"</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+</code></pre></div>
+<p>A single <code>rclcpp::WaitSet</code> object is able to observe multiple subscription objects. If there are multiple subscriptions for different topics, you can check the arrival of incoming messages per subscription. Algorithms used in the field of autonomous robots requires multiple incoming messages, such as sensor data or actuation state. Using <code>rclcpp::WaitSet</code> for the multiple subscriptions, they are able to check whether or not required messages have arrived without taking any message.</p>
+<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="k">auto</span><span class="w"> </span><span class="n">wait_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wait_set_</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<span class="w">      </span><span class="kt">bool</span><span class="w"> </span><span class="n">received_all_messages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">wait_result</span><span class="p">.</span><span class="n">kind</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">WaitResultKind</span><span class="o">::</span><span class="n">Ready</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">wait_set_subs</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">wait_result</span><span class="p">.</span><span class="n">get_wait_set</span><span class="p">().</span><span class="n">get_rcl_wait_set</span><span class="p">().</span><span class="n">subscriptions</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">wait_set_subs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">RCLCPP_INFO_THROTTLE</span><span class="p">(</span><span class="n">get_logger</span><span class="p">(),</span><span class="w"> </span><span class="n">clock</span><span class="p">,</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w"> </span><span class="s">"Waiting for data..."</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="p">{};</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">received_all_mesages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+</code></pre></div>
+<p>In the code above, unless <code>rclcpp::WaitSet</code> is used, it is impossible to verify the arrival of all needed messages without changing state of the subscription objects.</p>
 <h2 id="coding-manner">Coding manner<a class="headerlink" href="#coding-manner" title="Permanent link">#</a></h2>
-<p>To handle messages via intra-process communication, call <code>take_data()</code> method and then <code>execute()</code> method as below.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Execute any entities of the Waitable that may be ready</span>
-<span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">waitable</span><span class="p">.</span><span class="n">take_data</span><span class="p">();</span>
-<span class="n">waitable</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+<p>This section explains how to code using <code>rclcpp::WaitSet</code> with a sample code below.</p>
+<ul>
+<li><a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/waitset_examples/src/talker_triple.cpp"><em>ros2_subscription_examples/waitset_examples/src/talker_triple.cpp at main · takam5f2/ros2_subscription_examples</em></a><ul>
+<li>It periodically publishes <code>/chatter</code> every second, <code>/slower_chatter</code> every two seconds, and <code>/slowest_chatter</code> every three seconds.</li>
+</ul>
+</li>
+<li><a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/waitset_examples/src/timer_listener_triple_async.cpp"><em>ros2_subscription_examples/waitset_examples/src/timer_listener_triple_async.cpp at main · takam5f2/ros2_subscription_examples</em></a><ul>
+<li>It queries <code>WaitSet</code> per one second and if there is a message available, it obtains the message with <code>take()</code></li>
+<li>It has three subscriptions for <code>/chatter</code> <code>/slower_chatter</code>, and <code>/slower_chatter</code></li>
+</ul>
+</li>
+</ul>
+<p>The following three steps are required to use <code>rclcpp::WaitSet</code>.</p>
+<h3 id="1-declare-and-initialize-waitset">1. Declare and initialize <code>WaitSet</code><a class="headerlink" href="#1-declare-and-initialize-waitset" title="Permanent link">#</a></h3>
+<p>You must first instantiate a <code>rclcpp::WaitSet</code> based object.
+Below is a snippet from <a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/waitset_examples/src/timer_listener_triple_async.cpp"><em>ros2_subscription_examples/waitset_examples/src/timer_listener_triple_async.cpp at main · takam5f2/ros2_subscription_examples</em></a>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">rclcpp</span><span class="o">::</span><span class="n">WaitSet</span><span class="w"> </span><span class="n">wait_set_</span><span class="p">;</span>
 </code></pre></div>
-<p>Here is a sample program in <a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/intra_process_talker_listener/src/timer_listener_intra_process.cpp"><em>ros2_subscription_examples/intra_process_talker_listener/src/timer_listener_intra_process.cpp at main · takam5f2/ros2_subscription_examples</em></a>.
-You can run the program as below. If you set <code>true</code> to <code>use_intra_process_comms</code>, intra-process communication is performed, while if you set <code>false</code>, inter-process communication is performed.</p>
-<div class="highlight"><pre><span></span><code><span class="go">ros2 intra_process_talker_listener talker_listener_intra_process.launch.py use_intra_process_comms:=true</span>
+<details class="note">
+<summary>Note</summary>
+<p>There are several types of classes similar to the <code>rclcpp::WaitSet</code>. The <code>rclcpp::WaitSet</code> object can be configured during runtime. It is not thread-safe as explained in the <a href="https://docs.ros.org/en/ros2_packages/humble/api/rclcpp/generated/typedef_namespacerclcpp_1ad6fb19c154de27e92430309d2da25ac3.html"><em>API specification of <code>rclcpp::WaitSet</code></em></a>
+The thread-safe classes that are replacements for <code>rclcpp::WaitSet' are provided by the</code>rclcpp' package as listed below.</p>
+<ul>
+<li><a href="https://docs.ros.org/en/ros2_packages/humble/api/rclcpp/generated/typedef_namespacerclcpp_1acaec573e71549fd3078644e18e7f7127.html"><em>Typedef rclcpp::ThreadSafeWaitSet</em></a><ul>
+<li>Subscription, timer, etc. can only be registered to <code>ThreadSafeWaitSet</code> only in thread-safe state</li>
+<li>Sample code is here: <a href="https://github.com/ros2/examples/blob/rolling/rclcpp/wait_set/src/thread_safe_wait_set.cpp">examples/rclcpp/wait_set/src/thread_safe_wait_set.cpp at rolling · ros2/examples</a></li>
+</ul>
+</li>
+<li><a href="https://docs.ros.org/en/ros2_packages/humble/api/rclcpp/generated/typedef_namespacerclcpp_1adb06acf4a5723b1445fa6ed4e8f73374.html"><em>Typedef rclcpp::StaticWaitSet</em></a><ul>
+<li>Subscription, timer, etc. can be registered to <code>rclcpp::StaticWaitSet</code> only at initialization</li>
+<li>Here are sample code:<ul>
+<li><a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/waitset_examples/src/timer_listener_twin_static.cpp"><em>ros2_subscription_examples/waitset_examples/src/timer_listener_twin_static.cpp at main · takam5f2/ros2_subscription_examples</em></a></li>
+<li><a href="https://github.com/ros2/examples/blob/rolling/rclcpp/wait_set/src/static_wait_set.cpp"><em>examples/rclcpp/wait_set/src/static_wait_set.cpp at rolling · ros2/examples</em></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</details>
+<h3 id="2-register-trigger-subscription-timer-and-so-on-to-waitset">2. Register trigger (Subscription, Timer, and so on) to <code>WaitSet</code><a class="headerlink" href="#2-register-trigger-subscription-timer-and-so-on-to-waitset" title="Permanent link">#</a></h3>
+<p>You need to register a trigger to the <code>rclcpp::WaitSet</code> based object.
+The following is a snippet from <a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/waitset_examples/src/timer_listener_triple_async.cpp"><em>ros2_subscription_examples/waitset_examples/src/timer_listener_triple_async.cpp at main · takam5f2/ros2_subscription_examples</em></a></p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">subscriptions_array_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">create_subscription</span><span class="o">&lt;</span><span class="n">std_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"chatter"</span><span class="p">,</span><span class="w"> </span><span class="n">qos</span><span class="p">,</span><span class="w"> </span><span class="n">not_executed_callback</span><span class="p">,</span><span class="w"> </span><span class="n">subscription_options</span><span class="p">);</span>
+<span class="w">    </span><span class="n">subscriptions_array_</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">create_subscription</span><span class="o">&lt;</span><span class="n">std_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"slower_chatter"</span><span class="p">,</span><span class="w"> </span><span class="n">qos</span><span class="p">,</span><span class="w"> </span><span class="n">not_executed_callback</span><span class="p">,</span><span class="w"> </span><span class="n">subscription_options</span><span class="p">);</span>
+<span class="w">    </span><span class="n">subscriptions_array_</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">create_subscription</span><span class="o">&lt;</span><span class="n">std_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"slowest_chatter"</span><span class="p">,</span><span class="w"> </span><span class="n">qos</span><span class="p">,</span><span class="w"> </span><span class="n">not_executed_callback</span><span class="p">,</span><span class="w"> </span><span class="n">subscription_options</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Add subscription to waitset</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">subscription</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">subscriptions_array_</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">wait_set_</span><span class="p">.</span><span class="n">add_subscription</span><span class="p">(</span><span class="n">subscription</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 </code></pre></div>
-<p>Here is a snippet of <a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/intra_process_talker_listener/src/timer_listener_intra_process.cpp"><em>ros2_subscription_examples/intra_process_talker_listener/src/timer_listener_intra_process.cpp at main · takam5f2/ros2_subscription_examples</em></a>.</p>
-<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="c1">// check if intra-process communication is enabled.</span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">get_node_options</span><span class="p">().</span><span class="n">use_intra_process_comms</span><span class="p">()){</span>
-
-<span class="w">        </span><span class="c1">// get the intra-process subscription's waitable.</span>
-<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">intra_process_sub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sub_</span><span class="o">-&gt;</span><span class="n">get_intra_process_waitable</span><span class="p">();</span>
-
-<span class="w">        </span><span class="c1">// check if the waitable has data.</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intra_process_sub</span><span class="o">-&gt;</span><span class="n">is_ready</span><span class="p">(</span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">          </span><span class="c1">// take the data and execute the callback.</span>
-<span class="w">          </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intra_process_sub</span><span class="o">-&gt;</span><span class="n">take_data</span><span class="p">();</span>
-
-<span class="w">          </span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">get_logger</span><span class="p">(),</span><span class="w"> </span><span class="s">" Intra-process communication is performed."</span><span class="p">);</span>
-
-<span class="w">          </span><span class="c1">// execute the callback.</span>
-<span class="w">          </span><span class="n">intra_process_sub</span><span class="o">-&gt;</span><span class="n">execute</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+<p>In the code above, the <code>add_subscription()</code> method registers the created subscriptions with the <code>wait_set_</code> object.
+A <code>rclcpp::WaitSet</code>-based object basically handles objects each of which has a corresponding callback function. Not only<code>Subscription</code>based objects, but also <code>Timer</code>,<code>Service</code>or<code>Action</code>based objects can be observed by a <code>rclcpp::WaitSet</code> based object. A single<code>rclcpp::WaitSet</code> object accepts mixture of different types of objects.
+A sample code for registering timer triggers can be found here.</p>
+<div class="highlight"><pre><span></span><code><span class="n">wait_set_</span><span class="p">.</span><span class="n">add_timer</span><span class="p">(</span><span class="n">much_slower_timer_</span><span class="p">);</span>
 </code></pre></div>
-<p>Below is a line-by-line explanation of the above code.</p>
-<ul>
-<li>
-<p><code>if (this-&gt;get_node_options().use_intra_process_comms()){</code></p>
-<ul>
-<li>The statement checks whether or not intra-process communication is enabled or not by using <code>NodeOptions</code></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>
-<p><code>auto intra_process_sub = sub_-&gt;get_intra_process_waitable();</code></p>
-<ul>
-<li>The statement means to get an embodied object which performs intra-process communication</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>
-<p><code>if (intra_process_sub-&gt;is_ready(nullptr) == true) {</code></p>
-<ul>
-<li>The statement checks if a message has already been received through intra-process communication</li>
-<li>The argument of <code>is_ready()</code> is of type <code>rcl_wait_set_t</code> type, but because the argument is not used within <code>is_ready()</code>, <code>nullptr</code> is used for the moment.<ul>
-<li>Using <code>nullptr</code> is currently a workaround, as it has no intent.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>
-<p><code>std::shared_ptr&lt;void&gt; data = intra_process_sub-&gt;take_data();</code></p>
-<ul>
-<li>This statement means to obtain a topic message from subscriptions for intra-process communication.</li>
-<li><code>intra_process_sub-&gt;take_data()</code> does not return a boolean value indicating whether a message is received successfully or not, so it is necessary to check this by calling <code>is_ready()</code> beforehand</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><code>intra_process_sub-&gt;execute(data);</code><ul>
-<li>A callback function corresponding to the received message is called within <code>execute()</code></li>
-<li>The callback function is executed by the thread that calls <code>execute()</code> without a context switch</li>
-</ul>
-</li>
-</ul>
+<p>A trigger can be registered at declaration and initialization as described in <a href="https://github.com/ros2/examples/blob/rolling/rclcpp/wait_set/src/wait_set_topics_and_timer.cpp#L66"><em>wait_set_topics_and_timer.cpp from the examples</em></a>.</p>
+<h3 id="3-verify-waitset-result">3. Verify WaitSet result<a class="headerlink" href="#3-verify-waitset-result" title="Permanent link">#</a></h3>
+<p>The data structure of the test result returned from the <code>rclcpp::WaitSet</code> is nested.
+You can find the <code>WaitSet</code> result by the following 2 steps;</p>
+<ol>
+<li>Verify if any trigger has been invoked</li>
+<li>Verify if a specified trigger has been triggered</li>
+</ol>
+<p>For step 1, here is a sample code taken from <a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/waitset_examples/src/timer_listener_triple_async.cpp"><em>ros2_subscription_examples/waitset_examples/src/timer_listener_triple_async.cpp at main · takam5f2/ros2_subscription_examples</em></a>.</p>
+<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="k">auto</span><span class="w"> </span><span class="n">wait_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wait_set_</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">wait_result</span><span class="p">.</span><span class="n">kind</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">WaitResultKind</span><span class="o">::</span><span class="n">Ready</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">get_logger</span><span class="p">(),</span><span class="w"> </span><span class="s">"wait_set tells that some subscription is ready"</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">get_logger</span><span class="p">(),</span><span class="w"> </span><span class="s">"wait_set tells that any subscription is not ready and return"</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+</code></pre></div>
+<p>In the code above, <code>auto wait_result = wait_set_.wait(std::chrono::milliseconds(0))</code> tests if a trigger in <code>wait_set_</code> has been called. The argument to the<code>wait()</code>method is the timeout duration. If it is greater than 0 milliseconds or seconds, this method will wait for a message to be received until the timeout expires.
+If<code>wait_result.kind() == rclcpp::WaitResultKind::Ready</code>is<code>true</code>, then any trigger has been invoked.</p>
+<p>For step 2, here is a sample code taken from <a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/waitset_examples/src/timer_listener_triple_async.cpp"><em>ros2_subscription_examples/waitset_examples/src/timer_listener_triple_async.cpp at main · takam5f2/ros2_subscription_examples</em></a>.</p>
+<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">subscriptions_num</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">wait_result</span><span class="p">.</span><span class="n">get_wait_set</span><span class="p">().</span><span class="n">get_rcl_wait_set</span><span class="p">().</span><span class="n">subscriptions</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">std_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">String</span><span class="w"> </span><span class="n">msg</span><span class="p">;</span>
+<span class="w">          </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">MessageInfo</span><span class="w"> </span><span class="n">msg_info</span><span class="p">;</span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">subscriptions_array_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">take</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span><span class="w"> </span><span class="n">msg_info</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">get_logger</span><span class="p">(),</span><span class="w"> </span><span class="s">"Catch message via subscription[%ld]"</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">            </span><span class="n">RCLCPP_INFO</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">get_logger</span><span class="p">(),</span><span class="w"> </span><span class="s">"I heard: [%s]"</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+</code></pre></div>
+<p>In the code above, <code>wait_result.get_wait_set().get_rcl_wait_set().subscriptions[i]</code> indicates whether each individual trigger has been invoked or not. The result is stored in the <code>subscriptions</code> array. The order in the <code>subscriptions</code> array is the same as the order in which the triggers are registered.</p>
 <!-- prettier-ignore --></div>
 
 
@@ -7198,7 +7284,7 @@ You can run the program as below. If you set <code>true</code> to <code>use_intr
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Topic message handling guideline" rel="prev">
+          <a href="../supp-intra-process-comm/" class="md-footer__link md-footer__link--prev" aria-label="Previous: [supplement] Obtain a received message through intra-process communication" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -7207,20 +7293,20 @@ You can run the program as below. If you set <code>true</code> to <code>use_intr
                 Previous
               </span>
               <div class="md-ellipsis">
-                Topic message handling guideline
+                [supplement] Obtain a received message through intra-process communication
               </div>
             </div>
           </a>
         
         
           
-          <a href="../02-supp-wait_set/" class="md-footer__link md-footer__link--next" aria-label="Next: [supplement] Use rclcpp::WaitSet" rel="next">
+          <a href="../../../../testing-guidelines/" class="md-footer__link md-footer__link--next" aria-label="Next: Testing guidelines" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                [supplement] Use rclcpp::WaitSet
+                Testing guidelines
               </div>
             </div>
             <div class="md-footer__button md-icon">

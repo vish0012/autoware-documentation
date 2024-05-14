@@ -14,7 +14,7 @@
         <link rel="prev" href="../topic-namespaces/">
       
       
-        <link rel="next" href="01-supp-intra-process-comm/">
+        <link rel="next" href="supp-intra-process-comm/">
       
       <link rel="icon" href="../../../../assets/images/autoware-foundation.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.20">
@@ -6331,7 +6331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="01-supp-intra-process-comm/" class="md-nav__link">
+      <a href="supp-intra-process-comm/" class="md-nav__link">
         [supplement] Obtain a received message through intra-process communication
       </a>
     </li>
@@ -6345,7 +6345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="02-supp-wait_set/" class="md-nav__link">
+      <a href="supp-wait_set/" class="md-nav__link">
         [supplement] Use rclcpp::WaitSet
       </a>
     </li>
@@ -7138,8 +7138,8 @@ In this case, a topic message is retrieved from the subscription queue, the queu
 <p>You can see an example of the typical use of <code>take()</code> method in <a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/simple_examples/src/timer_listener.cpp"><em>ros2_subscription_examples/simple_examples/src/timer_listener.cpp</em></a>.</p>
 <h4 id="prevent-calling-a-callback-function">Prevent calling a callback function<a class="headerlink" href="#prevent-calling-a-callback-function" title="Permanent link">#</a></h4>
 <p>To prevent a callback function from being called automatically, the callback function has to belong a callback group whose callback functions are not added to any executor.
-According to the <a href="http://docs.ros.org/en/iron/p/rclcpp/generated/classrclcpp_1_1Node.html">API specification of <code>create_subscription</code></a>, registering a callback function to a <code>rclcpp::Subscription</code> based object is mandatory even if the callback function has no operation.
-Here is a sample code snippet from <a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/simple_examples/src/timer_listener.cpp">ros2_subscription_examples/simple_examples/src/timer_listener.cpp</a>.</p>
+According to the <a href="http://docs.ros.org/en/iron/p/rclcpp/generated/classrclcpp_1_1Node.html"><em>API specification of <code>create_subscription</code></em></a>, registering a callback function to a <code>rclcpp::Subscription</code> based object is mandatory even if the callback function has no operation.
+Here is a sample code snippet from <a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/simple_examples/src/timer_listener.cpp"><em>ros2_subscription_examples/simple_examples/src/timer_listener.cpp</em></a>.</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">CallbackGroup</span><span class="o">::</span><span class="n">SharedPtr</span><span class="w"> </span><span class="n">cb_group_not_executed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">create_callback_group</span><span class="p">(</span>
 <span class="w">        </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">CallbackGroupType</span><span class="o">::</span><span class="n">MutuallyExclusive</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span>
 <span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">subscription_options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">SubscriptionOptions</span><span class="p">();</span>
@@ -7161,7 +7161,7 @@ The second argument to <code>create_callback_group</code> is defined as follows.
 <p>When <code>automatically_add_to_executor_with_node</code> is set to <code>true</code>, callback functions included in a node that is added to an executor will be automatically called by the executor.</p>
 <h4 id="call-take-method-of-subscription-object">Call <code>take()</code> method of Subscription object<a class="headerlink" href="#call-take-method-of-subscription-object" title="Permanent link">#</a></h4>
 <p>To take a topic message from the <code>Subscription</code> based object, the <code>take()</code> method is called at the expected time.
-Here is a sample code snippet from <a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/simple_examples/src/timer_listener.cpp"><em>ros2_subscription_examples/simple_examples/src/timer_listener.cpp</em></a> using <code>take()</code> method is used.</p>
+Here is a sample code snippet from <a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/simple_examples/src/timer_listener.cpp"><em>ros2_subscription_examples/simple_examples/src/timer_listener.cpp</em></a> using <code>take()</code> method.</p>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="n">std_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">String</span><span class="w"> </span><span class="n">msg</span><span class="p">;</span>
 <span class="w">  </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">MessageInfo</span><span class="w"> </span><span class="n">msg_info</span><span class="p">;</span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sub_</span><span class="o">-&gt;</span><span class="n">take</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span><span class="w"> </span><span class="n">msg_info</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
@@ -7174,11 +7174,11 @@ Here is a sample code snippet from <a href="https://github.com/takam5f2/ros2_sub
 When <code>take(msg, msg_info)</code> is called, if the size of the subscription queue is greater than one and there are two or more messages in the queue, then the oldest message is copied to <code>msg</code>. If the size of the queue is one, the latest message is always obtained.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can check the presence of incoming message with the returned value of <code>take()</code> method. However, you have to take care of the destructive nature of the take() method. The <code>take()</code> method modifies the subscription queue. Also, the <code>take()</code> method is irreversible and there is no undo operation against the <code>take()</code> method. Checking the incoming message with only the <code>take()</code> method always changes the subscription queue. If you want to check without changing the subscription queue, rclcpp::WaitSet is recommended. Refer to <a href="02-supp-wait_set/"><em>[supplement] Use rclcpp::WaitSet</em></a> for more detail.</p>
+<p>You can check the presence of incoming message with the returned value of <code>take()</code> method. However, you have to take care of the destructive nature of the take() method. The <code>take()</code> method modifies the subscription queue. Also, the <code>take()</code> method is irreversible and there is no undo operation against the <code>take()</code> method. Checking the incoming message with only the <code>take()</code> method always changes the subscription queue. If you want to check without changing the subscription queue, rclcpp::WaitSet is recommended. Refer to <a href="supp-wait_set/"><em>[supplement] Use rclcpp::WaitSet</em></a> for more detail.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <code>take()</code> method is supported to only obtain a message which is passed through DDS as an inter-process communication. You must not use it for an intra-process communication because intra-process communication is based on another software stack of <code>rclcpp</code>. Refer to <a href="01-supp-intra-process-comm/"><em>[supplement] Obtain a received message through intra-process communication</em></a> in case of intra-process communication.</p>
+<p>The <code>take()</code> method is supported to only obtain a message which is passed through DDS as an inter-process communication. You must not use it for an intra-process communication because intra-process communication is based on another software stack of <code>rclcpp</code>. Refer to <a href="supp-intra-process-comm/"><em>[supplement] Obtain a received message through intra-process communication</em></a> in case of intra-process communication.</p>
 </div>
 <h4 id="11-obtain-serialized-message-from-subscription">1.1 Obtain Serialized Message from Subscription<a class="headerlink" href="#11-obtain-serialized-message-from-subscription" title="Permanent link">#</a></h4>
 <p><abbr title="Robot Operating System">ROS</abbr> 2 provides Serialized Message function which supports communication with arbitrary message types as described in <a href="http://docs.ros.org/en/humble/p/rclcpp/generated/classrclcpp_1_1SerializedMessage.html"><em>Class SerializedMessage</em></a>. It is used by <code>topic_state_monitor</code> in Autoware.
@@ -7200,7 +7200,7 @@ You have to use the <code>take_serialized()</code> method instead of the <code>t
 <h3 id="2-obtain-multiple-data-stored-in-subscription-queue">2. Obtain multiple data stored in Subscription Queue<a class="headerlink" href="#2-obtain-multiple-data-stored-in-subscription-queue" title="Permanent link">#</a></h3>
 <p>A subscription object can hold multiple messages in its queue if multiple queue size is configured with the QoS setting. The conventional manner using callback function forces a callback function to be executed per message. In other words, there is a constraint; a single cycle of callback function processes a single message . Note that with the conventional manner, if there are one or more messages in the subscription queue, the oldest one is taken and a thread is assigned to execute a callback function, which continues until the queue is empty.
 The <code>take()</code> method would alleviate this limitation. The <code>take()</code> method can be called in multiple iterations, so that a single cycle of the callback function processes multiple messages taken by <code>take()</code> methods.</p>
-<p>Here is a sample code, taken from <a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/simple_examples/src/timer_batch_listener.cpp">ros2_subscription_examples/simple_examples/src/timer_batch_listener.cpp</a> which calls the <code>take()</code> method in a single cycle of a callback function.</p>
+<p>Here is a sample code, taken from <a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/simple_examples/src/timer_batch_listener.cpp"><em>ros2_subscription_examples/simple_examples/src/timer_batch_listener.cpp</em></a> which calls the <code>take()</code> method in a single cycle of a callback function.</p>
 <div class="highlight"><pre><span></span><code><span class="w">      </span><span class="n">std_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">String</span><span class="w"> </span><span class="n">msg</span><span class="p">;</span>
 <span class="w">      </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">MessageInfo</span><span class="w"> </span><span class="n">msg_info</span><span class="p">;</span>
 <span class="w">      </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">sub_</span><span class="o">-&gt;</span><span class="n">take</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span><span class="w"> </span><span class="n">msg_info</span><span class="p">))</span>
@@ -7222,7 +7222,7 @@ Here is a sample code snippet from <a href="https://github.com/takam5f2/ros2_sub
 </code></pre></div>
 <p>In the code above, a message is taken by the <code>take_type_erased()</code> method before a registered callback function is called via the <code>handle_message()</code> method. Note that you must use <code>take_type_erased()</code> instead of <code>take()</code>. <code>take_type_erased()</code> needs <code>void</code> type data as its first argument. You must use the <code>get()</code> method to convert <code>msg</code> whose type is <code>shared_ptr&lt;void&gt;</code> to <code>void</code> type. Then the <code>handle_message()</code> method is called with the obtained message. A registered callback function is called within <code>handle_message()</code>.
 You don't need to take care of message type which is passed to <code>take_type_erased()</code> and <code>handle_message()</code>. You can define the message variable as <code>auto msg = sub_-&gt;create_message();</code>.
-You can also refer to <a href="http://docs.ros.org/en/humble/p/rclcpp/generated/classrclcpp_1_1SubscriptionBase.html#_CPPv4N6rclcpp16SubscriptionBase16take_type_erasedEPvRN6rclcpp11MessageInfoE">the API document</a> as for <code>create_message()</code>, <code>take_type_erased()</code> and <code>handle_message()</code>.</p>
+You can also refer to <a href="http://docs.ros.org/en/humble/p/rclcpp/generated/classrclcpp_1_1SubscriptionBase.html#_CPPv4N6rclcpp16SubscriptionBase16take_type_erasedEPvRN6rclcpp11MessageInfoE"><em>the API document</em></a> as for <code>create_message()</code>, <code>take_type_erased()</code> and <code>handle_message()</code>.</p>
 <h3 id="4-obtain-data-by-a-callback-function">4. Obtain data by a callback function<a class="headerlink" href="#4-obtain-data-by-a-callback-function" title="Permanent link">#</a></h3>
 <p>A conventional manner, typically used in <abbr title="Robot Operating System">ROS</abbr> 2 application, is a message reference using a callback function, is available. If you don't use a callback group with <code>automatically_add_to_executor_with_node = false</code>, a registered callback function will be called automatically by an executor when a topic message is received.
 One of the advantages of this manner is that you don't have to take care whether a topic message is passed through inter-process or intra-process. Remember that <code>take()</code> can only be used for inter-process communication via DDS, while another manner provided by <code>rclcpp</code> can be used for intra-process communication via <code>rclcpp</code>.</p>
@@ -7286,7 +7286,7 @@ This manner is also documented in <a href="https://docs.ros.org/en/humble/p/rclc
         
         
           
-          <a href="01-supp-intra-process-comm/" class="md-footer__link md-footer__link--next" aria-label="Next: [supplement] Obtain a received message through intra-process communication" rel="next">
+          <a href="supp-intra-process-comm/" class="md-footer__link md-footer__link--next" aria-label="Next: [supplement] Obtain a received message through intra-process communication" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
