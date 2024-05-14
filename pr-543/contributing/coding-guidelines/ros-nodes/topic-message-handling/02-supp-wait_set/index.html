@@ -7220,8 +7220,7 @@ The following is a snippet from <a href="https://github.com/takam5f2/ros2_subscr
 <span class="w">      </span><span class="n">wait_set_</span><span class="p">.</span><span class="n">add_subscription</span><span class="p">(</span><span class="n">subscription</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
-<p>In the code above, created subscriptions are registered to the <code>wait_set_</code> object by <code>add_subscription()</code> method.
-<code>rclcpp::WaitSet</code>-based object basically handles objects each of which have a corresponding callback function. Not only <code>Subscription</code> based objects, but <code>Timer</code>, <code>Service</code> or <code>Action</code> based objects can be observed by <code>rclcpp::WaitSet</code>-based object. A single <code>WaitSet</code> object accepts mixture of different types of objects.
+<p>In the code above, the <code>add_subscription()</code> method registers the created subscriptions with the <code>wait_set_' object.</code>rclcpp::WaitSet<code>-based object basically handles objects each of which have a corresponding callback function. Not only</code>Subscription<code>based objects, but</code>Timer<code>,</code>Service<code>or</code>Action<code>based objects can be observed by</code>rclcpp::WaitSet<code>-based object. A single</code>WaitSet` object accepts mixture of different types of objects.
 A sample code to register Timer trigger is here.</p>
 <div class="highlight"><pre><span></span><code><span class="n">wait_set_</span><span class="p">.</span><span class="n">add_timer</span><span class="p">(</span><span class="n">much_slower_timer_</span><span class="p">);</span>
 </code></pre></div>
