@@ -7187,7 +7187,7 @@ The following sample code shows how the <code>wait_set_.wait()</code> tells you 
 <p>The following three steps are required to use <code>rclcpp::WaitSet</code>.</p>
 <h3 id="1-declare-and-initialize-waitset">1. Declare and initialize <code>WaitSet</code><a class="headerlink" href="#1-declare-and-initialize-waitset" title="Permanent link">#</a></h3>
 <p>You must first instantiate a <code>rclcpp::WaitSet</code> based object.
-Below is excerption from <a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/waitset_examples/src/timer_listener_triple_async.cpp">ros2_subscription_examples/waitset_examples/src/timer_listener_triple_async.cpp at main · takam5f2/ros2_subscription_examples</a>.</p>
+Below is a snippet from <a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/waitset_examples/src/timer_listener_triple_async.cpp"><em>ros2_subscription_examples/waitset_examples/src/timer_listener_triple_async.cpp at main · takam5f2/ros2_subscription_examples</em></a>.</p>
 <div class="highlight"><pre><span></span><code><span class="n">rclcpp</span><span class="o">::</span><span class="n">WaitSet</span><span class="w"> </span><span class="n">wait_set_</span><span class="p">;</span>
 </code></pre></div>
 <p>The <code>rclcpp::WaitSet</code> object can be configured during runtime. It is not thread-safe as explained in<a href="https://docs.ros.org/en/ros2_packages/humble/api/rclcpp/generated/typedef_namespacerclcpp_1ad6fb19c154de27e92430309d2da25ac3.html"><em>API specification of <code>rclcpp::WaitSet</code></em></a>
