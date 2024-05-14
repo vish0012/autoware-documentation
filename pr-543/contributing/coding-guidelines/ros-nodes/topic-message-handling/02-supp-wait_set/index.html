@@ -7172,7 +7172,7 @@ The following sample code shows how the <code>wait_set_.wait()</code> tells you 
 </code></pre></div>
 <p>In the code above, unless <code>rclcpp::WaitSet</code> is used, it is impossible to verify the arrival of all needed messages without changing state of the subscription objects.</p>
 <h2 id="coding-manner">Coding manner<a class="headerlink" href="#coding-manner" title="Permanent link">#</a></h2>
-<p>This section explains the coding manner using <code>rclcpp::WaitSet</code> with a sample code below.</p>
+<p>This section explains how to code using <code>rclcpp::WaitSet</code> with a sample code below.</p>
 <ul>
 <li><a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/waitset_examples/src/talker_triple.cpp">ros2_subscription_examples/waitset_examples/src/talker_triple.cpp at main · takam5f2/ros2_subscription_examples</a><ul>
 <li>it publishes <code>/chatter</code> per one second, <code>/slower_chatter</code> per two seconds, and <code>/slowest_chatter</code> per three seconds periodically</li>
