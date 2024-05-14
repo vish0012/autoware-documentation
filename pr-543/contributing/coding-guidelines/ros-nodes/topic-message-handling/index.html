@@ -7121,7 +7121,7 @@ In this case, a topic message is retrieved from the subscription queue, the queu
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sub_</span><span class="o">-&gt;</span><span class="n">take</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span><span class="w"> </span><span class="n">msg_info</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// processing and publishing after this</span>
 </code></pre></div>
-<p>Using this manner will give you following advantages.</p>
+<p>Using this manner has the following benefits.</p>
 <ul>
 <li>It can reduce invocations of subscription callback functions</li>
 <li>There is no need to take a topic message, which a main logic does not consume, from a subscription</li>
