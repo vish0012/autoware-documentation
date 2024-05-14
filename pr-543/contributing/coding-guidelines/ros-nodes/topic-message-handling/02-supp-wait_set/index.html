@@ -7186,7 +7186,7 @@ The following sample code shows how the <code>wait_set_.wait()</code> tells you 
 </ul>
 <p>The following three steps are required to use <code>rclcpp::WaitSet</code>.</p>
 <h3 id="1-declare-and-initialize-waitset">1. Declare and initialize <code>WaitSet</code><a class="headerlink" href="#1-declare-and-initialize-waitset" title="Permanent link">#</a></h3>
-<p>You need to declare WaitSet variable first to use.
+<p>You must first instantiate a <code>rclcpp::WaitSet</code> based object.
 Below is excerption from <a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/waitset_examples/src/timer_listener_triple_async.cpp">ros2_subscription_examples/waitset_examples/src/timer_listener_triple_async.cpp at main · takam5f2/ros2_subscription_examples</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="n">rclcpp</span><span class="o">::</span><span class="n">WaitSet</span><span class="w"> </span><span class="n">wait_set_</span><span class="p">;</span>
 </code></pre></div>
