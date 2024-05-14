@@ -7133,7 +7133,7 @@ In this case, a topic message is retrieved from the subscription queue, the queu
 <p>To use the recommended manner using <code>Subscription-&gt;take()</code>, you basically need to do two things below.</p>
 <ol>
 <li>Prevent a callback function from being called when a topic message is received</li>
-<li>Call <code>take()</code> method of Subscription object when a topic message is needed</li>
+<li>Call <code>take()</code> method of a subscription object when a topic message is needed</li>
 </ol>
 <p>You can see an example of the typical usage of <code>take()</code> method in <a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/simple_examples/src/timer_listener.cpp">ros2_subscription_examples/simple_examples/src
 /timer_listener.cpp</a>.</p>
