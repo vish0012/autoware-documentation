@@ -7104,7 +7104,7 @@ Refer to <a href="http://docs.ros.org/en/humble/p/rclcpp/generated/classrclcpp_1
 <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">void</span><span class="o">&gt;</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">waitable</span><span class="p">.</span><span class="n">take_data</span><span class="p">();</span>
 <span class="n">waitable</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
 </code></pre></div>
-<p>Here is a sample program in <a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/intra_process_talker_listener/src/timer_listener_intra_process.cpp">ros2_subscription_examples/intra_process_talker_listener/src/timer_listener_intra_process.cpp at main · takam5f2/ros2_subscription_examples</a>.
+<p>Here is a sample program in <a href="https://github.com/takam5f2/ros2_subscription_examples/blob/main/intra_process_talker_listener/src/timer_listener_intra_process.cpp"><em>ros2_subscription_examples/intra_process_talker_listener/src/timer_listener_intra_process.cpp at main · takam5f2/ros2_subscription_examples</em></a>.
 You can run the program as below. If you set <code>true</code> to <code>use_intra_process_comms</code>, intra-process communication is performed, while if you set <code>false</code>, inter-process communication is performed.</p>
 <div class="highlight"><pre><span></span><code><span class="go">ros2 intra_process_talker_listener talker_listener_intra_process.launch.py use_intra_process_comms:=true</span>
 </code></pre></div>
