@@ -7193,7 +7193,7 @@ You have to use the <code>take_serialized()</code> method instead of the <code>t
 <span class="w">        </span><span class="k">return</span><span class="p">;</span>
 <span class="w">      </span><span class="p">}</span>
 </code></pre></div>
-<p>In the code above, <code>msg</code> is created by <code>create_serialized_message()</code> to store a received message, whose type is <code>std::shared_ptr&lt;rclcpp::SerializedMessage&gt;</code>. You can obtain a message of Serialized Message type by <code>take_serialized()</code> method. Note that <code>take_serialized()</code> method needs reference type data as its first argument therefore you need to convert <code>msg</code> type using <code>*</code>.</p>
+<p>In the code above, <code>msg</code> is created by <code>create_serialized_message()</code> to store a received message, whose type is <code>std::shared_ptr&lt;rclcpp::SerializedMessage&gt;</code>. You can obtain a message of type <code>rclcpp::SerializedMessage</code> using the <code>take_serialized()</code> method. Note that the <code>take_serialized()</code> method needs reference type data as its first argument. Since <code>msg</code> is a pointer, <code>*msg</code> should be passed as the first argument to the `take_serialized().</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 </div>
