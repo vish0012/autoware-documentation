@@ -7020,8 +7020,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#conventional-message-handling-manner-typically-used" class="md-nav__link">
-    Conventional message handling manner typically used
+  <a href="#conventional-message-handling-manner" class="md-nav__link">
+    Conventional message handling manner
   </a>
   
 </li>
@@ -7103,7 +7103,7 @@
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h2>
 <p>Here is coding guideline for topic message handling in Autoware. It includes the recommended manner than conventional one, which is roughly explained in <a href="https://github.com/orgs/autowarefoundation/discussions/4612"><em>Discussions page</em></a>. Refer to the page to understand the basic concept of the recommended manner.
 You can find sample source code in <a href="https://github.com/takam5f2/ros2_subscription_examples"><em>ros2_subscription_examples</em></a> referred from this document.</p>
-<h2 id="conventional-message-handling-manner-typically-used">Conventional message handling manner typically used<a class="headerlink" href="#conventional-message-handling-manner-typically-used" title="Permanent link">#</a></h2>
+<h2 id="conventional-message-handling-manner">Conventional message handling manner<a class="headerlink" href="#conventional-message-handling-manner" title="Permanent link">#</a></h2>
 <p>At first, let us see a conventional manner of handling messages that is commonly used.
 <a href="https://docs.ros.org/en/rolling/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Cpp-Publisher-And-Subscriber.html#write-the-subscriber-node"><em><abbr title="Robot Operating System">ROS</abbr> 2 Tutorials</em></a> is one of the most cited references for <abbr title="Robot Operating System">ROS</abbr> 2 applications, including Autoware.
 It implicitly recommends that each of messages received by subscriptions should be referred to and processed by a dedicated callback function. Autoware follows that manner thoroughly.</p>
