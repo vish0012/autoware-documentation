@@ -7175,7 +7175,7 @@
 
 <div><h1 id="rosbag2-anonymizer">Rosbag2 Anonymizer<a class="headerlink" href="#rosbag2-anonymizer" title="Permanent link">#</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
-<p>Autoware provides a tool to anonymize ROS2 bag files.
+<p>Autoware provides a tool to anonymize <abbr title="Robot Operating System">ROS</abbr> 2 bag files.
 This tool is useful when you want to share your data with Autoware community but want to keep the privacy of the data.</p>
 <p>With this tool you can blur any object (faces, license plates, etc.) in your bag files, and you can get a new bag file
 with the blurred images.</p>
@@ -7194,7 +7194,7 @@ wget<span class="w"> </span>https://github.com/autowarefoundation/autoware_rosba
 <h3 id="install-ros2-mcap-dependencies-if-you-will-use-mcap-files">Install ros2 mcap dependencies if you will use mcap files<a class="headerlink" href="#install-ros2-mcap-dependencies-if-you-will-use-mcap-files" title="Permanent link">#</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Be sure you have installed the ROS2 on your system.</p>
+<p>Be sure you have installed the <abbr title="Robot Operating System">ROS</abbr> 2 on your system.</p>
 </div>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-humble-rosbag2-storage-mcap
 </code></pre></div>
@@ -7301,7 +7301,7 @@ instructions will guide you to set each configuration file.</p>
 <span class="w">  </span><span class="nt">sigma_x</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">11</span><span class="w"> </span><span class="c1"># Sigma x for the Gaussian blur (int)</span>
 </code></pre></div>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h2>
-<p>The tool provides two options to anonymize images in ROS2 bag files.</p>
+<p>The tool provides two options to anonymize images in <abbr title="Robot Operating System">ROS</abbr> 2 bag files.</p>
 <h3 id="option-1-anonymize-with-unified-model">Option 1: Anonymize with Unified Model<a class="headerlink" href="#option-1-anonymize-with-unified-model" title="Permanent link">#</a></h3>
 <p>You should provide a single rosbag and tool anonymize images in rosbag with a unified model. The model is a combination
 of GroundingDINO, OpenCLIP, YOLOv8 and SegmentAnything. If you don't want to use pre-trained YOLOv8 model, you can
@@ -7311,7 +7311,7 @@ follow the instructions in the second option to train your own YOLOv8 model.</p>
 </code></pre></div>
 <h3 id="option-2-anonymize-using-the-yolov8-model-trained-on-a-dataset-created-with-the-unified-model">Option 2: Anonymize Using the YOLOv8 Model Trained on a Dataset Created with the Unified Model<a class="headerlink" href="#option-2-anonymize-using-the-yolov8-model-trained-on-a-dataset-created-with-the-unified-model" title="Permanent link">#</a></h3>
 <h4 id="step-1-create-a-dataset">Step 1: Create a Dataset<a class="headerlink" href="#step-1-create-a-dataset" title="Permanent link">#</a></h4>
-<p>Create an initial dataset with the unified model. You can provide multiple ROS2 bag files to create a dataset. After
+<p>Create an initial dataset with the unified model. You can provide multiple <abbr title="Robot Operating System">ROS</abbr> 2 bag files to create a dataset. After
 running the following command, the tool will create a dataset in YOLO format.</p>
 <p>You should set your configuration in config/yolo_create_dataset.yaml file.</p>
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>main.py<span class="w"> </span>config/yolo_create_dataset.yaml<span class="w"> </span>--yolo_create_dataset
@@ -7328,7 +7328,7 @@ step.</p>
 <p>You should set your configuration in config/yolo_train.yaml file.</p>
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>main.py<span class="w"> </span>config/yolo_train.yaml<span class="w"> </span>--yolo_train
 </code></pre></div>
-<h4 id="step-5-anonymize-images-in-ros2-bag-files">Step 5: Anonymize Images in ROS2 Bag Files<a class="headerlink" href="#step-5-anonymize-images-in-ros2-bag-files" title="Permanent link">#</a></h4>
+<h4 id="step-5-anonymize-images-in-ros-2-bag-files">Step 5: Anonymize Images in <abbr title="Robot Operating System">ROS</abbr> 2 Bag Files<a class="headerlink" href="#step-5-anonymize-images-in-ros-2-bag-files" title="Permanent link">#</a></h4>
 <p>Anonymize images in ROS2 bag files with the trained YOLOv8 model. If you want to anonymize your ROS2 bag file with only
 YOLOv8 model, you should use following command. But we recommend to use the unified model for better results. You can
 follow the Option 1 for the unified model with the YOLOv8 model trained by you.</p>
