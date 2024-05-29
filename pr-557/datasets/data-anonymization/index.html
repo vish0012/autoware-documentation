@@ -7096,8 +7096,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#install-ros2-mcap-dependencies-if-you-will-use-mcap-files" class="md-nav__link">
-    Install ros2 mcap dependencies if you will use mcap files
+  <a href="#install-ros-2-mcap-dependencies-if-you-will-use-mcap-files" class="md-nav__link">
+    Install ROS 2 mcap dependencies if you will use mcap files
   </a>
   
 </li>
@@ -7191,7 +7191,7 @@ wget<span class="w"> </span>https://huggingface.co/ShilongLiu/GroundingDINO/reso
 
 wget<span class="w"> </span>https://github.com/autowarefoundation/autoware_rosbag2_anonymizer/releases/download/v0.0.0/yolov8x_anonymizer.pt
 </code></pre></div>
-<h3 id="install-ros2-mcap-dependencies-if-you-will-use-mcap-files">Install ros2 mcap dependencies if you will use mcap files<a class="headerlink" href="#install-ros2-mcap-dependencies-if-you-will-use-mcap-files" title="Permanent link">#</a></h3>
+<h3 id="install-ros-2-mcap-dependencies-if-you-will-use-mcap-files">Install <abbr title="Robot Operating System">ROS</abbr> 2 mcap dependencies if you will use mcap files<a class="headerlink" href="#install-ros-2-mcap-dependencies-if-you-will-use-mcap-files" title="Permanent link">#</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Be sure you have installed the <abbr title="Robot Operating System">ROS</abbr> 2 on your system.</p>
@@ -7228,8 +7228,8 @@ instructions will guide you to set each configuration file.</p>
 <li><code>config/anonymize_with_unified_model.yaml</code></li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="nt">rosbag</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">input_bag_path</span><span class="p">:</span><span class="w"> </span><span class="s">"path/to/input.bag"</span><span class="w"> </span><span class="c1"># Path to the input ROS2 bag file with 'mcap' or 'sqlite3' extension</span>
-<span class="w">  </span><span class="nt">output_bag_path</span><span class="p">:</span><span class="w"> </span><span class="s">"path/to/output/folder"</span><span class="w"> </span><span class="c1"># Path to the output ROS2 bag folder</span>
+<span class="w">  </span><span class="nt">input_bag_path</span><span class="p">:</span><span class="w"> </span><span class="s">"path/to/input.bag"</span><span class="w"> </span><span class="c1"># Path to the input ROS 2 bag file with 'mcap' or 'sqlite3' extension</span>
+<span class="w">  </span><span class="nt">output_bag_path</span><span class="p">:</span><span class="w"> </span><span class="s">"path/to/output/folder"</span><span class="w"> </span><span class="c1"># Path to the output ROS 2 bag folder</span>
 <span class="w">  </span><span class="nt">output_save_compressed_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"> </span><span class="c1"># Save images as compressed images (True or False)</span>
 <span class="w">  </span><span class="nt">output_storage_id</span><span class="p">:</span><span class="w"> </span><span class="s">"sqlite3"</span><span class="w"> </span><span class="c1"># Storage id for the output bag file (`sqlite3` or `mcap`)</span>
 
@@ -7255,7 +7255,7 @@ instructions will guide you to set each configuration file.</p>
 <li><code>config/yolo_create_dataset.yaml</code></li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="nt">rosbag</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">input_bags_folder</span><span class="p">:</span><span class="w"> </span><span class="s">"path/to/input/folder"</span><span class="w"> </span><span class="c1"># Path to the input ROS2 bag files folder</span>
+<span class="w">  </span><span class="nt">input_bags_folder</span><span class="p">:</span><span class="w"> </span><span class="s">"path/to/input/folder"</span><span class="w"> </span><span class="c1"># Path to the input ROS 2 bag files folder</span>
 
 <span class="nt">dataset</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">output_dataset_folder</span><span class="p">:</span><span class="w"> </span><span class="s">"path/to/output/folder"</span><span class="w"> </span><span class="c1"># Path to the output dataset folder</span>
@@ -7286,8 +7286,8 @@ instructions will guide you to set each configuration file.</p>
 <li><code>config/yolo_anonymize.yaml</code></li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="nt">rosbag</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">input_bag_path</span><span class="p">:</span><span class="w"> </span><span class="s">"path/to/input.bag"</span><span class="w"> </span><span class="c1"># Path to the input ROS2 bag file with 'mcap' or 'sqlite3' extension</span>
-<span class="w">  </span><span class="nt">output_bag_path</span><span class="p">:</span><span class="w"> </span><span class="s">"path/to/output/folder"</span><span class="w"> </span><span class="c1"># Path to the output ROS2 bag folder</span>
+<span class="w">  </span><span class="nt">input_bag_path</span><span class="p">:</span><span class="w"> </span><span class="s">"path/to/input.bag"</span><span class="w"> </span><span class="c1"># Path to the input ROS 2 bag file with 'mcap' or 'sqlite3' extension</span>
+<span class="w">  </span><span class="nt">output_bag_path</span><span class="p">:</span><span class="w"> </span><span class="s">"path/to/output/folder"</span><span class="w"> </span><span class="c1"># Path to the output ROS 2 bag folder</span>
 <span class="w">  </span><span class="nt">output_save_compressed_image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"> </span><span class="c1"># Save images as compressed images (True or False)</span>
 <span class="w">  </span><span class="nt">output_storage_id</span><span class="p">:</span><span class="w"> </span><span class="s">"sqlite3"</span><span class="w"> </span><span class="c1"># Storage id for the output bag file (`sqlite3` or `mcap`)</span>
 
@@ -7329,7 +7329,7 @@ step.</p>
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>main.py<span class="w"> </span>config/yolo_train.yaml<span class="w"> </span>--yolo_train
 </code></pre></div>
 <h4 id="step-5-anonymize-images-in-ros-2-bag-files">Step 5: Anonymize Images in <abbr title="Robot Operating System">ROS</abbr> 2 Bag Files<a class="headerlink" href="#step-5-anonymize-images-in-ros-2-bag-files" title="Permanent link">#</a></h4>
-<p>Anonymize images in ROS2 bag files with the trained YOLOv8 model. If you want to anonymize your ROS2 bag file with only
+<p>Anonymize images in <abbr title="Robot Operating System">ROS</abbr> 2 bag files with the trained YOLOv8 model. If you want to anonymize your <abbr title="Robot Operating System">ROS</abbr> 2 bag file with only
 YOLOv8 model, you should use following command. But we recommend to use the unified model for better results. You can
 follow the Option 1 for the unified model with the YOLOv8 model trained by you.</p>
 <p>You should set your configuration in config/yolo_anonymize.yaml file.</p>
