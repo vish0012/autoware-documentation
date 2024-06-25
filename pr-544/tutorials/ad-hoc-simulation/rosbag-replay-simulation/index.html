@@ -5173,6 +5173,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_2_5" id="__nav_5_4_2_5_label" tabindex="0">
@@ -5195,6 +5197,20 @@
     <li class="md-nav__item">
       <a href="../../../design/autoware-interfaces/ad-api/features/cooperation/" class="md-nav__link">
         Cooperation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../design/autoware-interfaces/ad-api/features/diagnostics/" class="md-nav__link">
+        Diagnostics
       </a>
     </li>
   
@@ -6208,6 +6224,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_7_3_3" id="__nav_7_3_3_label" tabindex="0">
@@ -6343,6 +6361,88 @@
       <a href="../../../contributing/coding-guidelines/ros-nodes/topic-namespaces/" class="md-nav__link">
         Topic namespaces
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3_3_10" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../contributing/coding-guidelines/ros-nodes/topic-message-handling/">Topic message handling</a>
+          
+            <label for="__nav_7_3_3_10">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_7_3_3_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3_3_10">
+          <span class="md-nav__icon md-icon"></span>
+          Topic message handling
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/coding-guidelines/ros-nodes/topic-message-handling/supp-intra-process-comm/" class="md-nav__link">
+        [supplement] Obtain a received message through intra-process communication
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/coding-guidelines/ros-nodes/topic-message-handling/supp-wait_set/" class="md-nav__link">
+        [supplement] Use rclcpp::WaitSet
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6525,6 +6625,10 @@
         
           
         
+          
+        
+          
+        
       
       
         
@@ -6553,8 +6657,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../contributing/pull-request-guidelines/ai-pr-review/" class="md-nav__link">
+        AI PR Review
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../contributing/pull-request-guidelines/ci-checks/" class="md-nav__link">
         CI checks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/pull-request-guidelines/code-owners/" class="md-nav__link">
+        Code owners
       </a>
     </li>
   
@@ -7175,9 +7307,9 @@ unzip<span class="w"> </span>-d<span class="w"> </span>~/autoware_map/<span clas
 <li>
 <p>Download the sample rosbag files.</p>
 <ul>
-<li>You can also download <a href="https://drive.google.com/file/d/1VnwJx9tI3kI_cTLzP61ktuAJ1ChgygpG/view?usp=sharing">the rosbag files</a> manually.</li>
+<li>You can also download <a href="https://drive.google.com/file/d/1sU5wbxlXAfHIksuHjP3PyI2UVED8lZkP/view?usp=sharing">the rosbag files</a> manually.</li>
 </ul>
-<div class="highlight"><pre><span></span><code>gdown<span class="w"> </span>-O<span class="w"> </span>~/autoware_map/<span class="w"> </span><span class="s1">'https://docs.google.com/uc?export=download&amp;id=1VnwJx9tI3kI_cTLzP61ktuAJ1ChgygpG'</span>
+<div class="highlight"><pre><span></span><code>gdown<span class="w"> </span>-O<span class="w"> </span>~/autoware_map/<span class="w"> </span><span class="s1">'https://drive.google.com/file/d/1sU5wbxlXAfHIksuHjP3PyI2UVED8lZkP'</span>
 unzip<span class="w"> </span>-d<span class="w"> </span>~/autoware_map/<span class="w"> </span>~/autoware_map/sample-rosbag.zip
 </code></pre></div>
 </li>
@@ -7227,7 +7359,7 @@ ros2<span class="w"> </span>launch<span class="w"> </span>autoware_launch<span c
 <li>
 <p>Play the sample rosbag file.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/autoware/install/setup.bash
-ros2<span class="w"> </span>bag<span class="w"> </span>play<span class="w"> </span>~/autoware_map/sample-rosbag/sample.db3<span class="w"> </span>-r<span class="w"> </span><span class="m">0</span>.2<span class="w"> </span>-s<span class="w"> </span>sqlite3
+ros2<span class="w"> </span>bag<span class="w"> </span>play<span class="w"> </span>~/autoware_map/sample-rosbag/<span class="w"> </span>-r<span class="w"> </span><span class="m">0</span>.2<span class="w"> </span>-s<span class="w"> </span>sqlite3
 </code></pre></div>
 <blockquote>
 <p>⚠️ Due to the discrepancy between the timestamp in the <code>rosbag</code> and the current system timestamp, Autoware may generate warning messages in the terminal alerting to this mismatch. This is normal behavior.</p>
