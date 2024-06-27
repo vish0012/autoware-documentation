@@ -7098,7 +7098,8 @@
 <li>Data Type: <a href="../../../../types/autoware_adapi_v1_msgs/srv/SetRoutePoints/">autoware_adapi_v1_msgs/srv/SetRoutePoints</a></li>
 </ul>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
-<p>Set the route with the waypoint poses. If start pose is not specified, the current pose will be used.</p>
+<p>Set the route with the waypoint poses. If start pose is not specified, the current pose will be used.
+This API only accepts the route when the route state is UNSET. In any other state, clear the route first.</p>
 <h2 id="request">Request<a class="headerlink" href="#request" title="Permanent link">#</a></h2>
 <table>
 <thead>
