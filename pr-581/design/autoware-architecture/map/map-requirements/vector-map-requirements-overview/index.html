@@ -8,20 +8,20 @@
       
       
       
-        <link rel="canonical" href="https://autowarefoundation.github.io/autoware-documentation/pr-581/design/autoware-architecture/map/map-requirements/category_area/">
+        <link rel="canonical" href="https://autowarefoundation.github.io/autoware-documentation/pr-581/design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/">
       
       
         <link rel="prev" href="../../">
       
       
-        <link rel="next" href="../category_crosswalk/">
+        <link rel="next" href="category_area/">
       
       <link rel="icon" href="../../../../../assets/images/autoware-foundation.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.20">
     
     
       
-        <title>Category area - Autoware Documentation</title>
+        <title>Vector Map creation requirement specifications - Autoware Documentation</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#categoryarea" class="md-skip">
+        <a href="#vector-map-creation-requirement-specifications" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Category area
+              Vector Map creation requirement specifications
             
           </span>
         </div>
@@ -4441,20 +4441,6 @@
         
           
         
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
       
       
         <label class="md-nav__link" for="__nav_5_3_3_2" id="__nav_5_3_3_2_label" tabindex="0">
@@ -4476,86 +4462,65 @@
     
   
   
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Category area
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_3_2_1" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+          <a href="./">Vector map requirements overview</a>
+          
+            <label for="__nav_5_3_3_2_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_5_3_3_2_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5_3_3_2_1">
           <span class="md-nav__icon md-icon"></span>
+          Vector map requirements overview
         </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="category_area/" class="md-nav__link">
         Category area
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#categoryarea" class="md-nav__link">
-    Category:Area
-  </a>
-  
-    <nav class="md-nav" aria-label="Category:Area">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#vm-06-01-buffer-zone" class="md-nav__link">
-    vm-06-01 Buffer Zone
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vm-06-02-no-parking-signs" class="md-nav__link">
-    vm-06-02 No parking signs
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vm-06-03-no-stopping-signs" class="md-nav__link">
-    vm-06-03 No stopping signs
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vm-06-04-no-stopping-sections" class="md-nav__link">
-    vm-06-04 No stopping sections
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vm-06-05-detection-area" class="md-nav__link">
-    vm-06-05 Detection area
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4567,7 +4532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../category_crosswalk/" class="md-nav__link">
+      <a href="category_crosswalk/" class="md-nav__link">
         Category crosswalk
       </a>
     </li>
@@ -4581,7 +4546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../category_intersection/" class="md-nav__link">
+      <a href="category_intersection/" class="md-nav__link">
         Category intersection
       </a>
     </li>
@@ -4595,7 +4560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../category_lane/" class="md-nav__link">
+      <a href="category_lane/" class="md-nav__link">
         Category lane
       </a>
     </li>
@@ -4609,7 +4574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../category_others/" class="md-nav__link">
+      <a href="category_others/" class="md-nav__link">
         Category others
       </a>
     </li>
@@ -4623,7 +4588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../category_stop_line/" class="md-nav__link">
+      <a href="category_stop_line/" class="md-nav__link">
         Category stop line
       </a>
     </li>
@@ -4637,7 +4602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../category_traffic_light/" class="md-nav__link">
+      <a href="category_traffic_light/" class="md-nav__link">
         Category traffic light
       </a>
     </li>
@@ -4645,15 +4610,8 @@
 
             
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
-        Vector Map creation requirement specifications
-      </a>
+        </ul>
+      </nav>
     </li>
   
 
@@ -7269,6 +7227,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -7277,50 +7237,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#categoryarea" class="md-nav__link">
-    Category:Area
+  <a href="#overview" class="md-nav__link">
+    Overview
   </a>
   
-    <nav class="md-nav" aria-label="Category:Area">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handling-of-the-requirement-specification" class="md-nav__link">
+    Handling of the Requirement Specification
+  </a>
+  
+    <nav class="md-nav" aria-label="Handling of the Requirement Specification">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#vm-06-01-buffer-zone" class="md-nav__link">
-    vm-06-01 Buffer Zone
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vm-06-02-no-parking-signs" class="md-nav__link">
-    vm-06-02 No parking signs
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vm-06-03-no-stopping-signs" class="md-nav__link">
-    vm-06-03 No stopping signs
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vm-06-04-no-stopping-sections" class="md-nav__link">
-    vm-06-04 No stopping sections
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vm-06-05-detection-area" class="md-nav__link">
-    vm-06-05 Detection area
+  <a href="#caution" class="md-nav__link">
+    Caution
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-requirement-specifications" class="md-nav__link">
+    List of Requirement Specifications
+  </a>
   
 </li>
       
@@ -7342,99 +7288,296 @@
   
 
 
-  <h1>Category area</h1>
-
-<div><h2 id="categoryarea">Category:Area<a class="headerlink" href="#categoryarea" title="Permanent link">#</a></h2>
-<hr>
-<h3 id="vm-06-01-buffer-zone">vm-06-01 Buffer Zone<a class="headerlink" href="#vm-06-01-buffer-zone" title="Permanent link">#</a></h3>
-<h4 id="detail-of-requirements">Detail of requirements <!-- omit in toc --><a class="headerlink" href="#detail-of-requirements" title="Permanent link">#</a></h4>
-<p>Create a Polygon (<em>type:hatched_road_markings</em>) when a Buffer Zone (also known as a zebra zone) is painted on the road surface.</p>
+<div><h1 id="vector-map-creation-requirement-specifications">Vector Map creation requirement specifications<a class="headerlink" href="#vector-map-creation-requirement-specifications" title="Permanent link">#</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
+<p>Autoware relies on high-definition point cloud maps and vector maps of the driving environment to perform various tasks such as localization, route planning, traffic light detection, and predicting the trajectories of pedestrians and other vehicles.</p>
+<p>A vector map contains highly accurate information about a road network, lane geometry, and traffic lights. It is required for route planning, traffic light detection, and predicting the trajectories of other vehicles and pedestrians.</p>
+<p>Vector Map uses <a href="https://github.com/autowarefoundation/autoware_lanelet2_extension/blob/main/autoware_lanelet2_extension/docs/lanelet2_format_extension.md">lanelet2_extension</a>, which is based on the <a href="https://github.com/fzi-forschungszentrum-informatik/Lanelet2">lanelet2</a> format and extended for Autoware.</p>
+<p>The primitives (basic components) used in Vector Map are explained in <a href="https://docs.web.auto/en/user-manuals/vector-map-builder/introduction#what-is-lanelet2">Web.Auto Docs - What is Lanelet2</a>. The following <strong>Vector Map creation requirement specifications</strong> are written on the premise of these knowledge.</p>
+<p>This specification is a set of requirements for the creation of Vector Map(s) to ensure that Autoware drives safely and autonomously as intended by the user. It does not cover how to operate specific map creation tools.</p>
 <ul>
-<li>If the Buffer Zone is next to a Lanelet, share Points between them.</li>
-<li>Overlap the Buffer Zone's Polygon with the intersection's Polygon (intersection_area) if the Buffer Zone is located at an intersection.</li>
+<li><a href="https://docs.web.auto/user-manuals/vector-map-builder/how-to-use/edit-maps">Vector Map Builder - how to use</a></li>
 </ul>
-<h5 id="behavior-of-autoware">Behavior of Autoware： <!-- omit in toc --><a class="headerlink" href="#behavior-of-autoware" title="Permanent link">#</a></h5>
-<p>In order to avoid obstacles, Autoware regards the Buffer Zone as a drivable area and proceeds through it.</p>
-<h5 id="caution">Caution<a class="headerlink" href="#caution" title="Permanent link">#</a></h5>
+<h2 id="handling-of-the-requirement-specification">Handling of the Requirement Specification<a class="headerlink" href="#handling-of-the-requirement-specification" title="Permanent link">#</a></h2>
+<p>Which requirements apply entirely depends on the configuration of the Autoware system on a vehicle. Before creating a Vector Map, it is necessary to clearly determine in advance how you want the vehicle with the implemented system to behave in various environments.</p>
+<p>Next, you must comply with the laws of the country where the autonomous driving vehicle will be operating. It is your responsibility to choose which of the following requirements to apply according to the laws.</p>
+<h3 id="caution">Caution<a class="headerlink" href="#caution" title="Permanent link">#</a></h3>
 <ul>
-<li>Vehicles are not allowed to pass through safety areas. It's important to differentiate between Buffer Zones and safety areas. - Do not create a Polygon for the Buffer Zone in areas where static objects like poles are present and vehicles cannot pass, even if a Buffer Zone is painted on the surface. Buffer Zones should be established only in areas where vehicle passage is feasible.</li>
+<li>The examples of the road signs and road surface markings are used in Japan. Please replace them with those used in your respective countries.</li>
+<li>The values for range and distance indicated are minimum values. Please determine values that comply with the laws of your country. Furthermore, these minimum values may change depending on the maximum velocity of the autonomous driving vehicle.</li>
 </ul>
-<p><img alt="svg" src="../assets/vm-06-01_1.svg"></p>
-<p><img alt="svg" src="../assets/vm-06-01_2.svg"></p>
-<h4 id="preferred-vector-map">Preferred vector map <!-- omit in toc --><a class="headerlink" href="#preferred-vector-map" title="Permanent link">#</a></h4>
-<p><img alt="svg" src="../assets/vm-06-01_3.svg"></p>
-<h4 id="incorrect-vector-map">Incorrect vector map <!-- omit in toc --><a class="headerlink" href="#incorrect-vector-map" title="Permanent link">#</a></h4>
-<p>None in particular.</p>
-<h4 id="related-autoware-module">Related Autoware module<a class="headerlink" href="#related-autoware-module" title="Permanent link">#</a></h4>
-<ul>
-<li><a href="https://autowarefoundation.github.io/autoware.universe/main/planning/behavior_path_planner/autoware_behavior_path_static_obstacle_avoidance_module/">Static Avoidance - Autoware Universe Documentation</a></li>
-<li><a href="https://autowarefoundation.github.io/autoware.universe/main/planning/behavior_path_planner/autoware_behavior_path_dynamic_obstacle_avoidance_module/">Dynamic Avoidance - Autoware Universe Documentation</a></li>
-</ul>
-<hr>
-<h3 id="vm-06-02-no-parking-signs">vm-06-02 No parking signs<a class="headerlink" href="#vm-06-02-no-parking-signs" title="Permanent link">#</a></h3>
-<h4 id="detail-of-requirements_1">Detail of requirements <!-- omit in toc --><a class="headerlink" href="#detail-of-requirements_1" title="Permanent link">#</a></h4>
-<p>When creating a Vector Map, you can prohibit parking in specific areas, while temporary stops are permitted.</p>
-<p>Create a reference from a Lanelet (<em>subtype:road</em>) to a Regulatory Element (<em>subtype:no_parking_area</em>), and have this Regulatory Element refer to a Polygon (<em>type:no_parking_area</em>).</p>
-<p>Refer to <a href="https://docs.web.auto/en/user-manuals/vector-map-builder/how-to-use/edit-maps#creation-of-no-parking-area">Web.Auto Documentation - Creation of No Parking Area</a> for the method of creation in Vector Map Builder.</p>
-<h5 id="behavior-of-autoware_1">Behavior of Autoware： <!-- omit in toc --><a class="headerlink" href="#behavior-of-autoware_1" title="Permanent link">#</a></h5>
-<p>Since <em>no_parking_area</em> does not allow for setting a goal, Autoware cannot park the vehicle there.</p>
-<p><img alt="svg" src="../assets/vm-06-02_1.svg"></p>
-<h4 id="preferred-vector-map_1">Preferred vector map <!-- omit in toc --><a class="headerlink" href="#preferred-vector-map_1" title="Permanent link">#</a></h4>
-<p><img alt="svg" src="../assets/vm-06-02_2.svg"></p>
-<h4 id="incorrect-vector-map_1">Incorrect vector map <!-- omit in toc --><a class="headerlink" href="#incorrect-vector-map_1" title="Permanent link">#</a></h4>
-<p>None in particular.</p>
-<h4 id="related-autoware-module_1">Related Autoware module<a class="headerlink" href="#related-autoware-module_1" title="Permanent link">#</a></h4>
-<ul>
-<li><a href="https://autowarefoundation.github.io/autoware.universe/main/planning/behavior_path_planner/autoware_behavior_path_goal_planner_module/">Goal Planner design - Autoware Universe Documentation</a></li>
-</ul>
-<hr>
-<h3 id="vm-06-03-no-stopping-signs">vm-06-03 No stopping signs<a class="headerlink" href="#vm-06-03-no-stopping-signs" title="Permanent link">#</a></h3>
-<h4 id="detail-of-requirements_2">Detail of requirements <!-- omit in toc --><a class="headerlink" href="#detail-of-requirements_2" title="Permanent link">#</a></h4>
-<p>When creating a Vector Map, you can prohibit stopping in specific areas, while temporary stops are permitted.</p>
-<p>Create a reference from a Lanelet (<em>subtype:road</em>) to a Regulatory Element (<em>subtype:no_parking_area</em>), and have this Regulatory Element refer to a Polygon (<em>type:no_parking_area</em>).</p>
-<p>Refer to <a href="https://docs.web.auto/en/user-manuals/vector-map-builder/how-to-use/edit-maps#creation-of-no-parking-area">Web.Auto Documentation - Creation of No Parking Area</a> for the method of creation in Vector Map Builder.</p>
-<h5 id="behavior-of-autoware_2">Behavior of Autoware： <!-- omit in toc --><a class="headerlink" href="#behavior-of-autoware_2" title="Permanent link">#</a></h5>
-<p>Since <em>no_parking_area</em> does not allow for setting a goal, Autoware cannot park the vehicle there.</p>
-<p><img alt="svg" src="../assets/vm-06-03_1.svg"></p>
-<h4 id="preferred-vector-map_2">Preferred vector map <!-- omit in toc --><a class="headerlink" href="#preferred-vector-map_2" title="Permanent link">#</a></h4>
-<p><img alt="svg" src="../assets/vm-06-03_2.svg"></p>
-<h4 id="incorrect-vector-map_2">Incorrect vector map <!-- omit in toc --><a class="headerlink" href="#incorrect-vector-map_2" title="Permanent link">#</a></h4>
-<p>None in particular.</p>
-<h4 id="related-autoware-module_2">Related Autoware module<a class="headerlink" href="#related-autoware-module_2" title="Permanent link">#</a></h4>
-<ul>
-<li><a href="https://autowarefoundation.github.io/autoware.universe/main/planning/behavior_path_planner/autoware_behavior_path_goal_planner_module/">Goal Planner design - Autoware Universe Documentation</a></li>
-</ul>
-<hr>
-<h3 id="vm-06-04-no-stopping-sections">vm-06-04 No stopping sections<a class="headerlink" href="#vm-06-04-no-stopping-sections" title="Permanent link">#</a></h3>
-<h4 id="detail-of-requirements_3">Detail of requirements <!-- omit in toc --><a class="headerlink" href="#detail-of-requirements_3" title="Permanent link">#</a></h4>
-<p>While vehicles may stop on the road for signals or traffic congestion, you can prohibit any form of stopping (temporary stopping, parking, idling) in specific areas when creating a Vector Map.</p>
-<p>Create a reference from a Lanelet (<em>subtype:road</em>) to a Regulatory Element (<em>subtype:no_stopping_area</em>), and have this Regulatory Element refer to a Polygon (<em>type:no_stopping_area</em>).</p>
-<p>Refer to <a href="https://docs.web.auto/en/user-manuals/vector-map-builder/how-to-use/edit-maps#creation-of-no-stopping-area">Web.Auto Documentation - Creation of No Stopping Area</a> for the method of creation in Vector Map Builder.</p>
-<h5 id="behavior-of-autoware_3">Behavior of Autoware： <!-- omit in toc --><a class="headerlink" href="#behavior-of-autoware_3" title="Permanent link">#</a></h5>
-<p>The vehicle does not make temporary stops in <em>no_stopping_area</em>. Since goals cannot be set in <em>no_stopping_area</em>, the vehicle cannot park there.</p>
-<p><img alt="svg" src="../assets/vm-06-04_1.svg"></p>
-<h4 id="preferred-vector-map_3">Preferred vector map <!-- omit in toc --><a class="headerlink" href="#preferred-vector-map_3" title="Permanent link">#</a></h4>
-<p><img alt="svg" src="../assets/vm-06-04_2.svg"></p>
-<h4 id="incorrect-vector-map_3">Incorrect vector map <!-- omit in toc --><a class="headerlink" href="#incorrect-vector-map_3" title="Permanent link">#</a></h4>
-<p>None in particular.</p>
-<h4 id="related-autoware-module_3">Related Autoware module<a class="headerlink" href="#related-autoware-module_3" title="Permanent link">#</a></h4>
-<ul>
-<li><a href="https://autowarefoundation.github.io/autoware.universe/main/planning/behavior_velocity_planner/autoware_behavior_velocity_no_stopping_area_module/">No Stopping Area design - Autoware Universe Documentation</a></li>
-</ul>
-<hr>
-<h3 id="vm-06-05-detection-area">vm-06-05 Detection area<a class="headerlink" href="#vm-06-05-detection-area" title="Permanent link">#</a></h3>
-<h4 id="detail-of-requirements_4">Detail of requirements <!-- omit in toc --><a class="headerlink" href="#detail-of-requirements_4" title="Permanent link">#</a></h4>
-<p>Autoware identifies obstacles by detecting point clouds in the Detection Area, leading to a stop at the stop line and maintaining that stop until the obstacles move away. To enable this response, incorporate the Detection Area element into the Vector Map.</p>
-<p>Create a reference from a Lanelet (<em>subtype:road</em>) to a Regulatory Element (<em>subtype:detection_area</em>), and have this Regulatory Element refer to a Polygon (<em>type:detection_area</em>) and a Linestring (<em>type:stop_line</em>).</p>
-<p>Refer to <a href="https://docs.web.auto/en/user-manuals/vector-map-builder/how-to-use/edit-maps#creation-of-detection-area">Web.Auto Documentation - Creation of Detection Area</a> for the method of creation in Vector Map Builder.</p>
-<h4 id="preferred-vector-map_4">Preferred vector map <!-- omit in toc --><a class="headerlink" href="#preferred-vector-map_4" title="Permanent link">#</a></h4>
-<p><img alt="svg" src="../assets/vm-06-05_1.svg"></p>
-<h4 id="incorrect-vector-map_4">Incorrect vector map <!-- omit in toc --><a class="headerlink" href="#incorrect-vector-map_4" title="Permanent link">#</a></h4>
-<p>None in particular.</p>
-<h4 id="related-autoware-module_4">Related Autoware module<a class="headerlink" href="#related-autoware-module_4" title="Permanent link">#</a></h4>
-<ul>
-<li><a href="https://autowarefoundation.github.io/autoware.universe/main/planning/behavior_velocity_planner/autoware_behavior_velocity_detection_area_module/">Detection Area - Autoware Universe Documentation</a></li>
-</ul>
+<h2 id="list-of-requirement-specifications">List of Requirement Specifications<a class="headerlink" href="#list-of-requirement-specifications" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>ID</th>
+<th>Requirements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="category_lane/">Category Lane</a></td>
+<td>vm-01-01</td>
+<td>Lanelet basics</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-01-02</td>
+<td>Allowance for lane changes</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-01-03</td>
+<td>Linestring sharing</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-01-04</td>
+<td>Sharing of the centerline of lanes for opposing traffic</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-01-05</td>
+<td>Lane geometry</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-01-06</td>
+<td>Line position (1)</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-01-07</td>
+<td>Line position (2)</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-01-08</td>
+<td>Line position (3)</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-01-09</td>
+<td>Speed limits</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-01-10</td>
+<td>Centerline</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-01-11</td>
+<td>Centerline connection (1)</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-01-12</td>
+<td>Centerline connection (2)</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-01-13</td>
+<td>Roads with no centerline (1)</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-01-14</td>
+<td>Roads with no centerline (2)</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-01-15</td>
+<td>Road shoulder</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-01-16</td>
+<td>Road shoulder Linestring sharing</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-01-17</td>
+<td>Side strip</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-01-18</td>
+<td>Side strip Linestring sharing</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-01-19</td>
+<td>Walkway</td>
+</tr>
+<tr>
+<td><a href="category_stop_line/">Category Stop Line</a></td>
+<td>vm-02-01</td>
+<td>Stop line alignment</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-02-02</td>
+<td>Stop sign</td>
+</tr>
+<tr>
+<td><a href="category_intersection/">Category Intersection</a></td>
+<td>vm-03-01</td>
+<td>Intersection criteria</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-03-02</td>
+<td>Lanelet's turn direction and virtual</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-03-03</td>
+<td>Lanelet width in the intersection</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-03-04</td>
+<td>Lanelet creation in the intersection</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-03-05</td>
+<td>Lanelet division in the intersection</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-03-06</td>
+<td>Guide lines in the intersection</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-03-07</td>
+<td>Multiple lanelets in the intersection</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-03-08</td>
+<td>Intersection Area range</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-03-09</td>
+<td>Range of Lanelet in the intersection</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-03-10</td>
+<td>Right of way (with signal)</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-03-11</td>
+<td>Right of way (without signal)</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-03-12</td>
+<td>Right of way supplements</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-03-13</td>
+<td>Merging from private area, sidewalk</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-03-14</td>
+<td>Road marking</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-03-15</td>
+<td>Exclusive bicycle lane</td>
+</tr>
+<tr>
+<td><a href="category_traffic_light/">Category Traffic Light</a></td>
+<td>vm-04-01</td>
+<td>Traffic light basics</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-04-02</td>
+<td>Traffic light position and size</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-04-03</td>
+<td>Traffic light lamps</td>
+</tr>
+<tr>
+<td><a href="category_crosswalk/">Category Crosswalk</a></td>
+<td>vm-05-01</td>
+<td>Crosswalks across the road</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-05-02</td>
+<td>Crosswalks with pedestrian signals</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-05-03</td>
+<td>Deceleration for safety at crosswalks</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-05-04</td>
+<td>Fences</td>
+</tr>
+<tr>
+<td><a href="category_area/">Category Area</a></td>
+<td>vm-06-01</td>
+<td>Buffer Zone</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-06-02</td>
+<td>No parking signs</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-06-03</td>
+<td>No stopping signs</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-06-04</td>
+<td>No stopping sections</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-06-05</td>
+<td>Detection area</td>
+</tr>
+<tr>
+<td><a href="category_others/">Category Others</a></td>
+<td>vm-07-01</td>
+<td>Vector Map creation range</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-07-02</td>
+<td>Range of detecting pedestrians who enter the road</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-07-03</td>
+<td>Guardrails, guard pipes, fences</td>
+</tr>
+<tr>
+<td></td>
+<td>vm-07-04</td>
+<td>Ellipsoidal height</td>
+</tr>
+</tbody>
+</table>
 <!-- prettier-ignore --></div>
 
 
@@ -7478,13 +7621,13 @@
         
         
           
-          <a href="../category_crosswalk/" class="md-footer__link md-footer__link--next" aria-label="Next: Category crosswalk" rel="next">
+          <a href="category_area/" class="md-footer__link md-footer__link--next" aria-label="Next: Category area" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Category crosswalk
+                Category area
               </div>
             </div>
             <div class="md-footer__button md-icon">

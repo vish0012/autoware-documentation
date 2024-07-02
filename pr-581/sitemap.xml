@@ -216,42 +216,42 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-581/design/autoware-architecture/map/map-requirements/category_area/</loc>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-581/design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/</loc>
          <lastmod>2024-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-581/design/autoware-architecture/map/map-requirements/category_crosswalk/</loc>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-581/design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/category_area/</loc>
          <lastmod>2024-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-581/design/autoware-architecture/map/map-requirements/category_intersection/</loc>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-581/design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/category_crosswalk/</loc>
          <lastmod>2024-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-581/design/autoware-architecture/map/map-requirements/category_lane/</loc>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-581/design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/category_intersection/</loc>
          <lastmod>2024-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-581/design/autoware-architecture/map/map-requirements/category_others/</loc>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-581/design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/category_lane/</loc>
          <lastmod>2024-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-581/design/autoware-architecture/map/map-requirements/category_stop_line/</loc>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-581/design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/category_others/</loc>
          <lastmod>2024-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-581/design/autoware-architecture/map/map-requirements/category_traffic_light/</loc>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-581/design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/category_stop_line/</loc>
          <lastmod>2024-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-581/design/autoware-architecture/map/map-requirements/overview/</loc>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-581/design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/category_traffic_light/</loc>
          <lastmod>2024-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
