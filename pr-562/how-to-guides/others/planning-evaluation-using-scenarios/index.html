@@ -4584,12 +4584,18 @@
             
           
         
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
           <a href="../../../design/autoware-architecture/map/">Map</a>
+          
+            <label for="__nav_5_3_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
           
         </div>
       
@@ -4600,6 +4606,208 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3_3_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3_3_2" id="__nav_5_3_3_2_label" tabindex="0">
+          Map requirements
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_3_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_3_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Map requirements
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3_3_2_1" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/">Vector map requirements overview</a>
+          
+            <label for="__nav_5_3_3_2_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_5_3_3_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_3_3_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Vector map requirements overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/category_area/" class="md-nav__link">
+        Category area
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/category_crosswalk/" class="md-nav__link">
+        Category crosswalk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/category_intersection/" class="md-nav__link">
+        Category intersection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/category_lane/" class="md-nav__link">
+        Category lane
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/category_others/" class="md-nav__link">
+        Category others
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/category_stop_line/" class="md-nav__link">
+        Category stop line
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/category_traffic_light/" class="md-nav__link">
+        Category traffic light
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
             
           
         </ul>
@@ -7412,18 +7620,18 @@ their behaviors, and the success and failure conditions for the ego vehicle.</p>
 </li>
 <li>
 <p>After setting the positions of the bicycle, ego vehicle, and ego vehicle's destination, set the initial velocity of
-   the bicycle to 0 m/s as shown above. Then, click the <code>Scenario</code> tab and click on the <code>Add new act</code> button. Using
+   the bicycle to 0 m/s as shown below. Then, click the <code>Scenario</code> tab and click on the <code>Add new act</code> button. Using
    this, define an action that starts the bicycle moving when the distance condition is satisfied.</p>
 <p><img alt="scenario-create-tutorial-02.png" src="../images/planning-evaluation-using-scenarios/scenario-create-tutorial-02.png"></p>
 </li>
 <li>
-<p>As shown above, define a start condition for an action named <code>act_start_bicycle</code>. This condition checks the distance
+<p>As shown below, define a start condition for an action named <code>act_start_bicycle</code>. This condition checks the distance
    between the ego vehicle and the bicycle. If the distance is less than or equal to 10 meters, the action is triggered.</p>
 <p><img alt="scenario-create-tutorial-03.png" src="../images/planning-evaluation-using-scenarios/scenario-create-tutorial-03.png"></p>
 </li>
 <li>
 <p>After the start condition, define an <strong>event</strong> for this action. Since there are no other conditions for this event,
-   set a dummy condition where SimulationTime is greater than 0, as shown above.</p>
+   set a dummy condition where SimulationTime is greater than 0, as shown below.</p>
 <p><img alt="scenario-create-tutorial-04.png" src="../images/planning-evaluation-using-scenarios/scenario-create-tutorial-04.png"></p>
 </li>
 <li>
@@ -7470,7 +7678,9 @@ vcs<span class="w"> </span>import<span class="w"> </span>src<span class="w"> </s
 </code></pre></div>
 <ul>
 <li>If you are installing Autoware for the first time, you can automatically install the dependencies by using the
-  provided Ansible script.</li>
+  provided Ansible script. Please refer to
+  the <a href="https://autowarefoundation.github.io/autoware-documentation/main/installation/autoware/source-installation/">Autoware source installation page</a>
+  for more information.</li>
 </ul>
 <div class="highlight"><pre><span></span><code>./setup-dev-env.sh
 </code></pre></div>
@@ -7594,8 +7804,8 @@ is <code>Simulation failure: CustomCommandAction typed "exitFailure" was trigger
 <p>From this message, we can understand that an action which is used for checking the vehicle is not stopped is in complete
 state. And, the scenario author set this condition as a failure condition. Therefore, the scenario failed.</p>
 <ul>
-<li>To test the scenario in local, you can download the scenario and its map by using links above. Running scenario on
-  local machine was explained in the previous section.</li>
+<li>To test the scenario in local, you can download the scenario and its map by using links which are marked image above.
+  Running scenario on local machine was explained in the previous section.</li>
 </ul>
 <ul>
 <li>To compare the test executions to analyze when the scenarios were successfully running, you can use <code>Compare Reports</code>
