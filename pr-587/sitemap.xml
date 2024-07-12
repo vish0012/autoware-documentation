@@ -1336,6 +1336,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-587/installation/additional-settings-for-developers/enable-multicast-for-lo/</loc>
+         <lastmod>2024-07-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-587/installation/additional-settings-for-developers/network-configuration-old/</loc>
+         <lastmod>2024-07-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware-documentation/pr-587/installation/additional-settings-for-developers/network-configuration/</loc>
          <lastmod>2024-07-12</lastmod>
          <changefreq>daily</changefreq>

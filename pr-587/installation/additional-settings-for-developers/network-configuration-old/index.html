@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://autowarefoundation.github.io/autoware-documentation/pr-587/installation/additional-settings-for-developers/network-configuration/">
+        <link rel="canonical" href="https://autowarefoundation.github.io/autoware-documentation/pr-587/installation/additional-settings-for-developers/network-configuration-old/">
       
       
-        <link rel="prev" href="../console-settings/">
+        <link rel="prev" href="../enable-multicast-for-lo/">
       
       
-        <link rel="next" href="../../../tutorials/">
+        <link rel="next" href="../network-configuration/">
       
       <link rel="icon" href="../../../assets/images/autoware-foundation.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.20">
@@ -682,92 +682,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Network settings for ROS 2
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../network-configuration/" class="md-nav__link">
         Network settings for ROS 2
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#enable-localhost-only-communication" class="md-nav__link">
-    Enable localhost-only communication
-  </a>
-  
-    <nav class="md-nav" aria-label="Enable localhost-only communication">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bad-methods" class="md-nav__link">
-    Bad methods ❌
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#good-method" class="md-nav__link">
-    Good method ✅
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dds-settings" class="md-nav__link">
-    DDS settings
-  </a>
-  
-    <nav class="md-nav" aria-label="DDS settings">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tuning-dds-for-multiple-host-computers-for-advanced-users" class="md-nav__link">
-    Tuning DDS for multiple host computers (for advanced users)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -7370,11 +7289,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enable-localhost-only-communication" class="md-nav__link">
-    Enable localhost-only communication
+  <a href="#enabling-localhost-only-communication" class="md-nav__link">
+    Enabling localhost-only communication
   </a>
   
-    <nav class="md-nav" aria-label="Enable localhost-only communication">
+    <nav class="md-nav" aria-label="Enabling localhost-only communication">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -7387,6 +7306,26 @@
           <li class="md-nav__item">
   <a href="#good-method" class="md-nav__link">
     Good method ✅
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-multicast-on-lo-on-startup-with-a-service" class="md-nav__link">
+    Enable multicast on lo on startup with a service
+  </a>
+  
+    <nav class="md-nav" aria-label="Enable multicast on lo on startup with a service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validate" class="md-nav__link">
+    Validate
   </a>
   
 </li>
@@ -7435,18 +7374,22 @@
 
 
 <div><h1 id="network-settings-for-ros-2">Network settings for <abbr title="Robot Operating System">ROS</abbr> 2<a class="headerlink" href="#network-settings-for-ros-2" title="Permanent link">#</a></h1>
-<h2 id="enable-localhost-only-communication">Enable localhost-only communication<a class="headerlink" href="#enable-localhost-only-communication" title="Permanent link">#</a></h2>
-<ol>
-<li><a href="../enable-multicast-for-lo/">Enable <code>multicast</code> for <code>lo</code></a></li>
-<li>Make sure <code>export ROS_LOCALHOST_ONLY=1</code> <strong>is NOT</strong> set in <code>.bashrc</code>.</li>
-</ol>
+<p><abbr title="Robot Operating System">ROS</abbr> 2 employs DDS, and the configuration of <abbr title="Robot Operating System">ROS</abbr> 2 and DDS is described separately.</p>
+<p>For <abbr title="Robot Operating System">ROS</abbr> 2 networking concepts, refer to the <a href="http://design.ros2.org/articles/ros_on_dds.html">official documentation</a>.</p>
+<p><abbr title="Robot Operating System">ROS</abbr> 2 multicasts data on the local network by default.</p>
+<p>Therefore, when you develop in an office, the data flows over the local network of your office.</p>
+<p>It may cause collisions of packets or increases in network traffic.</p>
+<p>To avoid these, you should limit the DDS communication to the loopback interface within the host computer.</p>
+<p>Unless you plan to use multiple host computers on the local network, localhost-only communication is recommended.
+For details, refer to the sections below.</p>
+<h2 id="enabling-localhost-only-communication">Enabling localhost-only communication<a class="headerlink" href="#enabling-localhost-only-communication" title="Permanent link">#</a></h2>
 <h3 id="bad-methods">Bad methods ❌<a class="headerlink" href="#bad-methods" title="Permanent link">#</a></h3>
 <h4 id="ros_localhost_only-parameter"><code>ROS_LOCALHOST_ONLY</code> parameter<a class="headerlink" href="#ros_localhost_only-parameter" title="Permanent link">#</a></h4>
 <p>Previously, we used to set <code>export ROS_LOCALHOST_ONLY=1</code> to enable localhost-only communication.
 But because of <a href="https://github.com/ros2/rmw_cyclonedds/issues/370">an ongoing issue</a>, this method doesn't work.</p>
 <h4 id="ros_domain_id-parameter"><code>ROS_DOMAIN_ID</code> parameter<a class="headerlink" href="#ros_domain_id-parameter" title="Permanent link">#</a></h4>
 <p>We can also set <code>export ROS_DOMAIN_ID=3(or any number 1 to 255)</code> (<code>0</code> by default) to avoid interference with other <abbr title="Robot Operating System">ROS</abbr> 2 nodes on the same network.</p>
-<p>But since <code>255</code> is a very small number, there is no guarantee that it will not interfere with other computers on the same network unless you check everyone's domain ID.</p>
+<p>But since <code>255</code> is a very small number, there is no guarantee that it will not interfere with other computers on the same network unless you check everyones' domain ID.</p>
 <p>Another problem is that if someone runs a test that uses <abbr title="Robot Operating System">ROS</abbr> 2 <a href="https://github.com/ros2/launch/blob/a317c54bbbf2dfeec35fbb6d2b5913939d02750d/launch_testing/README.md">launch_testing</a> framework,
 by default it will use a random domain ID to isolate between tests even on the same machine.
 See <a href="https://github.com/ros2/launch/pull/251">this PR</a> for more details.</p>
@@ -7458,6 +7401,58 @@ Remove it from <code>.bashrc</code> if you have set it.</p>
 </div>
 <p>If you export <code>ROS_LOCALHOST_ONLY=1</code>, <code>MULTICAST</code> must be enabled at the loopback address.
 To verify that <code>MULTICAST</code> is enabled, use the following command.</p>
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>ip<span class="w"> </span>link<span class="w"> </span>show<span class="w"> </span>lo
+<span class="go">1: lo: &lt;LOOPBACK,MULTICAST,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000</span>
+</code></pre></div>
+<p>If the word <code>MULTICAST</code> is not printed, use the following command to enable it.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>lo<span class="w"> </span>multicast<span class="w"> </span>on
+</code></pre></div>
+<h2 id="enable-multicast-on-lo-on-startup-with-a-service">Enable <code>multicast</code> on <code>lo</code> on startup with a service<a class="headerlink" href="#enable-multicast-on-lo-on-startup-with-a-service" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/systemd/system/multicast-lo.service
+</code></pre></div>
+<p>Paste the following into the file:</p>
+<div class="highlight"><pre><span></span><code>[Unit]
+Description=Enable Multicast on Loopback
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/ip link set lo multicast on
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div>
+<p>Press following in order to save with nano:</p>
+<ol>
+<li><code>Ctrl+X</code></li>
+<li><code>Y</code></li>
+<li><code>Enter</code></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="c1"># Make it recognized</span>
+sudo<span class="w"> </span>systemctl<span class="w"> </span>daemon-reload
+
+<span class="c1"># Make it run on startup</span>
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>multicast-lo.service
+
+<span class="c1"># Start it now</span>
+sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>multicast-lo.service
+</code></pre></div>
+<h3 id="validate">Validate<a class="headerlink" href="#validate" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="gp">mfc@mfc-leo:~$ </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>multicast-lo.service
+<span class="go">○ multicast-lo.service - Enable Multicast on Loopback</span>
+<span class="go">     Loaded: loaded (/etc/systemd/system/multicast-lo.service; enabled; vendor preset: enabled)</span>
+<span class="go">     Active: inactive (dead) since Mon 2024-07-08 12:54:17 +03; 4s ago</span>
+<span class="go">    Process: 22588 ExecStart=/usr/bin/ip link set lo multicast on (code=exited, status=0/SUCCESS)</span>
+<span class="go">   Main PID: 22588 (code=exited, status=0/SUCCESS)</span>
+<span class="go">        CPU: 1ms</span>
+
+<span class="go">Tem 08 12:54:17 mfc-leo systemd[1]: Starting Enable Multicast on Loopback...</span>
+<span class="go">Tem 08 12:54:17 mfc-leo systemd[1]: multicast-lo.service: Deactivated successfully.</span>
+<span class="go">Tem 08 12:54:17 mfc-leo systemd[1]: Finished Enable Multicast on Loopback.</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="gp">mfc@mfc-leo:~$ </span>ip<span class="w"> </span>link<span class="w"> </span>show<span class="w"> </span>lo
+<span class="go">1: lo: &lt;LOOPBACK,MULTICAST,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000</span>
+<span class="go">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span>
+</code></pre></div>
 <h2 id="dds-settings">DDS settings<a class="headerlink" href="#dds-settings" title="Permanent link">#</a></h2>
 <p>Autoware uses DDS for internode communication. <a href="https://docs.ros.org/en/humble/How-To-Guides/DDS-tuning.html"><abbr title="Robot Operating System">ROS</abbr> 2 documentation</a> recommends users to tune DDS to utilize its capability. Especially, receive buffer size is the critical parameter for Autoware. If the parameter is not large enough, Autoware will fail receiving large data like point clouds or images.</p>
 <p>When using Autoware, we recommend using CycloneDDS as it is the most tested DDS implementation for Autoware.</p>
@@ -7524,7 +7519,7 @@ sudo<span class="w"> </span>sysctl<span class="w"> </span>-w<span class="w"> </s
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../console-settings/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Console settings for ROS 2" rel="prev">
+          <a href="../enable-multicast-for-lo/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Enable `multicast` on `lo`" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -7533,20 +7528,20 @@ sudo<span class="w"> </span>sysctl<span class="w"> </span>-w<span class="w"> </s
                 Previous
               </span>
               <div class="md-ellipsis">
-                Console settings for ROS 2
+                Enable `multicast` on `lo`
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../../tutorials/" class="md-footer__link md-footer__link--next" aria-label="Next: Simulation tutorials" rel="next">
+          <a href="../network-configuration/" class="md-footer__link md-footer__link--next" aria-label="Next: Network settings for ROS 2" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Simulation tutorials
+                Network settings for ROS 2
               </div>
             </div>
             <div class="md-footer__button md-icon">
