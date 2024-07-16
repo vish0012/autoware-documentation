@@ -7673,12 +7673,18 @@ rosdep<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> 
 </code></pre></div>
 </li>
 <li>
+<p><a href="../../../how-to-guides/others/advanced-usage-of-colcon/#using-ccache-to-speed-up-recompilation">Install and set up ccache to speed up consecutive builds</a>. (optional but highly recommended)</p>
+</li>
+<li>
 <p>Build the workspace.</p>
 <div class="highlight"><pre><span></span><code>colcon<span class="w"> </span>build<span class="w"> </span>--symlink-install<span class="w"> </span>--cmake-args<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release
 </code></pre></div>
 </li>
 <li>
-<p>Before running Autoware, make sure all network settings are configured correctly. Follow the steps in <a href="../../additional-settings-for-developers/network-configuration/">Network Configuration</a> section for more information.</p>
+<p>Follow the steps in <a href="../../additional-settings-for-developers/network-configuration/">Network Configuration</a> before running Autoware.</p>
+</li>
+<li>
+<p>Apply the settings recommended in <a href="../../additional-settings-for-developers/console-settings/">Console settings for <abbr title="Robot Operating System">ROS</abbr> 2</a> for a better development experience. (optional)</p>
 </li>
 </ol>
 <h2 id="using-autoware-build-gui">Using Autoware Build GUI<a class="headerlink" href="#using-autoware-build-gui" title="Permanent link">#</a></h2>
