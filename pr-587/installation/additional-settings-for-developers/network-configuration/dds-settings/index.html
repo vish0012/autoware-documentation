@@ -7623,8 +7623,8 @@ net.ipv4.ipfrag_high_thresh<span class="o">=</span><span class="m">134217728</sp
 <p>You can refer to <a href="https://github.com/eclipse-cyclonedds/cyclonedds/tree/a10ced3c81cc009e7176912190f710331a4d6caf#run-time-configuration">Eclipse Cyclone DDS: Run-time configuration documentation</a> for more details.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p><code>RMW_IMPLEMENTATION</code> variable might be already set with <a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/rmw_implementation#manual-installation">Ansible/RMW Implementation</a>.
-Check and remove the duplicate line if necessary.</p>
+<p><code>RMW_IMPLEMENTATION</code> variable might be already set with <a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/rmw_implementation#manual-installation">Ansible/RMW Implementation</a>.</p>
+<p>Check and remove the duplicate line if necessary.</p>
 </div>
 <h2 id="additional-information">Additional information<a class="headerlink" href="#additional-information" title="Permanent link">#</a></h2>
 <h3 id="about-ros_localhost_only-environment-variable">About <code>ROS_LOCALHOST_ONLY</code> environment variable<a class="headerlink" href="#about-ros_localhost_only-environment-variable" title="Permanent link">#</a></h3>
@@ -7632,9 +7632,9 @@ Check and remove the duplicate line if necessary.</p>
 But because of <a href="https://github.com/ros2/rmw_cyclonedds/issues/370">an ongoing issue</a>, this method doesn't work.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Do not set <code>export ROS_LOCALHOST_ONLY=1</code> in <code>~/.bashrc</code>.
-If you do so, it will cause an error with RMW.
-Remove it from <code>~/.bashrc</code> if you have set it.</p>
+<p>Do not set <code>export ROS_LOCALHOST_ONLY=1</code> in <code>~/.bashrc</code>.</p>
+<p>If you do so, it will cause an error with RMW.</p>
+<p>Remove it from <code>~/.bashrc</code> if you have set it.</p>
 </div>
 <h3 id="about-ros_domain_id-environment-variable">About <code>ROS_DOMAIN_ID</code> environment variable<a class="headerlink" href="#about-ros_domain_id-environment-variable" title="Permanent link">#</a></h3>
 <p>We can also set <code>export ROS_DOMAIN_ID=3(or any number 1 to 255)</code> (<code>0</code> by default) to avoid interference with other <abbr title="Robot Operating System">ROS</abbr> 2 nodes on the same network.</p>
