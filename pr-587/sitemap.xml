@@ -1356,11 +1356,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-587/installation/additional-settings-for-developers/network-configuration/network-configuration-old/</loc>
-         <lastmod>2024-07-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://autowarefoundation.github.io/autoware-documentation/pr-587/installation/autoware/docker-installation/</loc>
          <lastmod>2024-07-16</lastmod>
          <changefreq>daily</changefreq>
