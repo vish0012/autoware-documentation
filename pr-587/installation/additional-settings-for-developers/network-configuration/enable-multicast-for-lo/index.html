@@ -765,18 +765,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#manually" class="md-nav__link">
-    Manually
+  <a href="#manually-temporary-solution" class="md-nav__link">
+    Manually (temporary solution)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#on-startup-with-a-service" class="md-nav__link">
-    On startup with a service
+  <a href="#on-startup-with-a-service-permanent-solution" class="md-nav__link">
+    On startup with a service (permanent solution)
   </a>
   
-    <nav class="md-nav" aria-label="On startup with a service">
+    <nav class="md-nav" aria-label="On startup with a service (permanent solution)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -7425,18 +7425,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#manually" class="md-nav__link">
-    Manually
+  <a href="#manually-temporary-solution" class="md-nav__link">
+    Manually (temporary solution)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#on-startup-with-a-service" class="md-nav__link">
-    On startup with a service
+  <a href="#on-startup-with-a-service-permanent-solution" class="md-nav__link">
+    On startup with a service (permanent solution)
   </a>
   
-    <nav class="md-nav" aria-label="On startup with a service">
+    <nav class="md-nav" aria-label="On startup with a service (permanent solution)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -7477,7 +7477,7 @@
 
 
 <div><h1 id="enable-multicast-on-lo">Enable <code>multicast</code> on <code>lo</code><a class="headerlink" href="#enable-multicast-on-lo" title="Permanent link">#</a></h1>
-<h2 id="manually">Manually<a class="headerlink" href="#manually" title="Permanent link">#</a></h2>
+<h2 id="manually-temporary-solution">Manually (temporary solution)<a class="headerlink" href="#manually-temporary-solution" title="Permanent link">#</a></h2>
 <p>You may just call the following command to enable multicast on the loopback interface.</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>lo<span class="w"> </span>multicast<span class="w"> </span>on
 </code></pre></div>
@@ -7485,7 +7485,7 @@
 <p class="admonition-title">Warning</p>
 <p>This will be reverted once the computer restarts. To make it permanent, follow the steps below.</p>
 </div>
-<h2 id="on-startup-with-a-service">On startup with a service<a class="headerlink" href="#on-startup-with-a-service" title="Permanent link">#</a></h2>
+<h2 id="on-startup-with-a-service-permanent-solution">On startup with a service (permanent solution)<a class="headerlink" href="#on-startup-with-a-service-permanent-solution" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/systemd/system/multicast-lo.service
 </code></pre></div>
 <p>Paste the following into the file:</p>

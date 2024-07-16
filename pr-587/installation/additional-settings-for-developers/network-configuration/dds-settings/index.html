@@ -7503,7 +7503,9 @@ net.ipv4.ipfrag_high_thresh<span class="o">=</span><span class="m">134217728</sp
 <span class="nt">&lt;/CycloneDDS&gt;</span>
 </code></pre></div>
 <p>Then add the following line to your <code>~/.bashrc</code> file.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">CYCLONEDDS_URI</span><span class="o">=</span>file:///absolute/path/to/cyclonedds.xml
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">RMW_IMPLEMENTATION</span><span class="o">=</span>rmw_cyclonedds_cpp
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">CYCLONEDDS_URI</span><span class="o">=</span>file:///absolute/path/to/cyclonedds.xml
 <span class="c1"># Replace `/absolute/path/to/cyclonedds.xml` with the actual path to the file.</span>
 <span class="c1"># Example: export CYCLONEDDS_URI=file:///home/user/cyclonedds.xml</span>
 </code></pre></div>
