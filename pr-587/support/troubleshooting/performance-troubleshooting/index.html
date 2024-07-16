@@ -7614,15 +7614,15 @@ colcon<span class="w"> </span>build<span class="w"> </span>--symlink-install<spa
 </li>
 </ul>
 <h4 id="diagnosis_5">Diagnosis<a class="headerlink" href="#diagnosis_5" title="Permanent link">#</a></h4>
-<p>Run following to check it:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="nv">$ROS_LOCALHOST_ONLY</span>
-</code></pre></div>
-<p>The return line should be empty.</p>
+<p>Run:</p>
 <div class="highlight"><pre><span></span><code>cat<span class="w"> </span><span class="si">${</span><span class="nv">CYCLONEDDS_URI</span><span class="p">#file://</span><span class="si">}</span>
 </code></pre></div>
-<p>Should return <a href="../../../installation/additional-settings-for-developers/network-configuration/dds-settings/#cyclonedds-configuration">DDS settings for <abbr title="Robot Operating System">ROS</abbr> 2 and Autoware: CycloneDDS Configuration</a> this file.</p>
+<p>And it should return <a href="../../../installation/additional-settings-for-developers/network-configuration/dds-settings/#cyclonedds-configuration">DDS settings for <abbr title="Robot Operating System">ROS</abbr> 2 and Autoware: CycloneDDS Configuration</a> this file.</p>
 <h4 id="solution_5">Solution<a class="headerlink" href="#solution_5" title="Permanent link">#</a></h4>
 <p>Follow <a href="../../../installation/additional-settings-for-developers/network-configuration/dds-settings/#enable-localhost-only-communication">DDS settings for <abbr title="Robot Operating System">ROS</abbr> 2 and Autoware: Enable localhost-only communication</a>.</p>
+<p>Also make sure the following returns an empty line:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="nv">$ROS_LOCALHOST_ONLY</span>
+</code></pre></div>
 <!-- prettier-ignore --></div>
 
 
