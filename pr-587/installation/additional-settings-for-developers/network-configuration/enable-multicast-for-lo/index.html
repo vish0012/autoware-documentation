@@ -7501,6 +7501,12 @@
 <p class="admonition-title">Warning</p>
 <p>This will be reverted once the computer restarts. To make it permanent, follow the steps below.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here, <code>lo</code> is the loopback interface.</p>
+<p>You can check the interfaces with <code>ip link show</code>.</p>
+<p>You may change <code>lo</code> with the interface you want to enable multicast on.</p>
+</div>
 <h2 id="on-startup-with-a-service-permanent-solution">On startup with a service (permanent solution)<a class="headerlink" href="#on-startup-with-a-service-permanent-solution" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/systemd/system/multicast-lo.service
 </code></pre></div>
