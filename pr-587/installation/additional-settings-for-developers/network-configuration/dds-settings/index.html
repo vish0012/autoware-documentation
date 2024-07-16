@@ -7613,15 +7613,19 @@ net.ipv4.ipfrag_high_thresh<span class="o">=</span><span class="m">134217728</sp
 <span class="w">  </span><span class="nt">&lt;/Domain&gt;</span>
 <span class="nt">&lt;/CycloneDDS&gt;</span>
 </code></pre></div>
-<p>Then add the following line to your <code>~/.bashrc</code> file.</p>
+<p>Then add the following lines to your <code>~/.bashrc</code> file.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">RMW_IMPLEMENTATION</span><span class="o">=</span>rmw_cyclonedds_cpp
 
 <span class="nb">export</span><span class="w"> </span><span class="nv">CYCLONEDDS_URI</span><span class="o">=</span>file:///absolute/path/to/cyclonedds.xml
 <span class="c1"># Replace `/absolute/path/to/cyclonedds.xml` with the actual path to the file.</span>
 <span class="c1"># Example: export CYCLONEDDS_URI=file:///home/user/cyclonedds.xml</span>
 </code></pre></div>
-<p>This configuration is mostly taken from <a href="https://github.com/eclipse-cyclonedds/cyclonedds/tree/a10ced3c81cc009e7176912190f710331a4d6caf#run-time-configuration">Eclipse Cyclone DDS:Run-time configuration documentation</a>.
-You can see why each value is set as such under the documentation link.</p>
+<p>You can refer to <a href="https://github.com/eclipse-cyclonedds/cyclonedds/tree/a10ced3c81cc009e7176912190f710331a4d6caf#run-time-configuration">Eclipse Cyclone DDS: Run-time configuration documentation</a> for more details.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code>RMW_IMPLEMENTATION</code> variable might be already set with <a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/rmw_implementation#manual-installation">Ansible/RMW Implementation</a>.
+Check and remove the duplicate line if necessary.</p>
+</div>
 <h2 id="additional-information">Additional information<a class="headerlink" href="#additional-information" title="Permanent link">#</a></h2>
 <h3 id="about-ros_localhost_only-environment-variable">About <code>ROS_LOCALHOST_ONLY</code> environment variable<a class="headerlink" href="#about-ros_localhost_only-environment-variable" title="Permanent link">#</a></h3>
 <p>Previously, we used to set <code>export ROS_LOCALHOST_ONLY=1</code> to enable localhost-only communication.
