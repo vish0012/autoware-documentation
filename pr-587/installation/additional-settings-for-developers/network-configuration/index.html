@@ -14,14 +14,14 @@
         <link rel="prev" href="../console-settings/">
       
       
-        <link rel="next" href="../../../tutorials/">
+        <link rel="next" href="enable-multicast-for-lo/">
       
       <link rel="icon" href="../../../assets/images/autoware-foundation.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.20">
     
     
       
-        <title>Network settings for ROS 2 - Autoware Documentation</title>
+        <title>Network settings for ROS 2 and Autoware - Autoware Documentation</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#network-settings-for-ros-2" class="md-skip">
+        <a href="#network-settings-for-ros-2-and-autoware" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Network settings for ROS 2
+              Network settings for ROS 2 and Autoware
             
           </span>
         </div>
@@ -685,89 +685,76 @@
     
   
   
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Network settings for ROS 2
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Network settings for ROS 2
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
     
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
-        <li class="md-nav__item">
-  <a href="#enable-localhost-only-communication" class="md-nav__link">
-    Enable localhost-only communication
-  </a>
-  
-    <nav class="md-nav" aria-label="Enable localhost-only communication">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bad-methods" class="md-nav__link">
-    Bad methods ❌
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#good-method" class="md-nav__link">
-    Good method ✅
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
-        <li class="md-nav__item">
-  <a href="#dds-settings" class="md-nav__link">
-    DDS settings
-  </a>
-  
-    <nav class="md-nav" aria-label="DDS settings">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tuning-dds-for-multiple-host-computers-for-advanced-users" class="md-nav__link">
-    Tuning DDS for multiple host computers (for advanced users)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
-    </ul>
-  
-</nav>
       
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+          <a href="./">Network configuration</a>
+          
+            <label for="__nav_2_4_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Network configuration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="enable-multicast-for-lo/" class="md-nav__link">
+        Enable `multicast` on `lo`
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="multiple-computers/" class="md-nav__link">
+        Communicating across multiple computers within a network with CycloneDDS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -7363,61 +7350,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#enable-localhost-only-communication" class="md-nav__link">
-    Enable localhost-only communication
-  </a>
-  
-    <nav class="md-nav" aria-label="Enable localhost-only communication">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bad-methods" class="md-nav__link">
-    Bad methods ❌
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#good-method" class="md-nav__link">
-    Good method ✅
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dds-settings" class="md-nav__link">
-    DDS settings
-  </a>
-  
-    <nav class="md-nav" aria-label="DDS settings">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tuning-dds-for-multiple-host-computers-for-advanced-users" class="md-nav__link">
-    Tuning DDS for multiple host computers (for advanced users)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -7434,69 +7366,11 @@
   
 
 
-<div><h1 id="network-settings-for-ros-2">Network settings for <abbr title="Robot Operating System">ROS</abbr> 2<a class="headerlink" href="#network-settings-for-ros-2" title="Permanent link">#</a></h1>
-<h2 id="enable-localhost-only-communication">Enable localhost-only communication<a class="headerlink" href="#enable-localhost-only-communication" title="Permanent link">#</a></h2>
+<div><h1 id="network-settings-for-ros-2-and-autoware">Network settings for <abbr title="Robot Operating System">ROS</abbr> 2 and Autoware<a class="headerlink" href="#network-settings-for-ros-2-and-autoware" title="Permanent link">#</a></h1>
 <ol>
-<li><a href="../enable-multicast-for-lo/">Enable <code>multicast</code> for <code>lo</code></a></li>
-<li>Make sure <code>export ROS_LOCALHOST_ONLY=1</code> <strong>is NOT</strong> set in <code>.bashrc</code>.</li>
+<li><a href="dds-settings/">Tune the DDS settings for <abbr title="Robot Operating System">ROS</abbr> 2 and Autoware</a></li>
+<li><a href="multiple-computers/">Settings to enable DDS communication across multiple computers within a network</a> (Optional)</li>
 </ol>
-<h3 id="bad-methods">Bad methods ❌<a class="headerlink" href="#bad-methods" title="Permanent link">#</a></h3>
-<h4 id="ros_localhost_only-parameter"><code>ROS_LOCALHOST_ONLY</code> parameter<a class="headerlink" href="#ros_localhost_only-parameter" title="Permanent link">#</a></h4>
-<p>Previously, we used to set <code>export ROS_LOCALHOST_ONLY=1</code> to enable localhost-only communication.
-But because of <a href="https://github.com/ros2/rmw_cyclonedds/issues/370">an ongoing issue</a>, this method doesn't work.</p>
-<h4 id="ros_domain_id-parameter"><code>ROS_DOMAIN_ID</code> parameter<a class="headerlink" href="#ros_domain_id-parameter" title="Permanent link">#</a></h4>
-<p>We can also set <code>export ROS_DOMAIN_ID=3(or any number 1 to 255)</code> (<code>0</code> by default) to avoid interference with other <abbr title="Robot Operating System">ROS</abbr> 2 nodes on the same network.</p>
-<p>But since <code>255</code> is a very small number, there is no guarantee that it will not interfere with other computers on the same network unless you check everyone's domain ID.</p>
-<p>Another problem is that if someone runs a test that uses <abbr title="Robot Operating System">ROS</abbr> 2 <a href="https://github.com/ros2/launch/blob/a317c54bbbf2dfeec35fbb6d2b5913939d02750d/launch_testing/README.md">launch_testing</a> framework,
-by default it will use a random domain ID to isolate between tests even on the same machine.
-See <a href="https://github.com/ros2/launch/pull/251">this PR</a> for more details.</p>
-<h3 id="good-method">Good method ✅<a class="headerlink" href="#good-method" title="Permanent link">#</a></h3>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Do not set <code>export ROS_LOCALHOST_ONLY=1</code> in <code>.bashrc</code> because it will cause an error.
-Remove it from <code>.bashrc</code> if you have set it.</p>
-</div>
-<p>If you export <code>ROS_LOCALHOST_ONLY=1</code>, <code>MULTICAST</code> must be enabled at the loopback address.
-To verify that <code>MULTICAST</code> is enabled, use the following command.</p>
-<h2 id="dds-settings">DDS settings<a class="headerlink" href="#dds-settings" title="Permanent link">#</a></h2>
-<p>Autoware uses DDS for internode communication. <a href="https://docs.ros.org/en/humble/How-To-Guides/DDS-tuning.html"><abbr title="Robot Operating System">ROS</abbr> 2 documentation</a> recommends users to tune DDS to utilize its capability. Especially, receive buffer size is the critical parameter for Autoware. If the parameter is not large enough, Autoware will fail receiving large data like point clouds or images.</p>
-<p>When using Autoware, we recommend using CycloneDDS as it is the most tested DDS implementation for Autoware.</p>
-<p>We need to configure it with a config file is given below. Save it as <code>~/cyclonedds.xml</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
-<span class="nt">&lt;CycloneDDS</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"https://cdds.io/config"</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span><span class="w"> </span><span class="na">xsi:schemaLocation=</span><span class="s">"https://cdds.io/config https://raw.githubusercontent.com/eclipse-cyclonedds/cyclonedds/master/etc/cyclonedds.xsd"</span><span class="nt">&gt;</span>
-<span class="w">  </span><span class="nt">&lt;Domain</span><span class="w"> </span><span class="na">Id=</span><span class="s">"any"</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;General&gt;</span>
-<span class="w">      </span><span class="nt">&lt;Interfaces&gt;</span>
-<span class="w">        </span><span class="nt">&lt;NetworkInterface</span><span class="w"> </span><span class="na">name=</span><span class="s">"lo"</span><span class="w"> </span><span class="na">priority=</span><span class="s">"default"</span><span class="w"> </span><span class="na">multicast=</span><span class="s">"default"</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;/Interfaces&gt;</span>
-<span class="w">      </span><span class="nt">&lt;AllowMulticast&gt;</span>default<span class="nt">&lt;/AllowMulticast&gt;</span>
-<span class="w">      </span><span class="nt">&lt;MaxMessageSize&gt;</span>65500B<span class="nt">&lt;/MaxMessageSize&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/General&gt;</span>
-<span class="w">    </span><span class="nt">&lt;Internal&gt;</span>
-<span class="w">      </span><span class="nt">&lt;SocketReceiveBufferSize</span><span class="w"> </span><span class="na">min=</span><span class="s">"10MB"</span><span class="nt">/&gt;</span>
-<span class="w">      </span><span class="nt">&lt;Watermarks&gt;</span>
-<span class="w">        </span><span class="nt">&lt;WhcHigh&gt;</span>500kB<span class="nt">&lt;/WhcHigh&gt;</span>
-<span class="w">      </span><span class="nt">&lt;/Watermarks&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/Internal&gt;</span>
-<span class="w">  </span><span class="nt">&lt;/Domain&gt;</span>
-<span class="nt">&lt;/CycloneDDS&gt;</span>
-</code></pre></div>
-<p>This configuration is mostly taken from <a href="https://github.com/eclipse-cyclonedds/cyclonedds/tree/a10ced3c81cc009e7176912190f710331a4d6caf#run-time-configuration">Eclipse Cyclone DDS:Run-time configuration documentation</a>.
-You can see why each value is set as such under the documentation link.</p>
-<p>Set the config file path and enlarge the Linux kernel maximum buffer size before launching Autoware.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">CYCLONEDDS_URI</span><span class="o">=</span>file:///absolute/path/to/cyclonedds_config.xml
-sudo<span class="w"> </span>sysctl<span class="w"> </span>-w<span class="w"> </span>net.core.rmem_max<span class="o">=</span><span class="m">2147483647</span>
-</code></pre></div>
-<p>For more information, Refer to <a href="https://docs.ros.org/en/humble/How-To-Guides/DDS-tuning.html"><abbr title="Robot Operating System">ROS</abbr> 2 documentation</a>. Reading user guide for chosen DDS is helpful for more understanding.</p>
-<h3 id="tuning-dds-for-multiple-host-computers-for-advanced-users">Tuning DDS for multiple host computers (for advanced users)<a class="headerlink" href="#tuning-dds-for-multiple-host-computers-for-advanced-users" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;Interfaces&gt;</span>
-<span class="w">  </span><span class="nt">&lt;NetworkInterface</span><span class="w"> </span><span class="na">autodetermine=</span><span class="s">"true"</span><span class="w"> </span><span class="na">priority=</span><span class="s">"default"</span><span class="w"> </span><span class="na">multicast=</span><span class="s">"default"</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/Interfaces&gt;</span>
-</code></pre></div>
-<p>When Autoware runs on multiple host computers, IP Fragmentation should be taken into account. As <a href="https://docs.ros.org/en/humble/How-To-Guides/DDS-tuning.html#cross-vendor-tuning"><abbr title="Robot Operating System">ROS</abbr> 2 documentation</a> recommends, parameters for IP Fragmentation should be set as shown in the following example.</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>sysctl<span class="w"> </span>-w<span class="w"> </span>net.ipv4.ipfrag_time<span class="o">=</span><span class="m">3</span>
-sudo<span class="w"> </span>sysctl<span class="w"> </span>-w<span class="w"> </span>net.ipv4.ipfrag_high_thresh<span class="o">=</span><span class="m">134217728</span><span class="w">     </span><span class="c1"># (128 MB)</span>
-</code></pre></div>
 <!-- prettier-ignore --></div>
 
 
@@ -7540,13 +7414,13 @@ sudo<span class="w"> </span>sysctl<span class="w"> </span>-w<span class="w"> </s
         
         
           
-          <a href="../../../tutorials/" class="md-footer__link md-footer__link--next" aria-label="Next: Simulation tutorials" rel="next">
+          <a href="enable-multicast-for-lo/" class="md-footer__link md-footer__link--next" aria-label="Next: Enable `multicast` on `lo`" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Simulation tutorials
+                Enable `multicast` on `lo`
               </div>
             </div>
             <div class="md-footer__button md-icon">
