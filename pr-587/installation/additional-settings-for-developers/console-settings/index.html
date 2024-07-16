@@ -717,6 +717,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#colorized-googletest-output" class="md-nav__link">
+    Colorized GoogleTest output
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7434,6 +7441,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#colorized-googletest-output" class="md-nav__link">
+    Colorized GoogleTest output
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7455,15 +7469,19 @@
 <div><h1 id="console-settings-for-ros-2">Console settings for <abbr title="Robot Operating System">ROS</abbr> 2<a class="headerlink" href="#console-settings-for-ros-2" title="Permanent link">#</a></h1>
 <h2 id="colorizing-logger-output">Colorizing logger output<a class="headerlink" href="#colorizing-logger-output" title="Permanent link">#</a></h2>
 <p>By default, <abbr title="Robot Operating System">ROS</abbr> 2 logger doesn't colorize the output.
-To colorize it, write the following in your <code>.bashrc</code>:</p>
+To colorize it, add the following to your <code>~/.bashrc</code>.:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">RCUTILS_COLORIZED_OUTPUT</span><span class="o">=</span><span class="m">1</span>
 </code></pre></div>
 <h2 id="customizing-the-format-of-logger-output">Customizing the format of logger output<a class="headerlink" href="#customizing-the-format-of-logger-output" title="Permanent link">#</a></h2>
 <p>By default, <abbr title="Robot Operating System">ROS</abbr> 2 logger doesn't output detailed information such as file name, function name, or line number.
-To customize it, write the following in your <code>.bashrc</code>:</p>
+To customize it, add the following to your <code>~/.bashrc</code>.:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">RCUTILS_CONSOLE_OUTPUT_FORMAT</span><span class="o">=</span><span class="s2">"[{severity} {time}] [{name}]: {message} ({function_name}() at {file_name}:{line_number})"</span>
 </code></pre></div>
-<p>For more options, see <a href="https://docs.ros.org/en/rolling/Tutorials/Logging-and-logger-configuration.html#console-output-formatting">here</a>.</p>
+<p>For more options, see <a href="https://docs.ros.org/en/rolling/Tutorials/Demos/Logging-and-logger-configuration.html#console-output-formatting">here</a>.</p>
+<h2 id="colorized-googletest-output">Colorized GoogleTest output<a class="headerlink" href="#colorized-googletest-output" title="Permanent link">#</a></h2>
+<p>Add <code>export GTEST_COLOR=1</code> to your <code>~/.bashrc</code>.</p>
+<p>For more details, refer to <a href="https://google.github.io/googletest/advanced.html#colored-terminal-output">Advanced GoogleTest Topics: Colored Terminal Output</a>.</p>
+<p>This is useful when running tests with <code>colcon test</code>.</p>
 <!-- prettier-ignore --></div>
 
 
