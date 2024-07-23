@@ -7269,17 +7269,20 @@
 <p>Please follow the download instruction in <a href="https://github.com/autowarefoundation/autoware/blob/main/ansible/roles/artifacts/README.md#L15">autoware download instructions</a> for updated models downloading.</p>
 <p>The models can be also downloaded manually using download tools such as <code>wget</code> or <code>curl</code>. The latest urls of weight files and param files for each model can be found at <a href="https://github.com/autowarefoundation/autoware/blob/main/ansible/roles/artifacts/tasks/main.yaml">autoware main.yaml file</a></p>
 <p>The example of downloading <code>lidar_centerpoint</code> model:</p>
-<p>$ mkdir -p ~/autoware_data/lidar_centerpoint/
-$ wget -P ~/autoware_data/lidar_centerpoint/ \
- <a href="https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/pts_voxel_encoder_centerpoint.onnx">https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/pts_voxel_encoder_centerpoint.onnx</a> \
- <a href="https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/pts_backbone_neck_head_centerpoint.onnx">https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/pts_backbone_neck_head_centerpoint.onnx</a> \
- <a href="https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/pts_voxel_encoder_centerpoint_tiny.onnx">https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/pts_voxel_encoder_centerpoint_tiny.onnx</a> \
- <a href="https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/pts_backbone_neck_head_centerpoint_tiny.onnx">https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/pts_backbone_neck_head_centerpoint_tiny.onnx</a> \
- <a href="https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/centerpoint_ml_package.param.yaml">https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/centerpoint_ml_package.param.yaml</a> \
- <a href="https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/centerpoint_tiny_ml_package.param.yaml">https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/centerpoint_tiny_ml_package.param.yaml</a> \
- <a href="https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/centerpoint_sigma_ml_package.param.yaml">https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/centerpoint_sigma_ml_package.param.yaml</a> \
- <a href="https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/detection_class_remapper.param.yaml">https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/detection_class_remapper.param.yaml</a> \
- <a href="https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/deploy_metadata.yaml">https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/deploy_metadata.yaml</a></p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>lidar_centerpoint
+
+<span class="gp">$ </span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/autoware_data/lidar_centerpoint/
+<span class="gp">$ </span>wget<span class="w"> </span>-P<span class="w"> </span>~/autoware_data/lidar_centerpoint/<span class="w"> </span><span class="se">\</span>
+<span class="w">       </span>https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/pts_voxel_encoder_centerpoint.onnx<span class="w"> </span><span class="se">\</span>
+<span class="w">       </span>https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/pts_backbone_neck_head_centerpoint.onnx<span class="w"> </span><span class="se">\</span>
+<span class="w">       </span>https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/pts_voxel_encoder_centerpoint_tiny.onnx<span class="w"> </span><span class="se">\</span>
+<span class="w">       </span>https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/pts_backbone_neck_head_centerpoint_tiny.onnx<span class="w"> </span><span class="se">\</span>
+<span class="w">       </span>https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/centerpoint_ml_package.param.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">       </span>https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/centerpoint_tiny_ml_package.param.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">       </span>https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/centerpoint_sigma_ml_package.param.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">       </span>https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/detection_class_remapper.param.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">       </span>https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/deploy_metadata.yaml
+</code></pre></div>
 <!-- prettier-ignore --></div>
 
 
