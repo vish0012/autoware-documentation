@@ -8,20 +8,20 @@
       
       
       
-        <link rel="canonical" href="https://autowarefoundation.github.io/autoware-documentation/main/design/autoware-interfaces/ad-api/list/api/routing/clear_route/">
+        <link rel="canonical" href="https://autowarefoundation.github.io/autoware-documentation/main/design/autoware-interfaces/ad-api/list/api/routing/change_route_points/">
       
       
-        <link rel="prev" href="../change_route_points/">
+        <link rel="prev" href="../change_route/">
       
       
-        <link rel="next" href="../route/">
+        <link rel="next" href="../clear_route/">
       
       <link rel="icon" href="../../../../../../../assets/images/autoware-foundation.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.20">
     
     
       
-        <title>/api/routing/clear_route - Autoware Documentation</title>
+        <title>/api/routing/change_route_points - Autoware Documentation</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#apiroutingclear_route" class="md-skip">
+        <a href="#apiroutingchange_route_points" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              /api/routing/clear_route
+              /api/routing/change_route_points
             
           </span>
         </div>
@@ -7418,17 +7418,44 @@
   
 
 
-<div><h1 id="apiroutingclear_route">/api/routing/clear_route<a class="headerlink" href="#apiroutingclear_route" title="Permanent link">#</a></h1>
+<div><h1 id="apiroutingchange_route_points">/api/routing/change_route_points<a class="headerlink" href="#apiroutingchange_route_points" title="Permanent link">#</a></h1>
 <h2 id="status">Status<a class="headerlink" href="#status" title="Permanent link">#</a></h2>
 <ul>
-<li>Latest Version: v1.0.0</li>
+<li>Latest Version: not released</li>
 <li>Method: function call</li>
-<li>Data Type: <a href="../../../../types/autoware_adapi_v1_msgs/srv/ClearRoute/">autoware_adapi_v1_msgs/srv/ClearRoute</a></li>
+<li>Data Type: <a href="../../../../types/autoware_adapi_v1_msgs/srv/SetRoutePoints/">autoware_adapi_v1_msgs/srv/SetRoutePoints</a></li>
 </ul>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
-<p>Clear the route.</p>
+<p>Same as <a href="./">/api/routing/change_route_points</a>, but change the route while driving.
+This API only accepts the route when the route state is SET.
+In any other state, set the route first or wait for the route change to complete.</p>
 <h2 id="request">Request<a class="headerlink" href="#request" title="Permanent link">#</a></h2>
-<p>None</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>header</td>
+<td>std_msgs/msg/Header</td>
+<td>header for pose transformation</td>
+</tr>
+<tr>
+<td>goal</td>
+<td>geometry_msgs/msg/Pose</td>
+<td>goal pose</td>
+</tr>
+<tr>
+<td>waypoints</td>
+<td>geometry_msgs/msg/Pose[]</td>
+<td>waypoint poses</td>
+</tr>
+</tbody>
+</table>
 <h2 id="response">Response<a class="headerlink" href="#response" title="Permanent link">#</a></h2>
 <table>
 <thead>
@@ -7473,7 +7500,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../change_route_points/" class="md-footer__link md-footer__link--prev" aria-label="Previous: /api/routing/change_route_points" rel="prev">
+          <a href="../change_route/" class="md-footer__link md-footer__link--prev" aria-label="Previous: /api/routing/change_route" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -7482,20 +7509,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                /api/routing/change_route_points
+                /api/routing/change_route
               </div>
             </div>
           </a>
         
         
           
-          <a href="../route/" class="md-footer__link md-footer__link--next" aria-label="Next: /api/routing/route" rel="next">
+          <a href="../clear_route/" class="md-footer__link md-footer__link--next" aria-label="Next: /api/routing/clear_route" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                /api/routing/route
+                /api/routing/clear_route
               </div>
             </div>
             <div class="md-footer__button md-icon">
