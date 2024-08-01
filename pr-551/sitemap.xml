@@ -141,6 +141,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-551/contributing/pull-request-guidelines/ai-pr-review/</loc>
+         <lastmod>2024-08-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware-documentation/pr-551/contributing/pull-request-guidelines/ci-checks/</loc>
          <lastmod>2024-08-01</lastmod>
          <changefreq>daily</changefreq>
@@ -207,6 +212,46 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware-documentation/pr-551/design/autoware-architecture/map/</loc>
+         <lastmod>2024-08-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-551/design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/</loc>
+         <lastmod>2024-08-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-551/design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/category_area/</loc>
+         <lastmod>2024-08-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-551/design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/category_crosswalk/</loc>
+         <lastmod>2024-08-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-551/design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/category_intersection/</loc>
+         <lastmod>2024-08-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-551/design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/category_lane/</loc>
+         <lastmod>2024-08-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-551/design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/category_others/</loc>
+         <lastmod>2024-08-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-551/design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/category_stop_line/</loc>
+         <lastmod>2024-08-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-551/design/autoware-architecture/map/map-requirements/vector-map-requirements-overview/category_traffic_light/</loc>
          <lastmod>2024-08-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -477,6 +522,16 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware-documentation/pr-551/design/autoware-interfaces/ad-api/list/api/planning/cooperation/set_policies/</loc>
+         <lastmod>2024-08-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-551/design/autoware-interfaces/ad-api/list/api/routing/change_route/</loc>
+         <lastmod>2024-08-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-551/design/autoware-interfaces/ad-api/list/api/routing/change_route_points/</loc>
          <lastmod>2024-08-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1251,6 +1306,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-551/how-to-guides/others/planning-evaluation-using-scenarios/</loc>
+         <lastmod>2024-08-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware-documentation/pr-551/how-to-guides/others/reducing-start-delays/</loc>
          <lastmod>2024-08-01</lastmod>
          <changefreq>daily</changefreq>
@@ -1277,6 +1337,31 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/autoware-documentation/pr-551/installation/additional-settings-for-developers/</loc>
+         <lastmod>2024-08-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-551/installation/additional-settings-for-developers/console-settings/</loc>
+         <lastmod>2024-08-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-551/installation/additional-settings-for-developers/network-configuration/</loc>
+         <lastmod>2024-08-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-551/installation/additional-settings-for-developers/network-configuration/dds-settings/</loc>
+         <lastmod>2024-08-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-551/installation/additional-settings-for-developers/network-configuration/enable-multicast-for-lo/</loc>
+         <lastmod>2024-08-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-551/installation/additional-settings-for-developers/network-configuration/multiple-computers/</loc>
          <lastmod>2024-08-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
