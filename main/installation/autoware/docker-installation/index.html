@@ -587,15 +587,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#runtime-setup" class="md-nav__link">
-    Runtime setup
+  <a href="#runtime" class="md-nav__link">
+    Runtime
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#development-setup" class="md-nav__link">
-    Development setup
+  <a href="#development-environment" class="md-nav__link">
+    Development environment
   </a>
   
 </li>
@@ -7476,15 +7476,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#runtime-setup" class="md-nav__link">
-    Runtime setup
+  <a href="#runtime" class="md-nav__link">
+    Runtime
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#development-setup" class="md-nav__link">
-    Development setup
+  <a href="#development-environment" class="md-nav__link">
+    Development environment
   </a>
   
 </li>
@@ -7548,23 +7548,34 @@
 <li>NVIDIA Container Toolkit (preferred)</li>
 <li>NVIDIA CUDA 12 compatible <abbr title="Graphics Processing Unit">GPU</abbr> Driver (preferred)</li>
 </ul>
-<p>The <a href="https://github.com/autowarefoundation/autoware/blob/main/setup-dev-env.sh">setup script</a> will install all required dependencies with the setup script:</p>
+<ol>
+<li>
+<p>Clone <code>autowarefoundation/autoware</code> and move to the directory.</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/autowarefoundation/autoware.git
+<span class="nb">cd</span><span class="w"> </span>autoware
+</code></pre></div>
+</li>
+<li>
+<p>The <a href="https://github.com/autowarefoundation/autoware/blob/main/setup-dev-env.sh">setup script</a> will install all required dependencies with:</p>
 <div class="highlight"><pre><span></span><code>./setup-dev-env.sh<span class="w"> </span>-y<span class="w"> </span>docker
 </code></pre></div>
 <p>To install without <strong>NVIDIA <abbr title="Graphics Processing Unit">GPU</abbr></strong> support:</p>
 <div class="highlight"><pre><span></span><code>./setup-dev-env.sh<span class="w"> </span>-y<span class="w"> </span>--no-nvidia<span class="w"> </span>docker
 </code></pre></div>
+</li>
+</ol>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p><abbr title="Graphics Processing Unit">GPU</abbr> acceleration is required for some features such as object detection and traffic light detection/classification. For details of how to enable these features without a <abbr title="Graphics Processing Unit">GPU</abbr>, refer to the <a href="../../../how-to-guides/others/running-autoware-without-cuda/">Running Autoware without CUDA</a>.</p>
 </div>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h2>
-<h3 id="runtime-setup">Runtime setup<a class="headerlink" href="#runtime-setup" title="Permanent link">#</a></h3>
+<h3 id="runtime">Runtime<a class="headerlink" href="#runtime" title="Permanent link">#</a></h3>
 <p>You can use <code>run.sh</code> to run the Autoware runtime container with the map data:</p>
 <div class="highlight"><pre><span></span><code>./docker/run.sh<span class="w"> </span>--map-path<span class="w"> </span>path_to_map_data
 </code></pre></div>
-<p>For more launch options, you can append a custom launch command instead of using the default launch command <code>ros2 launch autoware_launch autoware.launch.xml</code>:</p>
-<div class="highlight"><pre><span></span><code>./docker/run.sh<span class="w"> </span>--map-path<span class="w"> </span>path_to_map_data<span class="w"> </span>ros2<span class="w"> </span>launch<span class="w"> </span>autoware_launch<span class="w"> </span>autoware.launch.xml<span class="w"> </span>map_path:<span class="o">=</span>/autoware_map<span class="w"> </span>vehicle_model:<span class="o">=</span>sample_vehicle<span class="w"> </span>sensor_model:<span class="o">=</span>sample_sensor_kit
+<p>For more launch options, you can append a custom launch command instead of using the default launch command which is <code>ros2 launch autoware_launch autoware.launch.xml</code>.</p>
+<p>Here is an example of running the runtime container with a custom launch command:</p>
+<div class="highlight"><pre><span></span><code>./docker/run.sh<span class="w"> </span>--map-path<span class="w"> </span>~/autoware_map/sample-map-rosbag<span class="w"> </span>ros2<span class="w"> </span>launch<span class="w"> </span>autoware_launch<span class="w"> </span>planning_simulator.launch.xml<span class="w"> </span>map_path:<span class="o">=</span>/autoware_map<span class="w"> </span>vehicle_model:<span class="o">=</span>sample_vehicle<span class="w"> </span>sensor_model:<span class="o">=</span>sample_sensor_kit
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -7574,12 +7585,12 @@
 <p>Inside the container, you can run the Autoware tutorials by following these links:</p>
 <p><a href="../../../tutorials/ad-hoc-simulation/planning-simulation/">Planning Simulation</a></p>
 <p><a href="../../../tutorials/ad-hoc-simulation/rosbag-replay-simulation/">Rosbag Replay Simulation</a>.</p>
-<h3 id="development-setup">Development setup<a class="headerlink" href="#development-setup" title="Permanent link">#</a></h3>
+<h3 id="development-environment">Development environment<a class="headerlink" href="#development-environment" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>./docker/run.sh<span class="w"> </span>--devel
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>By default workspace mounted on the container will be current directory, you can change the workspace path by <code>--workspace path_to_workspace</code>. For development environments without NVIDIA <abbr title="Graphics Processing Unit">GPU</abbr> support use <code>--no-nvidia</code>.</p>
+<p>By default workspace mounted on the container will be current directory(pwd), you can change the workspace path by <code>--workspace path_to_workspace</code>. For development environments without NVIDIA <abbr title="Graphics Processing Unit">GPU</abbr> support use <code>--no-nvidia</code>.</p>
 </div>
 <h4 id="how-to-set-up-a-workspace">How to set up a workspace<a class="headerlink" href="#how-to-set-up-a-workspace" title="Permanent link">#</a></h4>
 <ol>
