@@ -7155,6 +7155,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#citation" class="md-nav__link">
+    Citation
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7208,7 +7215,7 @@ wget<span class="w"> </span>https://github.com/autowarefoundation/autoware_rosba
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>.
 </code></pre></div>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h2>
-<p>Define prompts in the validation.jsonfile. The tool will use these prompts to detect objects. You can add your prompts
+<p>Define prompts in the <code>validation.json</code> file. The tool will use these prompts to detect objects. You can add your prompts
 as dictionaries under the prompts key. Each dictionary should have two keys:</p>
 <ul>
 <li><code>prompt</code>: The prompt that will be used to detect the object. This prompt will be blurred in the anonymization process.</li>
@@ -7345,6 +7352,45 @@ follow the Option 1 for the unified model with the YOLOv8 model trained by you.<
 <p>After anonymizing your data, you can share your anonymized data with the Autoware community. If you want to share your
 data with the Autoware community, you should create an issue and pull request to
 the <a href="https://github.com/autowarefoundation/autoware-documentation">Autoware Documentation repository</a>.</p>
+<h2 id="citation">Citation<a class="headerlink" href="#citation" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nc">@article</span><span class="p">{</span><span class="nl">liu2023grounding</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="p">=</span><span class="s">{Grounding dino: Marrying dino with grounded pre-training for open-set object detection}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{Liu, Shilong and Zeng, Zhaoyang and Ren, Tianhe and Li, Feng and Zhang, Hao and Yang, Jie and Li, Chunyuan and Yang, Jianwei and Su, Hang and Zhu, Jun and others}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">journal</span><span class="p">=</span><span class="s">{arXiv preprint arXiv:2303.05499}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">year</span><span class="p">=</span><span class="s">{2023}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nc">@article</span><span class="p">{</span><span class="nl">kirillov2023segany</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="p">=</span><span class="s">{Segment Anything}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{Kirillov, Alexander and Mintun, Eric and Ravi, Nikhila and Mao, Hanzi and Rolland, Chloe and Gustafson, Laura and Xiao, Tete and Whitehead, Spencer and Berg, Alexander C. and Lo, Wan-Yen and Doll{\'a}r, Piotr and Girshick, Ross}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">journal</span><span class="p">=</span><span class="s">{arXiv:2304.02643}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">year</span><span class="p">=</span><span class="s">{2023}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nc">@software</span><span class="p">{</span><span class="nl">ilharco_gabriel_2021_5143773</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="s">{Ilharco, Gabriel and</span>
+<span class="s">                  Wortsman, Mitchell and</span>
+<span class="s">                  Wightman, Ross and</span>
+<span class="s">                  Gordon, Cade and</span>
+<span class="s">                  Carlini, Nicholas and</span>
+<span class="s">                  Taori, Rohan and</span>
+<span class="s">                  Dave, Achal and</span>
+<span class="s">                  Shankar, Vaishaal and</span>
+<span class="s">                  Namkoong, Hongseok and</span>
+<span class="s">                  Miller, John and</span>
+<span class="s">                  Hajishirzi, Hannaneh and</span>
+<span class="s">                  Farhadi, Ali and</span>
+<span class="s">                  Schmidt, Ludwig}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="w">        </span><span class="p">=</span><span class="w"> </span><span class="s">{OpenCLIP}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">month</span><span class="w">        </span><span class="p">=</span><span class="w"> </span><span class="nv">jul</span><span class="p">,</span>
+<span class="w">  </span><span class="na">year</span><span class="w">         </span><span class="p">=</span><span class="w"> </span><span class="m">2021</span><span class="p">,</span>
+<span class="w">  </span><span class="na">note</span><span class="w">         </span><span class="p">=</span><span class="w"> </span><span class="s">{If you use this software, please cite it as below.}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">publisher</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="s">{Zenodo}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">version</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">{0.1}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">doi</span><span class="w">          </span><span class="p">=</span><span class="w"> </span><span class="s">{10.5281/zenodo.5143773}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">url</span><span class="w">          </span><span class="p">=</span><span class="w"> </span><span class="s">{https://doi.org/10.5281/zenodo.5143773}</span>
+<span class="p">}</span>
+</code></pre></div>
 <!-- prettier-ignore --></div>
 
 
