@@ -7450,13 +7450,31 @@
 </ul>
 </li>
 <li>Use <code>const</code> for variables whose values will not change after initialization, and for functions or arguments that guarantee they will not modify the object's state. This improves code safety and clarity by preventing unintended side effects.</li>
-<li>When not using an index, prefer <code>for (const auto &amp; e : v)</code>.</li>
-<li>For index access, prefer <code>.at(idx)</code> over <code>[idx]</code> whenever possible for safety.</li>
-<li>Avoid using auto with <code>Eigen::Matrix</code> or <code>Eigen::Vector</code> variables, as it can lead to bugs.</li>
-<li>Safe memory management is crucial for accident-free autonomous vehicles, so <code>new</code>, <code>delete</code>, <code>free</code>, and raw pointers are generally not acceptable.</li>
-<li>When using <code>mutex</code>, use <code>std::lock_guard</code> instead of <code>std::lock</code> and <code>std::unlock</code>.</li>
+<li>When not using an index, prefer <code>for (const auto &amp; e : v)</code>.<ul>
+<li>cf. <a href="https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es71-prefer-a-range-for-statement-to-a-for-statement-when-there-is-a-choice">C++ Core Guidelines, ES.71: Prefer a range-for-statement to a for-statement when there is a choice</a></li>
+</ul>
+</li>
+<li>For index access, prefer <code>.at(idx)</code> over <code>[idx]</code> whenever possible for safety.<ul>
+<li>cf. <a href="https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#slcon3-avoid-bounds-errors">C++ Core Guidelines, Avoid bounds errors</a></li>
+</ul>
+</li>
+<li>Avoid using auto with <code>Eigen::Matrix</code> or <code>Eigen::Vector</code> variables, as it can lead to bugs.<ul>
+<li>cf. <a href="https://eigen.tuxfamily.org/dox/TopicPitfalls.html">Eigen, C++11 and the auto keyword</a></li>
+</ul>
+</li>
+<li>Safe memory management is crucial for accident-free autonomous vehicles, so <code>new</code>, <code>delete</code>, <code>malloc</code>, <code>free</code>, and raw pointers are generally not acceptable.<ul>
+<li>cf. <a href="https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c149-use-unique_ptr-or-shared_ptr-to-avoid-forgetting-to-delete-objects-created-using-new">C++ Core Guidelines, C.149: Use unique_ptr or shared_ptr to avoid forgetting to delete objects created using new</a>, <a href="https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r10-avoid-malloc-and-free">C++ Core Guidelines, R.10: Avoid malloc() and free()</a></li>
+</ul>
+</li>
+<li>When using <code>mutex</code>, use <code>std::lock_guard</code> instead of <code>std::lock</code> and <code>std::unlock</code>.<ul>
+<li>cf. <a href="https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#Rr-raii">C++ Core Guidelines, RAII</a></li>
+</ul>
+</li>
 <li>Use assert to validate that function arguments and return values meet specific conditions or expectations.</li>
-<li>Be cautious when using <code>throw</code>. C++ exceptions should only be used when it's acceptable for the process to terminate if uncaught. This applies to scenarios where Autoware has no other choice but to shut down.</li>
+<li>Be cautious when using <code>throw</code>. C++ exceptions should only be used when it's acceptable for the process to terminate if uncaught. This applies to scenarios where Autoware has no other choice but to shut down.<ul>
+<li>cf. <a href="https://google.github.io/styleguide/cppguide.html#Exceptions">Google C++ Style Guide, Exceptions</a></li>
+</ul>
+</li>
 </ul>
 <h2 id="ros-2-style-guide"><abbr title="Robot Operating System">ROS</abbr> 2 Style Guide<a class="headerlink" href="#ros-2-style-guide" title="Permanent link">#</a></h2>
 <p>As a basic rule, follow <a href="https://docs.ros.org/en/humble/The-ROS2-Project/Contributing/Developer-Guide.html">the <abbr title="Robot Operating System">ROS</abbr> 2 developer guide</a> and <a href="ros-nodes/class-design/">the <abbr title="Robot Operating System">ROS</abbr> nodes guidelines</a>. The following are commonly pointed out areas that require attention:</p>
@@ -7471,14 +7489,23 @@
 </ul>
 </li>
 <li>Follow <a href="ros-nodes/directory-structure/">the directory structure guideline</a>.</li>
-<li>If <code>RCLCPP_INFO</code> generates a large amount of logs, use <code>RCLCPP_INFO_THROTTLE</code>.</li>
+<li>If <code>RCLCPP_INFO</code> generates a large amount of logs, use <code>RCLCPP_INFO_THROTTLE</code>.<ul>
+<li>cf. <a href="ros-nodes/console-logging/#use-throttled-logging-when-the-log-is-unnecessarily-shown-repeatedly-required-non-automated">Coding guidelines, ros-nodes, Use throttled logging when the log is unnecessarily shown repeatedly</a></li>
+</ul>
+</li>
 <li>Avoid setting default values in <code>declare_parameter</code>. Instead, specify them in a config file or launch file.</li>
 </ul>
 <h2 id="autoware-style-guide">Autoware Style Guide<a class="headerlink" href="#autoware-style-guide" title="Permanent link">#</a></h2>
 <p>For Autoware-specific styles, refer to the following:</p>
 <ul>
-<li>Use the <code>autoware_</code> prefix for package names.</li>
-<li>Add implementations within the <code>autoware</code> namespace.</li>
+<li>Use the <code>autoware_</code> prefix for package names.<ul>
+<li>cf. <a href="https://github.com/orgs/autowarefoundation/discussions/4097">Prefix packages with autoware_</a></li>
+</ul>
+</li>
+<li>Add implementations within the <code>autoware</code> namespace.<ul>
+<li>cf. <a href="https://github.com/orgs/autowarefoundation/discussions/4097#discussioncomment-8384169">Prefix packages with autoware_, Option 3:</a></li>
+</ul>
+</li>
 <li>In <code>CMakeLists.txt</code>, use <code>autoware_package()</code>.<ul>
 <li>cf. <a href="https://github.com/autowarefoundation/autoware_cmake/tree/main/autoware_cmake">autoware_cmake README</a></li>
 </ul>
