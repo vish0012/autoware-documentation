@@ -7463,7 +7463,7 @@
 <ul>
 <li>Use <code>RCLCPP</code> instead of <code>printf</code> or <code>std::cout</code>.<ul>
 <li>Reasons include the following:<ul>
-<li>It allows for consistent log level management. For instance, with <code>RCLCPP_hoge</code>, you can simply set <code>--log_level</code> to adjust the log level uniformly across the application.</li>
+<li>It allows for consistent log level management. For instance, with <code>RCLCPP</code>, you can simply set <code>--log_level</code> to adjust the log level uniformly across the application.</li>
 <li>You can standardize the format using <code>RCUTILS_CONSOLE_OUTPUT_FORMAT</code>.</li>
 <li>With <code>RCLCPP</code>, logs are automatically recorded to <code>/rosout</code>. These logs can be saved to a rosbag, which can then be replayed to review the log data.</li>
 </ul>
