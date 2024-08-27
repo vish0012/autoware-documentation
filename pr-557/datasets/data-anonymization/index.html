@@ -7149,6 +7149,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#share-your-anonymized-data" class="md-nav__link">
     Share Your Anonymized Data
   </a>
@@ -7347,6 +7354,16 @@ YOLOv8 model, you should use following command. But we recommend to use the unif
 follow the Option 1 for the unified model with the YOLOv8 model trained by you.</p>
 <p>You should set your configuration in config/yolo_anonymize.yaml file.</p>
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>main.py<span class="w"> </span>config/yolo_anonymize.yaml<span class="w"> </span>--yolo_anonymize
+</code></pre></div>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">#</a></h2>
+<ul>
+<li><strong>Error 1</strong>: <code>torch.OutOfMemoryError: CUDA out of memory</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code>torch.OutOfMemoryError:<span class="w"> </span>CUDA<span class="w"> </span>out<span class="w"> </span>of<span class="w"> </span>memory.<span class="w"> </span>Tried<span class="w"> </span>to<span class="w"> </span>allocate<span class="w"> </span><span class="m">1024</span>.00<span class="w"> </span>MiB.<span class="w"> </span>GPU<span class="w"> </span><span class="m">0</span><span class="w"> </span>has<span class="w"> </span>a<span class="w"> </span>total<span class="w"> </span>capacity<span class="w"> </span>of<span class="w"> </span><span class="m">10</span>.87<span class="w"> </span>GiB<span class="w"> </span>of<span class="w"> </span>which<span class="w"> </span><span class="m">1010</span>.88<span class="w"> </span>MiB<span class="w"> </span>is<span class="w"> </span>free.<span class="w"> </span>Including<span class="w"> </span>non-PyTorch<span class="w"> </span>memory,<span class="w"> </span>this<span class="w"> </span>process<span class="w"> </span>has<span class="w"> </span><span class="m">8</span>.66<span class="w"> </span>GiB<span class="w"> </span>memory<span class="w"> </span><span class="k">in</span><span class="w"> </span>use.<span class="w"> </span>Of<span class="w"> </span>the<span class="w"> </span>allocated<span class="w"> </span>memory<span class="w"> </span><span class="m">8</span>.21<span class="w"> </span>GiB<span class="w"> </span>is<span class="w"> </span>allocated<span class="w"> </span>by<span class="w"> </span>PyTorch,<span class="w"> </span>and<span class="w"> </span><span class="m">266</span>.44<span class="w"> </span>MiB<span class="w"> </span>is<span class="w"> </span>reserved<span class="w"> </span>by<span class="w"> </span>PyTorch<span class="w"> </span>but<span class="w"> </span>unallocated.<span class="w"> </span>If<span class="w"> </span>reserved<span class="w"> </span>but<span class="w"> </span>unallocated<span class="w"> </span>memory<span class="w"> </span>is<span class="w"> </span>large<span class="w"> </span>try<span class="w"> </span>setting<span class="w"> </span><span class="nv">PYTORCH_CUDA_ALLOC_CONF</span><span class="o">=</span>expandable_segments:True<span class="w"> </span>to<span class="w"> </span>avoid<span class="w"> </span>fragmentation.<span class="w">  </span>See<span class="w"> </span>documentation<span class="w"> </span><span class="k">for</span><span class="w"> </span>Memory<span class="w"> </span>Management<span class="w">  </span><span class="o">(</span>https://pytorch.org/docs/stable/notes/cuda.html#environment-variables<span class="o">)</span>
+</code></pre></div>
+<p>This error occurs when the <abbr title="Graphics Processing Unit">GPU</abbr> memory is not enough to run the model. You can add the following environment variable to
+avoid this error.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PYTORCH_CUDA_ALLOC_CONF</span><span class="o">=</span>expandable_segments:True
 </code></pre></div>
 <h2 id="share-your-anonymized-data">Share Your Anonymized Data<a class="headerlink" href="#share-your-anonymized-data" title="Permanent link">#</a></h2>
 <p>After anonymizing your data, you can share your anonymized data with the Autoware community. If you want to share your
