@@ -7507,15 +7507,15 @@
 <h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">#</a></h2>
 <h3 id="nodes">Nodes<a class="headerlink" href="#nodes" title="Permanent link">#</a></h3>
 <h4 id="gnss_poser_nodehpp"><code>gnss_poser_node.hpp</code><a class="headerlink" href="#gnss_poser_nodehpp" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">GNSSPoserNode</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Node</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">GNSSPoser</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">Node</span>
 <span class="p">{</span>
 <span class="w">  </span><span class="k">public</span><span class="o">:</span>
-<span class="w">    </span><span class="k">explicit</span><span class="w"> </span><span class="n">GNSSPoserNode</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">NodeOptions</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">node_options</span><span class="p">);</span>
+<span class="w">    </span><span class="k">explicit</span><span class="w"> </span><span class="n">GNSSPoser</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">NodeOptions</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">node_options</span><span class="p">);</span>
 <span class="w">  </span><span class="p">...</span>
 <span class="p">}</span>
 </code></pre></div>
 <h4 id="gnss_poser_nodecpp"><code>gnss_poser_node.cpp</code><a class="headerlink" href="#gnss_poser_nodecpp" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="n">GNSSPoserNode</span><span class="o">::</span><span class="n">GNSSPoserNode</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">NodeOptions</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">node_options</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">GNSSPoser</span><span class="o">::</span><span class="n">GNSSPoser</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">rclcpp</span><span class="o">::</span><span class="n">NodeOptions</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">node_options</span><span class="p">)</span>
 <span class="o">:</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="s">"gnss_poser"</span><span class="p">,</span><span class="w"> </span><span class="n">node_options</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">  </span><span class="p">...</span>
@@ -7541,7 +7541,7 @@
 <span class="p">}</span><span class="w"> </span><span class="c1">// namespace autoware::gnss_poser</span>
 
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;rclcpp_components/register_node_macro.hpp&gt;</span>
-<span class="n">RCLCPP_COMPONENTS_REGISTER_NODE</span><span class="p">(</span><span class="n">autoware</span><span class="o">::</span><span class="n">gnss_poser</span><span class="o">::</span><span class="n">GNSSPoserNode</span><span class="p">)</span>
+<span class="n">RCLCPP_COMPONENTS_REGISTER_NODE</span><span class="p">(</span><span class="n">autoware</span><span class="o">::</span><span class="n">gnss_poser</span><span class="o">::</span><span class="n">GNSSPoser</span><span class="p">)</span>
 </code></pre></div>
 <ul>
 <li>The component should be registered at the end of the <code>gnss_poser_node.cpp</code> file, outside the namespaces.</li>
