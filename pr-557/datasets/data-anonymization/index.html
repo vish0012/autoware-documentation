@@ -7322,6 +7322,14 @@ instructions will guide you to set each configuration file.</p>
 </code></pre></div>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h2>
 <p>The tool provides two options to anonymize images in <abbr title="Robot Operating System">ROS</abbr> 2 bag files.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If your <abbr title="Robot Operating System">ROS</abbr> 2 bag file includes custom message types from Autoware or any other packages, you should source the 
+their workspaces before running the tool.</p>
+<p>You can source Autoware workspace with the following command.
+</p><div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>/path/to/your/workspace/install/setup.bash
+</code></pre></div>
+</div>
 <h3 id="option-1-anonymize-with-unified-model">Option 1: Anonymize with Unified Model<a class="headerlink" href="#option-1-anonymize-with-unified-model" title="Permanent link">#</a></h3>
 <p>You should provide a single rosbag and tool anonymize images in rosbag with a unified model. The model is a combination
 of GroundingDINO, OpenCLIP, YOLOv8 and SegmentAnything. If you don't want to use pre-trained YOLOv8 model, you can
@@ -7337,7 +7345,12 @@ running the following command, the tool will create a dataset in YOLO format.</p
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>main.py<span class="w"> </span>config/yolo_create_dataset.yaml<span class="w"> </span>--yolo_create_dataset
 </code></pre></div>
 <h4 id="step-2-manually-label-the-missing-labels">Step 2: Manually Label the Missing Labels<a class="headerlink" href="#step-2-manually-label-the-missing-labels" title="Permanent link">#</a></h4>
-<p>The dataset which is created in the first step has some missing labels. You should label the missing labels manually.</p>
+<p>The dataset which is created in the first step has some missing labels. You should label the missing labels manually.
+You can use the following example tools to label the missing labels:</p>
+<ul>
+<li><a href="https://github.com/HumanSignal/label-studio">label-studio</a></li>
+<li><a href="https://roboflow.com/">Roboflow</a> (You can use the free version)</li>
+</ul>
 <h4 id="step-3-split-the-dataset">Step 3: Split the Dataset<a class="headerlink" href="#step-3-split-the-dataset" title="Permanent link">#</a></h4>
 <p>Split the dataset into training and validation sets. Give the path to the dataset folder which is created in the first
 step.</p>
