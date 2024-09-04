@@ -8263,11 +8263,11 @@ you can check debug image with rviz2 or <a href="http://wiki.ros.org/rqt">rqt</a
 The default <abbr title="Global Navigation Satellite System">GNSS</abbr> sensor options at <a href="https://github.com/autowarefoundation/sample_sensor_kit_launch/blob/main/sample_sensor_kit_launch/launch/gnss.launch.xml"><code>sample_sensor_kit_launch</code></a> for <a href="https://www.u-blox.com/en/">u-blox</a>
 and <a href="https://www.septentrio.com/en">septentrio</a> is included in <code>gnss.launch.xml</code>,
 so If we use other sensors as <abbr title="Global Navigation Satellite System">GNSS</abbr>/INS receiver, we need to add it here.
-Moreover, <a href="https://github.com/autowarefoundation/autoware.universe/tree/main/sensing/gnss_poser">gnss_poser</a> package launches here,
+Moreover, <a href="https://github.com/autowarefoundation/autoware.universe/tree/main/sensing/autoware_gnss_poser">gnss_poser</a> package launches here,
 we will use this package for the pose source of our vehicle at localization initialization but remember,
 your sensor_driver must provide <a href="https://github.com/autowarefoundation/autoware_msgs/blob/main/autoware_sensing_msgs/msg/GnssInsOrientationStamped.msg">autoware gnss orientation message</a> for this node.
 If you are ready with your <abbr title="Global Navigation Satellite System">GNSS</abbr>/INS driver,
-you must set <code>navsatfix_topic_name</code> and <code>orientation_topic_name</code> variables at this launch file for <a href="https://github.com/autowarefoundation/autoware.universe/tree/main/sensing/gnss_poser">gnss_poser</a> arguments.
+you must set <code>navsatfix_topic_name</code> and <code>orientation_topic_name</code> variables at this launch file for <a href="https://github.com/autowarefoundation/autoware.universe/tree/main/sensing/autoware_gnss_poser">gnss_poser</a> arguments.
 For Example, necessary modifications for <your-gnss-sensor> should be like this:</your-gnss-sensor></p>
 <div class="highlight"><pre><span></span><code><span class="w"> </span> ...
 <span class="gd">- &lt;arg name="gnss_receiver" default="ublox" description="ublox(default) or septentrio"/&gt;</span>
@@ -8332,7 +8332,7 @@ our <code>gnss.launch.xml</code> for tutorial vehicle should be like this file
 <span class="w">    </span><span class="nt">&lt;/group&gt;</span>
 
 <span class="w">    </span><span class="cm">&lt;!-- NavSatFix to MGRS Pose --&gt;</span>
-<span class="w">    </span><span class="nt">&lt;include</span><span class="w"> </span><span class="na">file=</span><span class="s">"$(find-pkg-share gnss_poser)/launch/gnss_poser.launch.xml"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;include</span><span class="w"> </span><span class="na">file=</span><span class="s">"$(find-pkg-share autoware_gnss_poser)/launch/gnss_poser.launch.xml"</span><span class="nt">&gt;</span>
 <span class="w">      </span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">"input_topic_fix"</span><span class="w"> </span><span class="na">value=</span><span class="s">"$(var navsatfix_topic_name)"</span><span class="nt">/&gt;</span>
 <span class="w">      </span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">"input_topic_orientation"</span><span class="w"> </span><span class="na">value=</span><span class="s">"$(var orientation_topic_name)"</span><span class="nt">/&gt;</span>
 

@@ -7379,6 +7379,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#autoware-style-guide" class="md-nav__link">
+    Autoware Style Guide
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7411,9 +7418,41 @@
 <ul>
 <li>Keep things consistent.</li>
 <li>Automate where possible, using simple checks for formatting, syntax, etc.</li>
+<li>Write comments and documentation in English.</li>
+<li>Functions that are too complex (low cohesion) should be appropriately split into smaller functions (e.g. less than 40 lines in one function is recommended in the <a href="https://google.github.io/styleguide/cppguide.html#Write_Short_Functions">google style guideline</a>).</li>
+<li>Try to minimize the use of member variables or global variables that have a large scope.</li>
+<li>Whenever possible, break large pull requests into smaller, manageable PRs (less than 200 lines of change is recommended in some research e.g. <a href="https://opensource.com/article/18/6/anatomy-perfect-pull-request">here</a>).</li>
 <li>When it comes to code reviews, don't spend too much time on trivial disagreements. For details see:<ul>
 <li><a href="https://en.wikipedia.org/wiki/Law_of_triviality">https://en.wikipedia.org/wiki/Law_of_triviality</a></li>
 <li><a href="https://steemit.com/programming/@emrebeyler/code-reviews-and-parkinson-s-law-of-triviality">https://steemit.com/programming/@emrebeyler/code-reviews-and-parkinson-s-law-of-triviality</a></li>
+</ul>
+</li>
+<li>Please follow the guidelines for each language.<ul>
+<li><a href="languages/cpp/">C++</a></li>
+<li><a href="languages/python/">Python</a></li>
+<li><a href="languages/shell-scripts/">Shell script</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="autoware-style-guide">Autoware Style Guide<a class="headerlink" href="#autoware-style-guide" title="Permanent link">#</a></h2>
+<p>For Autoware-specific styles, refer to the following:</p>
+<ul>
+<li>Use the <code>autoware_</code> prefix for package names.<ul>
+<li>cf. <a href="ros-nodes/directory-structure/#package-name">Directory structure guideline, Package name</a></li>
+<li>cf. <a href="https://github.com/orgs/autowarefoundation/discussions/4097">Prefix packages with autoware_</a></li>
+</ul>
+</li>
+<li>Add implementations within the <code>autoware</code> namespace.<ul>
+<li>cf. <a href="ros-nodes/class-design/#namespaces">Class design guideline, Namespaces</a></li>
+<li>cf. <a href="https://github.com/orgs/autowarefoundation/discussions/4097#discussioncomment-8384169">Prefix packages with autoware_, Option 3:</a></li>
+</ul>
+</li>
+<li>The header files to be exported must be placed in the <code>PACKAGE_NAME/include/autoware/</code> directory.<ul>
+<li>cf. <a href="ros-nodes/directory-structure/#exporting-headers">Directory structure guideline, Exporting headers</a></li>
+</ul>
+</li>
+<li>In <code>CMakeLists.txt</code>, use <code>autoware_package()</code>.<ul>
+<li>cf. <a href="https://github.com/autowarefoundation/autoware_cmake/tree/main/autoware_cmake">autoware_cmake README</a></li>
 </ul>
 </li>
 </ul>

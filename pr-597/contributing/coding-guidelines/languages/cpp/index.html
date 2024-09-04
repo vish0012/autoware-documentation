@@ -6415,6 +6415,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#do-not-use-the-auto-keywords-with-eigens-expressions-required" class="md-nav__link">
+    Do not use the auto keywords with Eigen's expressions (required)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-rclcpp_-eg-rclcpp_info-macros-instead-of-printf-or-stdcout-for-logging-required" class="md-nav__link">
+    Use RCLCPP_* (e.g. RCLCPP_INFO) macros instead of printf or std::cout for logging (required)
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -7511,6 +7525,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#do-not-use-the-auto-keywords-with-eigens-expressions-required" class="md-nav__link">
+    Do not use the auto keywords with Eigen's expressions (required)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-rclcpp_-eg-rclcpp_info-macros-instead-of-printf-or-stdcout-for-logging-required" class="md-nav__link">
+    Use RCLCPP_* (e.g. RCLCPP_INFO) macros instead of printf or std::cout for logging (required)
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -7704,6 +7732,29 @@ For the usage, see <a href="../../../../how-to-guides/others/applying-clang-tidy
 <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">RosApi</span><span class="p">;</span>
 <span class="n">RosApi</span><span class="w"> </span><span class="n">ros_api</span><span class="p">;</span>
 </code></pre></div>
+<h3 id="do-not-use-the-auto-keywords-with-eigens-expressions-required">Do not use the auto keywords with Eigen's expressions (required)<a class="headerlink" href="#do-not-use-the-auto-keywords-with-eigens-expressions-required" title="Permanent link">#</a></h3>
+<h4 id="rationale_5">Rationale<a class="headerlink" href="#rationale_5" title="Permanent link">#</a></h4>
+<ul>
+<li>Avoid using auto with <code>Eigen::Matrix</code> or <code>Eigen::Vector</code> variables, as it can lead to bugs.</li>
+</ul>
+<h4 id="reference_5">Reference<a class="headerlink" href="#reference_5" title="Permanent link">#</a></h4>
+<ul>
+<li><a href="https://eigen.tuxfamily.org/dox/TopicPitfalls.html">Eigen, C++11 and the auto keyword</a></li>
+</ul>
+<h3 id="use-rclcpp_-eg-rclcpp_info-macros-instead-of-printf-or-stdcout-for-logging-required">Use RCLCPP_* (e.g. RCLCPP_INFO) macros instead of printf or std::cout for logging (required)<a class="headerlink" href="#use-rclcpp_-eg-rclcpp_info-macros-instead-of-printf-or-stdcout-for-logging-required" title="Permanent link">#</a></h3>
+<h4 id="rationale_6">Rationale<a class="headerlink" href="#rationale_6" title="Permanent link">#</a></h4>
+<ul>
+<li>Reasons include the following:<ul>
+<li>It allows for consistent log level management. For instance, with RCLCPP_* macros, you can simply set --log_level to adjust the log level uniformly across the application.</li>
+<li>You can standardize the format using RCUTILS_CONSOLE_OUTPUT_FORMAT.</li>
+<li>With RCLCPP_* macros, logs are automatically recorded to /rosout. These logs can be saved to a rosbag, which can then be replayed to review the log data.</li>
+</ul>
+</li>
+</ul>
+<h4 id="reference_6">Reference<a class="headerlink" href="#reference_6" title="Permanent link">#</a></h4>
+<ul>
+<li><a href="../../ros-nodes/console-logging/">Autoware Documentation for Console logging in <abbr title="Robot Operating System">ROS</abbr> Node</a></li>
+</ul>
 <!-- prettier-ignore --></div>
 
 
