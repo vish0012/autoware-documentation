@@ -14,7 +14,7 @@
         <link rel="prev" href="../contributing/discussion-guidelines/">
       
       
-        <link rel="next" href="../models/">
+        <link rel="next" href="data-anonymization/">
       
       <link rel="icon" href="../assets/images/autoware-foundation.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.20">
@@ -7075,12 +7075,18 @@
             
           
         
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index md-nav__link--active">
           <a href="./">Datasets</a>
+          
+            <label for="__nav_8">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
           
         </div>
       
@@ -7091,6 +7097,54 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_2" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="data-anonymization/">Data Anonymization</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_2">
+          <span class="md-nav__icon md-icon"></span>
+          Data Anonymization
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
             
           
         </ul>
@@ -7462,14 +7516,12 @@
 <p>Autoware partners provide datasets for testing and development. These datasets are available for download here.</p>
 <h2 id="istanbul-open-dataset">Istanbul Open Dataset<a class="headerlink" href="#istanbul-open-dataset" title="Permanent link">#</a></h2>
 <p>The dataset is collected in the following route. Tunnels and bridges are annotated on the image.
-The included specific areas into the dataset are:</p>
-<ul>
-<li>Galata Bridge (Small Bridge)</li>
-<li>Eurasia Tunnel (Long Tunnel with High Elevation Changes)</li>
-<li>2nd Bosphorus Bridge (Long Bridge)</li>
-<li>Kagithane-Bomonti Tunnel (Small Tunnel)</li>
-<li>Viaducts, road junctions, highways, dense urban areas...</li>
-</ul>
+The included specific areas into the dataset are:
+  - Galata Bridge (Small Bridge)
+  - Eurasia Tunnel (Long Tunnel with High Elevation Changes)
+  - 2nd Bosphorus Bridge (Long Bridge)
+  - Kagithane-Bomonti Tunnel (Small Tunnel)
+  - Viaducts, road junctions, highways, dense urban areas...</p>
 <p align="center">
     <img src="images/ist_dataset_route_3_resized.png" alt="ist_dataset_route2" width="80%">
 </p>
@@ -7494,10 +7546,8 @@ The included specific areas into the dataset are:</p>
 </li>
 </ul>
 <ul>
-<li>
-<p>You can find the <abbr title="Robot Operating System">ROS</abbr> 2 bag which is collected simultaneously with the mapping data:</p>
-<ul>
-<li><a href="https://drive.google.com/drive/folders/1HH_ghCqQwuP1v8mt4tjvb2Ks_138o52d?usp=drive_link">https://drive.google.com/drive/folders/1HH_ghCqQwuP1v8mt4tjvb2Ks_138o52d?usp=drive_link</a></li>
+<li>You can find the <abbr title="Robot Operating System">ROS</abbr> 2 bag which is collected simultaneously with the mapping data:<ul>
+<li><a href="https://drive.google.com/drive/folders/1NikD8Cu6qEsQmz5qwlJNl5GXomEus-Q0?usp=drive_link">https://drive.google.com/drive/folders/1NikD8Cu6qEsQmz5qwlJNl5GXomEus-Q0?usp=drive_link</a></li>
 <li>Due to the simultaneous data collection, we can assume that the point cloud maps and <abbr title="Global Navigation Satellite System">GNSS</abbr>/INS
   data are the ground truth data for this rosbag.</li>
 </ul>
@@ -7740,13 +7790,13 @@ The pcap file and ros2 bag file is recorded in the same time with slight differe
         
         
           
-          <a href="../models/" class="md-footer__link md-footer__link--next" aria-label="Next: Machine learning models" rel="next">
+          <a href="data-anonymization/" class="md-footer__link md-footer__link--next" aria-label="Next: Rosbag2 Anonymizer" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Machine learning models
+                Rosbag2 Anonymizer
               </div>
             </div>
             <div class="md-footer__button md-icon">
