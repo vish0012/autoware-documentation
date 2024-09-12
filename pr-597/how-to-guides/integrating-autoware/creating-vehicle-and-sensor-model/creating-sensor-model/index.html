@@ -7941,11 +7941,23 @@ but you need to update <code>sensor_id</code>, <code>data_port</code>, <code>sen
 </code></pre></div>
 <p>Please add similar launch groups according to your sensor architecture.
 For example, we use Robosense Lidars for our <code>tutorial_vehicle</code>,
-so the lidar group for Robosense Lidar should be like this structure:</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>under construction</p>
-</div>
+so the lidar group for Robosense Lidar (i.e., for Bpearl) should be like this structure:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;group&gt;</span>
+<span class="w">      </span><span class="nt">&lt;push-ros-namespace</span><span class="w"> </span><span class="na">namespace=</span><span class="s">"&lt;YOUR-SENSOR-NAMESPACE&gt;"</span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;include</span><span class="w"> </span><span class="na">file=</span><span class="s">"$(find-pkg-share common_sensor_launch)/launch/robosense_Bpearl.launch.xml"</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">"max_range"</span><span class="w"> </span><span class="na">value=</span><span class="s">"30.0"</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">"sensor_frame"</span><span class="w"> </span><span class="na">value=</span><span class="s">"&lt;YOUR-ROBOSENSE-SENSOR-FRAME&gt;"</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">"sensor_ip"</span><span class="w"> </span><span class="na">value=</span><span class="s">"&lt;YOUR-ROBOSENSE-SENSOR-IP&gt;"</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">"host_ip"</span><span class="w"> </span><span class="na">value=</span><span class="s">"$(var host_ip)"</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">"data_port"</span><span class="w"> </span><span class="na">value=</span><span class="s">"&lt;YOUR-ROBOSENSE-SENSOR-DATA-PORT&gt;"</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">"gnss_port"</span><span class="w"> </span><span class="na">value=</span><span class="s">"&lt;YOUR-ROBOSENSE-SENSOR-GNSS-PORT&gt;"</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">"scan_phase"</span><span class="w"> </span><span class="na">value=</span><span class="s">"0.0"</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">"launch_driver"</span><span class="w"> </span><span class="na">value=</span><span class="s">"$(var launch_driver)"</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">"vehicle_mirror_param_file"</span><span class="w"> </span><span class="na">value=</span><span class="s">"$(var vehicle_mirror_param_file)"</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">"container_name"</span><span class="w"> </span><span class="na">value=</span><span class="s">"pointcloud_container"</span><span class="nt">/&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/include&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/group&gt;</span>
+</code></pre></div>
 <p>If you are using a Hesai lidar (i.e. PandarQT64,
 please check <a href="https://github.com/tier4/nebula">nebula</a> driver page for supported sensors),
 you can add the group like this structure at <code>lidar.launch.xml</code>:</p>
@@ -7975,10 +7987,10 @@ the pointcloud preprocessing pipeline is constructed for each lidar please check
 you can modify the pipeline components like this way:</p>
 <div class="highlight"><pre><span></span><code><span class="w"> </span>   nodes.append(
 <span class="w"> </span>       ComposableNode(
-<span class="w"> </span>           package="pointcloud_preprocessor",
-<span class="gd">-           plugin="pointcloud_preprocessor::RingOutlierFilterComponent",</span>
+<span class="w"> </span>           package="autoware_pointcloud_preprocessor",
+<span class="gd">-           plugin="autoware::pointcloud_preprocessor::RingOutlierFilterComponent",</span>
 <span class="gd">-           name="ring_outlier_filter",</span>
-<span class="gi">+           plugin="pointcloud_preprocessor::DualReturnOutlierFilterComponent",</span>
+<span class="gi">+           plugin="autoware::pointcloud_preprocessor::DualReturnOutlierFilterComponent",</span>
 <span class="gi">+           name="dual_return_outlier_filter",</span>
 <span class="w"> </span>           remappings=[
 <span class="w"> </span>               ("input", "rectified/pointcloud_ex"),
