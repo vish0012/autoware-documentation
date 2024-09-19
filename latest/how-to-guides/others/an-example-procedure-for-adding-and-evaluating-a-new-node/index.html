@@ -7600,7 +7600,7 @@ This verification can be accomplished, for example, by inspecting the image data
 <h2 id="3-developing-the-new-node">3. Developing the new node<a class="headerlink" href="#3-developing-the-new-node" title="Permanent link">#</a></h2>
 <p>When developing a new node, it could be beneficial to reference a package that is similar to the one you intend to create.</p>
 <p>It is advisable to thoroughly read the <a href="https://autowarefoundation.github.io/autoware-documentation/main/design/">Design page</a>, contemplate the addition or replacement of nodes in Autoware, and then implement your solution.</p>
-<p>For example, a node doing NDT, a LiDAR-based localization method, is <a href="https://github.com/autowarefoundation/autoware.universe/tree/main/localization/ndt_scan_matcher">ndt_scan_matcher</a>.
+<p>For example, a node doing NDT, a LiDAR-based localization method, is <a href="https://github.com/autowarefoundation/autoware.universe/tree/main/localization/autoware_ndt_scan_matcher">ndt_scan_matcher</a>.
 If you want to replace this with a different approach, implement a node which produces the same topics and provides the same services.</p>
 <p><code>ndt_scan_matcher</code> is launched as <a href="https://github.com/autowarefoundation/autoware.universe/blob/main/launch/tier4_localization_launch/launch/pose_estimator/pose_estimator.launch.xml">pose_estimator</a>, so it is necessary to replace the launch file as well.</p>
 <h2 id="4-evaluating-by-a-rosbag-based-simulator">4. Evaluating by a rosbag-based simulator<a class="headerlink" href="#4-evaluating-by-a-rosbag-based-simulator" title="Permanent link">#</a></h2>
