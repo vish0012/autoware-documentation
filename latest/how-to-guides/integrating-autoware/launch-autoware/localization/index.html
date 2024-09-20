@@ -7519,7 +7519,7 @@ you need to update <code>tier4_localization_component.launch.xml</code> like:</p
 <li>
 <p><strong><code>twist_source:</code></strong> This argument specifies the twist_estimator, currently supporting <code>gyro_odom</code> (default), and <code>eagleye</code>.
   By default,
-  Autoware launches <a href="https://github.com/autowarefoundation/autoware.universe/tree/main/localization/gyro_odometer">gyro_odometer</a> for twist estimator.
+  Autoware launches <a href="https://github.com/autowarefoundation/autoware.universe/tree/main/localization/autoware_gyro_odometer">gyro_odometer</a> for twist estimator.
   Also, you can use eagleye for the twist source, please refer to the <a href="eagleye/">Eagleye</a>.
   If you want to change your twist source to eagleye, you can update <code>tier4_localization_component.launch.xml</code> like:</p>
 <div class="highlight"><pre><span></span><code><span class="gd">- &lt;arg name="twist_source" default="gyro_odom" description="select twist_estimator. gyro_odom, eagleye"/&gt;</span>
@@ -7534,7 +7534,7 @@ you need to update <code>tier4_localization_component.launch.xml</code> like:</p
 <li>
 <p><strong><code>input_pointcloud:</code></strong> This argument specifies the input pointcloud of the localization pointcloud pipeline. The default value is
   <code>/sensing/lidar/top/outlier_filtered/pointcloud</code> which
-  is output of the <a href="https://autowarefoundation.github.io/autoware.universe/main/sensing/pointcloud_preprocessor/">pointcloud pre-processing</a> pipeline from sensing.
+  is output of the <a href="https://autowarefoundation.github.io/autoware.universe/main/sensing/autoware_pointcloud_preprocessor/">pointcloud pre-processing</a> pipeline from sensing.
   You can change this value according to your LiDAR topic name,
   or you can choose to use concatenated point cloud:</p>
 <div class="highlight"><pre><span></span><code><span class="gd">- &lt;arg name="input_pointcloud" default="/sensing/lidar/top/outlier_filtered/pointcloud" description="The topic will be used in the localization util module"/&gt;</span>

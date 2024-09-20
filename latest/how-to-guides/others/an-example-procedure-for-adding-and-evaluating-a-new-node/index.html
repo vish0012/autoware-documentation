@@ -7602,7 +7602,7 @@ This verification can be accomplished, for example, by inspecting the image data
 <p>It is advisable to thoroughly read the <a href="https://autowarefoundation.github.io/autoware-documentation/main/design/">Design page</a>, contemplate the addition or replacement of nodes in Autoware, and then implement your solution.</p>
 <p>For example, a node doing NDT, a LiDAR-based localization method, is <a href="https://github.com/autowarefoundation/autoware.universe/tree/main/localization/autoware_ndt_scan_matcher">ndt_scan_matcher</a>.
 If you want to replace this with a different approach, implement a node which produces the same topics and provides the same services.</p>
-<p><code>ndt_scan_matcher</code> is launched as <a href="https://github.com/autowarefoundation/autoware.universe/blob/main/launch/tier4_localization_launch/launch/pose_estimator/pose_estimator.launch.xml">pose_estimator</a>, so it is necessary to replace the launch file as well.</p>
+<p><code>ndt_scan_matcher</code> is launched as <a href="https://github.com/autowarefoundation/autoware.universe/blob/main/launch/tier4_localization_launch/launch/pose_twist_estimator/ndt_scan_matcher.launch.xml">pose_estimator</a>, so it is necessary to replace the launch file as well.</p>
 <h2 id="4-evaluating-by-a-rosbag-based-simulator">4. Evaluating by a rosbag-based simulator<a class="headerlink" href="#4-evaluating-by-a-rosbag-based-simulator" title="Permanent link">#</a></h2>
 <p>Once the new node is implemented, it is time to evaluate it.
 <a href="https://autowarefoundation.github.io/autoware-documentation/main/tutorials/ad-hoc-simulation/rosbag-replay-simulation/">logging_simulator</a> is a tool of how to evaluate the new node using the rosbag captured in step 2.</p>
@@ -7616,7 +7616,7 @@ Also, using the <code>--topics</code> option of <code>ros2 bag play</code>, you 
 <p>Once you have sufficiently verified the behavior in the logging_simulator, let's run it as Autoware with new nodes added in the realtime environment.</p>
 <p>To debug Autoware, the method described at <a href="https://autowarefoundation.github.io/autoware-documentation/main/how-to-guides/others/debug-autoware/">debug-autoware</a> is useful.</p>
 <p>For reproducibility, you may want to fix the GoalPose.
-In such cases, consider using the <a href="https://github.com/autowarefoundation/autoware.universe/tree/main/common/tier4_automatic_goal_rviz_plugin">tier4_automatic_goal_rviz_plugin</a>.</p>
+In such cases, consider using the <a href="https://github.com/autowarefoundation/autoware_tools/tree/main/common/tier4_automatic_goal_rviz_plugin">tier4_automatic_goal_rviz_plugin</a>.</p>
 <h2 id="6-sharing-the-results">6. Sharing the results<a class="headerlink" href="#6-sharing-the-results" title="Permanent link">#</a></h2>
 <p>If your implementation works successfully, please consider a pull request to Autoware.</p>
 <p>It is also a good idea to start by presenting your ideas in Discussion at <a href="https://github.com/orgs/autowarefoundation/discussions/categories/show-and-tell">Show and tell</a>.</p>
