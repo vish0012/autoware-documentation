@@ -7685,7 +7685,7 @@ rosdep<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> 
 <p>It might be the case that dependencies imported via <code>vcs import</code> have been moved/removed.
 VCStool does not currently handle those cases, so if builds fail after <code>vcs import</code>, cleaning
 and re-importing all dependencies may be necessary:</p>
-<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>src
+<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>src/*
 vcs<span class="w"> </span>import<span class="w"> </span>src<span class="w"> </span>&lt;<span class="w"> </span>autoware.repos
 </code></pre></div>
 </blockquote>
