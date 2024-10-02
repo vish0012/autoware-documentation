@@ -1511,6 +1511,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/latest/tutorials/components_evaluation/</loc>
+         <lastmod>2024-10-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/latest/tutorials/components_evaluation/localization_evaluation/urban-environment-evaluation/</loc>
+         <lastmod>2024-10-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware-documentation/latest/tutorials/scenario-simulation/</loc>
          <lastmod>2024-10-02</lastmod>
          <changefreq>daily</changefreq>
