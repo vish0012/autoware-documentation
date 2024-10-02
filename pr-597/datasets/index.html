@@ -7516,14 +7516,12 @@
 <p>Autoware partners provide datasets for testing and development. These datasets are available for download here.</p>
 <h2 id="istanbul-open-dataset">Istanbul Open Dataset<a class="headerlink" href="#istanbul-open-dataset" title="Permanent link">#</a></h2>
 <p>The dataset is collected in the following route. Tunnels and bridges are annotated on the image.
-The included specific areas into the dataset are:</p>
-<ul>
-<li>Galata Bridge (Small Bridge)</li>
-<li>Eurasia Tunnel (Long Tunnel with High Elevation Changes)</li>
-<li>2nd Bosphorus Bridge (Long Bridge)</li>
-<li>Kagithane-Bomonti Tunnel (Small Tunnel)</li>
-<li>Viaducts, road junctions, highways, dense urban areas...</li>
-</ul>
+The included specific areas into the dataset are:
+  - Galata Bridge (Small Bridge)
+  - Eurasia Tunnel (Long Tunnel with High Elevation Changes)
+  - 2nd Bosphorus Bridge (Long Bridge)
+  - Kagithane-Bomonti Tunnel (Small Tunnel)
+  - Viaducts, road junctions, highways, dense urban areas...</p>
 <p align="center">
     <img src="images/ist_dataset_route_3_resized.png" alt="ist_dataset_route2" width="80%">
 </p>
@@ -7548,10 +7546,8 @@ The included specific areas into the dataset are:</p>
 </li>
 </ul>
 <ul>
-<li>
-<p>You can find the <abbr title="Robot Operating System">ROS</abbr> 2 bag which is collected simultaneously with the mapping data:</p>
-<ul>
-<li><a href="https://drive.google.com/drive/folders/1GOrMwiNJDleGTntfd_Cwr_mHb4tnuUW0?usp=drive_link">https://drive.google.com/drive/folders/1GOrMwiNJDleGTntfd_Cwr_mHb4tnuUW0?usp=drive_link</a></li>
+<li>You can find the <abbr title="Robot Operating System">ROS</abbr> 2 bag which is collected simultaneously with the mapping data:<ul>
+<li><a href="https://drive.google.com/drive/folders/17zXiBeYlM90gQ5hV6EAWaoBTnNFoVPML?usp=drive_link">https://drive.google.com/drive/folders/17zXiBeYlM90gQ5hV6EAWaoBTnNFoVPML?usp=drive_link</a></li>
 <li>Due to the simultaneous data collection, we can assume that the point cloud maps and <abbr title="Global Navigation Satellite System">GNSS</abbr>/INS
   data are the ground truth data for this rosbag.</li>
 </ul>
@@ -7670,29 +7666,6 @@ types for additional information. Following topics are the default <abbr title="
 </ul>
 </li>
 </ul>
-<ul>
-<li><code>/pandar_packets</code><ul>
-<li>Gives the LiDAR packets.</li>
-</ul>
-</li>
-</ul>
-<p>Also the Applanix raw messages are also included in the rosbag.
-In order to be able to play back these messages, you need to build and source
-the <code>applanix_msgs</code> package.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Create a workspace and clone the repository</span>
-mkdir<span class="w"> </span>-p<span class="w"> </span>~/applanix_ws/src<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span><span class="s2">"</span><span class="nv">$_</span><span class="s2">"</span>
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/autowarefoundation/applanix.git
-<span class="nb">cd</span><span class="w"> </span>..
-
-<span class="c1"># Build the workspace</span>
-colcon<span class="w"> </span>build<span class="w"> </span>--symlink-install<span class="w"> </span>--packages-select<span class="w"> </span>applanix_msgs
-
-<span class="c1"># Source the workspace</span>
-<span class="nb">source</span><span class="w"> </span>~/applanix_ws/install/setup.bash
-
-<span class="c1"># Now you can play back the messages</span>
-</code></pre></div>
-<p>Also make sure to source Autoware Universe workspace too.</p>
 <h2 id="bus-odd-operational-design-domain-datasets">Bus-<abbr title="Operational Design Domain">ODD</abbr> (Operational Design Domain) datasets<a class="headerlink" href="#bus-odd-operational-design-domain-datasets" title="Permanent link">#</a></h2>
 <h3 id="leo-drive-isuzu-sensor-data">Leo Drive - ISUZU sensor data<a class="headerlink" href="#leo-drive-isuzu-sensor-data" title="Permanent link">#</a></h3>
 <p>This dataset contains data from the Isuzu bus used in the Bus <abbr title="Operational Design Domain">ODD</abbr> project.</p>
