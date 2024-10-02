@@ -7644,9 +7644,10 @@ Data Collection Documentation --&gt; <a href="https://autowarefoundation.github.
 </ul>
 <p>You can find the data collected for testing and mapping in this <a href="https://autowarefoundation.github.io/autoware-documentation/main/datasets/#istanbul-open-dataset">Documentation</a>.</p>
 <blockquote>
-<p>[!Note]
-Since there was no velocity source coming from the vehicle during all these tests, the twist message coming from <abbr title="Global Navigation Satellite System">GNSS</abbr>/INS was given to ekf_localizer as the linear&amp;angular velocity source.
-In order to understand whether this increases the error in cases where the <abbr title="Global Navigation Satellite System">GNSS</abbr>/INS error increases in the tunnel and how it affects the system, localization in the tunnel was tested by giving only the pose from the NDT, without giving this velocity to ekf_localizer. The video of this test is <a href="https://www.youtube.com/watch?v=ajgedIwwuaM">here</a>.
+<p><span style="color:blue"><strong>NOTE ! :</strong></span> 
+Since there was no velocity source coming from the vehicle during all these tests, the twist message coming from <abbr title="Global Navigation Satellite System">GNSS</abbr>/INS was given to ekf_localizer as the linear&amp;angular velocity source. 
+In order to understand whether this increases the error in cases where the <abbr title="Global Navigation Satellite System">GNSS</abbr>/INS error increases in the tunnel and how it affects the system, localization in the tunnel was tested by giving only the pose from the NDT, without giving this velocity to ekf_localizer. </p>
+<p>The video of this test is <a href="https://www.youtube.com/watch?v=ajgedIwwuaM">here</a>. 
 As seen in the video, when velocity is not given, localization in the tunnel deteriorates more quickly.
 It is also predicted that if the <abbr title="Inertial Measurement Unit">IMU</abbr> Twist message combined (/localization/twist_estimator/twist_with_covariance) with the linear velocity from the vehicle is given instead of the <abbr title="Global Navigation Satellite System">GNSS</abbr>/INS Twist message, the performance in the tunnel will increase. However, this test cannot be done with the current data.</p>
 </blockquote>
@@ -7665,7 +7666,7 @@ It is also predicted that if the <abbr title="Inertial Measurement Unit">IMU</ab
 gdown<span class="w"> </span>--id<span class="w"> </span>1WPWmFCjV7eQee4kyBpmGNlX7awerCPxc<span class="w"> </span>-O<span class="w"> </span>~/autoware_ista_map/
 </code></pre></div>
 <blockquote>
-<p>[!Note]
+<p><span style="color:blue"><strong>NOTE ! :</strong></span>
 You also need to add <code>lanelet2_map.osm</code> file to autoware_ista_map folder. Since no lanelet file is created for this map at the
 moment, you can run any <code>lanelet2_map.osm</code> file by placing it in this folder.</p>
 </blockquote>
@@ -7718,7 +7719,7 @@ ros2<span class="w"> </span>bag<span class="w"> </span>play<span class="w"> </sp
 gdown<span class="w"> </span>--id<span class="w"> </span>1WPWmFCjV7eQee4kyBpmGNlX7awerCPxc<span class="w"> </span>-O<span class="w"> </span>~/autoware_ista_map/
 </code></pre></div>
 <blockquote>
-<p>[!Note]
+<p><span style="color:blue"><strong>NOTE ! :</strong></span>
 You also need to add <code>lanelet2_map.osm</code> file to autoware_ista_map folder. Since no lanelet file is created for this map at the
 moment, you can run any <code>lanelet2_map.osm</code> file by placing it in this folder.</p>
 </blockquote>
