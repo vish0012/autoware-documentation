@@ -7651,8 +7651,8 @@ As seen in the video, when velocity is not given, localization in the tunnel det
 It is also predicted that if the <abbr title="Inertial Measurement Unit">IMU</abbr> Twist message combined (/localization/twist_estimator/twist_with_covariance) with the linear velocity from the vehicle is given instead of the <abbr title="Global Navigation Satellite System">GNSS</abbr>/INS Twist message, the performance in the tunnel will increase. However, this test cannot be done with the current data.</p>
 </blockquote>
 <h4 id="expected-tests">Expected Tests<a class="headerlink" href="#expected-tests" title="Permanent link">#</a></h4>
-<p>1.) Firstly, it is aimed to detect the points where the localization is completely broken and to roughly control the localization.
-2.) By extracting the metrics, it is aimed to see concretely how much the localization error has increased and what the level of performance is.</p>
+<p>1.) Firstly, it is aimed to detect the points where the localization is completely broken and to roughly control the localization.</p>
+<p>2.) By extracting the metrics, it is aimed to see concretely how much the localization error has increased and what the level of performance is.</p>
 <h3 id="how-to-reproduce-tests">How to Reproduce Tests<a class="headerlink" href="#how-to-reproduce-tests" title="Permanent link">#</a></h3>
 <h4 id="test-with-raw-data">Test With Raw Data<a class="headerlink" href="#test-with-raw-data" title="Permanent link">#</a></h4>
 <p>If you test with raw data, you need to follow these <code>Test With Raw Data</code> instructions. Since you need to repeat all preprocessing operations on the input data in this test, you need to test by switching to the test branches in the sensor kit and individual params repos. You can perform these steps by following the instructions below.</p>
@@ -7669,7 +7669,7 @@ gdown<span class="w"> </span>--id<span class="w"> </span>1WPWmFCjV7eQee4kyBpmGNl
 You also need to add <code>lanelet2_map.osm</code> file to autoware_ista_map folder. Since no lanelet file is created for this map at the
 moment, you can run any <code>lanelet2_map.osm</code> file by placing it in this folder.</p>
 </blockquote>
-<p>2.)Download the test rosbag files.</p>
+<p>2.) Download the test rosbag files.</p>
 <ul>
 <li>You can also download <a href="https://drive.google.com/drive/folders/1BMPcUhjq_BCLi521X88WpujoOiEi3_CJ?usp=drive_link">the rosbag file</a> manually.</li>
 </ul>
@@ -7722,7 +7722,7 @@ gdown<span class="w"> </span>--id<span class="w"> </span>1WPWmFCjV7eQee4kyBpmGNl
 You also need to add <code>lanelet2_map.osm</code> file to autoware_ista_map folder. Since no lanelet file is created for this map at the
 moment, you can run any <code>lanelet2_map.osm</code> file by placing it in this folder.</p>
 </blockquote>
-<p>2.)Download the test rosbag files.</p>
+<p>2.) Download the test rosbag files.</p>
 <ul>
 <li>You can also download <a href="https://drive.google.com/file/d/1yEB5j74gPLLbkkf87cuCxUgHXTkgSZbn/view?usp=sharing">the localization rosbag file</a> manually.</li>
 </ul>
@@ -7751,11 +7751,11 @@ ros2<span class="w"> </span>bag<span class="w"> </span>play<span class="w"> </sp
 <h3 id="test-results">Test Results<a class="headerlink" href="#test-results" title="Permanent link">#</a></h3>
 <h4 id="test-1-simple-test-of-localization">Test 1: Simple Test of Localization<a class="headerlink" href="#test-1-simple-test-of-localization" title="Permanent link">#</a></h4>
 <p>Simply put, how localization works in an urban environment was tested and the results were recorded on video.
-Here is the <a href="https://youtu.be/Bk4Oyk6FOg0?t=6">test video</a>
+Here is the <a href="https://youtu.be/Bk4Oyk6FOg0?t=6">test video</a>.
 <a href='https://youtu.be/Bk4Oyk6FOg0?t=6"'><img src="https://github.com/user-attachments/assets/e0f7edbf-0596-4806-8dcd-b4156584e4c0" width="60%"></a></p>
 <p>We can see from video that there is a localization error in the longitudinal axis along the Eurasia tunnel. As expected, NDT based localization does not work properly here. However, since the NDT score cannot detect the distortion here, localization is not completely broken until the end of the tunnel. Localization is completely broken at the exit of the tunnel. I re-initialized the localization after vehicle exit the tunnel.</p>
-<p>From this point on, we move on to the bridge scenario. This is one of the bridges connecting the Bosphorus and was the longest bridge on our route.Here too, we thought that NDT-based localization might be disrupted. However, I did not observe any disruption.</p>
-<p>After this part there is another tunnel(Kagithane - Bomonti) and localization behaves similar to Eurasia tunnel . However, at the exit of this tunnel, it recovers localization on its own without the need for re-initialization.</p>
+<p>From this point on, we move on to the bridge scenario. This is one of the bridges connecting the Bosphorus and was the longest bridge on our route. Here too, we thought that NDT-based localization might be disrupted. However, I did not observe any disruption.</p>
+<p>After this part there is another tunnel(Kagithane - Bomonti) and localization behaves similar to Eurasia tunnel. However, at the exit of this tunnel, it recovers localization on its own without the need for re-initialization.</p>
 <h5 id="test-1-summary">Test 1 Summary<a class="headerlink" href="#test-1-summary" title="Permanent link">#</a></h5>
 <p>In summary, the places where there was visible deterioration with our test route were the tunnels. This was already an expected situation. Apart from this, we anticipated that we could have problems on the bridges, but I could not observe any deterioration in the localization on the bridges. Of course, it is useful to remind you at this point that these tests were conducted with a single data.</p>
 <h4 id="test-2-comparing-results-with-ground-truth">Test 2: Comparing Results with Ground Truth<a class="headerlink" href="#test-2-comparing-results-with-ground-truth" title="Permanent link">#</a></h4>
@@ -7765,7 +7765,7 @@ Here is the <a href="https://youtu.be/Bk4Oyk6FOg0?t=6">test video</a>
 <p>NDT Score (Nearest Voxel Transformation Likelihood) Threshold = 2.3</p>
 <p>2.) Compare with Ground Truth</p>
 <p>Ground Truth : In these tests, the post-processed <abbr title="Global Navigation Satellite System">GNSS</abbr> / INS data was used as ground truth. Since the error of this ground truth data also decreases in the tunnel environment, it is necessary to evaluate these regions by taking into account the Ground Truth error.</p>
-<p>During these tests, I compared the NDT and EKF exposures with Ground Truth and presented the results. I am sharing the test results below as png. However, if you want to examine this data in more detail, I have created an executable file for you to visualize and take a closer look at. You can access this executable file from <a href="https://drive.google.com/drive/folders/145QXl6wfV7IB9NS-PzFQtsNnxnAn6a9o?usp=sharing">here</a> Currently there is only a version that works on Ubuntu at this link, but I plan to add it for Windows as well.
+<p>During these tests, I compared the NDT and EKF exposures with Ground Truth and presented the results. I am sharing the test results below as png. However, if you want to examine this data in more detail, I have created an executable file for you to visualize and take a closer look at. You can access this executable file from <a href="https://drive.google.com/drive/folders/145QXl6wfV7IB9NS-PzFQtsNnxnAn6a9o?usp=sharing">here</a>. Currently there is only a version that works on Ubuntu at this link, but I plan to add it for Windows as well.
 You need to follow these steps:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/your/path/show_evaluation_ubuntu
 ./pose_main
