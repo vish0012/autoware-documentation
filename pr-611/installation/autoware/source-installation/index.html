@@ -7658,7 +7658,8 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </
 <li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/ros2_dev_tools#manual-installation">Install <abbr title="Robot Operating System">ROS</abbr> 2 Dev Tools</a></li>
 <li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/cuda#manual-installation">Install Nvidia CUDA</a></li>
 <li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/tensorrt#manual-installation">Install Nvidia cuDNN and TensorRT</a></li>
-<li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/artifacts">Download the Artifacts</a> (for perception inference)</li>
+<li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/qt5ct_setup#readme">Install the Autoware RViz Theme</a> (only affects Autoware RViz)</li>
+<li><a href="https://github.com/autowarefoundation/autoware/tree/main/ansible/roles/artifacts#readme">Download the Artifacts</a> (for perception inference)</li>
 </ul>
 </div>
 <h2 id="how-to-set-up-a-workspace">How to set up a workspace<a class="headerlink" href="#how-to-set-up-a-workspace" title="Permanent link">#</a></h2>
@@ -7681,6 +7682,9 @@ vcs<span class="w"> </span>import<span class="w"> </span>src<span class="w"> </s
  The tool <code>rosdep</code> allows an automatic search and installation of such dependencies.
  You might need to run <code>rosdep update</code> before <code>rosdep install</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>/opt/ros/humble/setup.bash
+<span class="c1"># Make sure all previously installed ros-$ROS_DISTRO-* packages are upgraded to their latest version</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade
+rosdep<span class="w"> </span>update
 rosdep<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>--from-paths<span class="w"> </span>src<span class="w"> </span>--ignore-src<span class="w"> </span>--rosdistro<span class="w"> </span><span class="nv">$ROS_DISTRO</span>
 </code></pre></div>
 </li>
@@ -7728,10 +7732,19 @@ vcs<span class="w"> </span>pull<span class="w"> </span>src
 </li>
 </ul>
 <p>For more information, refer to the <a href="https://github.com/dirk-thomas/vcstool">official documentation</a>.</p>
+<p>It might be the case that dependencies imported via <code>vcs import</code> have been moved/removed.
+ VCStool does not currently handle those cases, so if builds fail after <code>vcs import</code>, cleaning
+ and re-importing all dependencies may be necessary:</p>
+<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>src/*
+vcs<span class="w"> </span>import<span class="w"> </span>src<span class="w"> </span>&lt;<span class="w"> </span>autoware.repos
+</code></pre></div>
 </li>
 <li>
 <p>Install dependent <abbr title="Robot Operating System">ROS</abbr> packages.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>/opt/ros/humble/setup.bash
+<span class="c1"># Make sure all previously installed ros-$ROS_DISTRO-* packages are upgraded to their latest version</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade
+rosdep<span class="w"> </span>update
 rosdep<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>--from-paths<span class="w"> </span>src<span class="w"> </span>--ignore-src<span class="w"> </span>--rosdistro<span class="w"> </span><span class="nv">$ROS_DISTRO</span>
 </code></pre></div>
 </li>
