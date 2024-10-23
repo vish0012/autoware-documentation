@@ -5786,6 +5786,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#allow_while_using_route" class="md-nav__link">
+    allow_while_using_route
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -7663,6 +7670,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#allow_while_using_route" class="md-nav__link">
+    allow_while_using_route
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -7734,6 +7748,8 @@ There are two ways to set the route. The one is a generic method that uses pose,
 See the sections below for supported options and details.</p>
 <h3 id="allow_goal_modification">allow_goal_modification<a class="headerlink" href="#allow_goal_modification" title="Permanent link">#</a></h3>
 <p><strong>[v1.1.0]</strong> Autoware tries to look for an alternate goal when goal is unreachable (e.g., when there is an obstacle on the given goal). When setting a route from the API, applications can choose whether they allow Autoware to adjust goal pose in such situation. When set false, Autoware may get stuck until the given goal becomes reachable.</p>
+<h3 id="allow_while_using_route">allow_while_using_route<a class="headerlink" href="#allow_while_using_route" title="Permanent link">#</a></h3>
+<p><strong>[v1.6.0]</strong> This option only affects the route change APIs. Autoware accepts new route even while the vehicle is using the current route. The APIs fail if it cannot safely transition to new route. When set false, the APIs always fail when the vehicle is using the route.</p>
 <!-- prettier-ignore --></div>
 
 
