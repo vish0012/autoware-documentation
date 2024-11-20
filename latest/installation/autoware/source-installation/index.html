@@ -7801,6 +7801,12 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </
 mkdir<span class="w"> </span>src
 vcs<span class="w"> </span>import<span class="w"> </span>src<span class="w"> </span>&lt;<span class="w"> </span>autoware.repos
 </code></pre></div>
+<p>If you are an active developer, you may also want to pull the nightly repositories, which contain the latest updates:</p>
+<div class="highlight"><pre><span></span><code>vcs<span class="w"> </span>import<span class="w"> </span>src<span class="w"> </span>&lt;<span class="w"> </span>autoware-nightly.repos
+</code></pre></div>
+<blockquote>
+<p>⚠️ Note: The nightly repositories are unstable and may contain bugs. Use them with caution.</p>
+</blockquote>
 </li>
 <li>
 <p>Install dependent <abbr title="Robot Operating System">ROS</abbr> packages.</p>
@@ -7844,7 +7850,13 @@ git<span class="w"> </span>pull<span class="w"> </span>&lt;remote&gt;<span class
 <li>
 <p>Update the repositories.</p>
 <div class="highlight"><pre><span></span><code>vcs<span class="w"> </span>import<span class="w"> </span>src<span class="w"> </span>&lt;<span class="w"> </span>autoware.repos
-vcs<span class="w"> </span>pull<span class="w"> </span>src
+</code></pre></div>
+<blockquote>
+<p>⚠️ If you are using nightly repositories, you can also update them.</p>
+<div class="highlight"><pre><span></span><code>vcs<span class="w"> </span>import<span class="w"> </span>src<span class="w"> </span>&lt;<span class="w"> </span>autoware-nightly.repos
+</code></pre></div>
+</blockquote>
+<div class="highlight"><pre><span></span><code>vcs<span class="w"> </span>pull<span class="w"> </span>src
 </code></pre></div>
 <p>For Git users:</p>
 <ul>
@@ -7864,6 +7876,11 @@ vcs<span class="w"> </span>pull<span class="w"> </span>src
 <div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>src/*
 vcs<span class="w"> </span>import<span class="w"> </span>src<span class="w"> </span>&lt;<span class="w"> </span>autoware.repos
 </code></pre></div>
+<blockquote>
+<p>⚠️ If you are using nightly repositories, import them as well.</p>
+<div class="highlight"><pre><span></span><code>vcs<span class="w"> </span>import<span class="w"> </span>src<span class="w"> </span>&lt;<span class="w"> </span>autoware-nightly.repos
+</code></pre></div>
+</blockquote>
 </li>
 <li>
 <p>Install dependent <abbr title="Robot Operating System">ROS</abbr> packages.</p>
