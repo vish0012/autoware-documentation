@@ -7845,19 +7845,19 @@ In detail, please see <a href="../reference-implementations/data-message/">Data 
 <p>Radar can detect x-axis velocity as doppler velocity, but cannot detect y-axis velocity. Some radar can estimate y-axis velocity inside the device, but it sometimes lack precision. This package treats these objects as noise by y-axis threshold filter.</p>
 <h3 id="message-converter">Message converter<a class="headerlink" href="#message-converter" title="Permanent link">#</a></h3>
 <ul>
-<li><a href="https://github.com/autowarefoundation/autoware.universe/tree/main/perception/radar_tracks_msgs_converter">radar_tracks_msgs_converter</a></li>
+<li><a href="https://github.com/autowarefoundation/autoware.universe/tree/main/perception/autoware_radar_tracks_msgs_converter">radar_tracks_msgs_converter</a></li>
 </ul>
 <p>This package converts from <code>radar_msgs/msg/RadarTracks</code> into <code>autoware_auto_perception_msgs/msg/DetectedObject</code> with ego vehicle motion compensation and coordinate transform.</p>
 <h3 id="object-merger">Object merger<a class="headerlink" href="#object-merger" title="Permanent link">#</a></h3>
 <ul>
-<li><a href="https://github.com/autowarefoundation/autoware.universe/tree/main/perception/object_merger">object_merger</a></li>
+<li><a href="https://github.com/autowarefoundation/autoware.universe/tree/main/perception/autoware_object_merger">object_merger</a></li>
 </ul>
 <p>This package can merge 2 topics of <code>autoware_auto_perception_msgs/msg/DetectedObject</code>.</p>
 <ul>
-<li><a href="https://github.com/autowarefoundation/autoware.universe/tree/main/perception/simple_object_merger">simple_object_merger</a></li>
+<li><a href="https://github.com/autowarefoundation/autoware.universe/tree/main/perception/autoware_simple_object_merger">simple_object_merger</a></li>
 </ul>
 <p>This package can merge simply multiple topics of <code>autoware_auto_perception_msgs/msg/DetectedObject</code>.
-Different from <a href="https://github.com/autowarefoundation/autoware.universe/tree/main/perception/object_merger">object_merger</a>, this package doesn't use association algorithm and can merge with low calculation cost.</p>
+Different from <a href="https://github.com/autowarefoundation/autoware.universe/tree/main/perception/autoware_object_merger">object_merger</a>, this package doesn't use association algorithm and can merge with low calculation cost.</p>
 <ul>
 <li><a href="https://github.com/ros-tooling/topic_tools">topic_tools</a></li>
 </ul>
