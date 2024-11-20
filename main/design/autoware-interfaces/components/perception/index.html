@@ -7727,7 +7727,7 @@
 
 
 <div><h1 id="perception">Perception<a class="headerlink" href="#perception" title="Permanent link">#</a></h1>
-<p>This page provides specific specifications about the Interface of the Perception Component.<br>
+<p>This page provides specific specifications about the Interface of the Perception Component.
 Please refer to <a href="../../../autoware-architecture/perception/reference_implementation/">the perception architecture reference implementation design</a> for concepts and data flow.</p>
 <h2 id="input">Input<a class="headerlink" href="#input" title="Permanent link">#</a></h2>
 <h3 id="from-map-component">From Map Component<a class="headerlink" href="#from-map-component" title="Permanent link">#</a></h3>
@@ -7744,7 +7744,7 @@ Please refer to <a href="../../../autoware-architecture/perception/reference_imp
 <tr>
 <td>Vector Map</td>
 <td><code>/map/vector_map</code></td>
-<td><a href="https://github.com/tier4/autoware_auto_msgs/blob/tier4/main/autoware_auto_mapping_msgs/msg/HADMapBin.idl">autoware_auto_mapping_msgs/msg/HADMapBin</a></td>
+<td><a href="https://github.com/autowarefoundation/autoware_msgs/blob/main/autoware_map_msgs/msg/LaneletMapBin.msg">autoware_map_msgs/msg/LaneletMapBin</a></td>
 <td>HD Map including the information about lanes</td>
 </tr>
 <tr>
@@ -7794,7 +7794,7 @@ Please refer to <a href="../../../autoware-architecture/perception/reference_imp
 <tr>
 <td>Radar Object</td>
 <td><code>/sensing/radar/detected_objects</code></td>
-<td><a href="https://gitlab.com/autowarefoundation/autoware.auto/autoware_auto_msgs/-/blob/master/autoware_auto_perception_msgs/msg/DetectedObject.idl">autoware_auto_perception_msgs/msg/DetectedObject</a></td>
+<td><a href="https://github.com/autowarefoundation/autoware_msgs/blob/main/autoware_perception_msgs/msg/DetectedObjects.msg">autoware_perception_msgs/msg/DetectedObject</a></td>
 <td>Radar objects</td>
 </tr>
 </tbody>
@@ -7853,7 +7853,7 @@ Please refer to <a href="../../../autoware-architecture/perception/reference_imp
 <tr>
 <td>Dynamic Objects</td>
 <td><code>/perception/object_recognition/objects</code></td>
-<td><a href="https://github.com/tier4/autoware_auto_msgs/blob/tier4/main/autoware_auto_perception_msgs/msg/PredictedObjects.idl">autoware_auto_perception_msgs/msg/PredictedObjects</a></td>
+<td><a href="https://github.com/autowarefoundation/autoware_msgs/blob/main/autoware_perception_msgs/msg/PredictedObjects.msg">autoware_perception_msgs/msg/PredictedObjects</a></td>
 <td>Set of dynamic objects with information such as a object class and a shape of the objects. These objects did not exist when the map was generated and are not contained within the map.</td>
 </tr>
 <tr>
@@ -7871,7 +7871,7 @@ Please refer to <a href="../../../autoware-architecture/perception/reference_imp
 <tr>
 <td>Traffic Signal</td>
 <td><code>/perception/traffic_light_recognition/traffic_signals</code></td>
-<td><a href="https://github.com/autowarefoundation/autoware_msgs/blob/main/autoware_perception_msgs/msg/TrafficSignalArray.msg">autoware_perception_msgs::msg::TrafficSignalArray</a></td>
+<td><a href="https://github.com/autowarefoundation/autoware_msgs/blob/main/autoware_perception_msgs/msg/TrafficLightGroupArray.msg">autoware_perception_msgs::msg::TrafficLightGroupArray</a></td>
 <td>The traffic signal information such as a color (green, yellow, read) and an arrow (right, left, straight)</td>
 </tr>
 </tbody>

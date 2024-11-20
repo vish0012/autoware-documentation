@@ -7720,9 +7720,9 @@
 <li>Differential point cloud map loading via <abbr title="Robot Operating System">ROS</abbr> service (autoware_map_msgs/srv/GetDifferentialPointCloudMap)</li>
 </ul>
 <h3 id="lanelet2-map">Lanelet2 map<a class="headerlink" href="#lanelet2-map" title="Permanent link">#</a></h3>
-<p>It loads a Lanelet2 file and publishes the map data as <code>autoware_auto_mapping_msgs/msg/HADMapBin</code> message. The lan/lon coordinates are projected onto the MGRS coordinates.</p>
+<p>It loads a Lanelet2 file and publishes the map data as <code>autoware_map_msgs/msg/LaneletMapBin</code> message. The lan/lon coordinates are projected onto the MGRS coordinates.</p>
 <ul>
-<li>autoware_auto_mapping_msgs/msg/HADMapBin<ul>
+<li>autoware_map_msgs/msg/LaneletMapBin<ul>
 <li>std_msgs/Header header</li>
 <li>string version_map_format</li>
 <li>string version_map</li>
@@ -7732,7 +7732,7 @@
 </li>
 </ul>
 <h3 id="lanelet2-map-visualization">Lanelet2 map visualization<a class="headerlink" href="#lanelet2-map-visualization" title="Permanent link">#</a></h3>
-<p>Visualize <code>autoware_auto_mapping_msgs/HADMapBin</code> messages in <code>Rviz</code>.</p>
+<p>Visualize <code>autoware_map_msgs/msg/LaneletMapBin</code> messages in <code>Rviz</code>.</p>
 <ul>
 <li>visualization_msgs/msg/MarkerArray</li>
 </ul>
