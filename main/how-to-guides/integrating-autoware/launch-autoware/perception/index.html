@@ -7627,7 +7627,7 @@ to change it since <code>tier4_perception_component.launch.xml</code> is the top
 Here are some predefined perception launch arguments:</p>
 <ul>
 <li>
-<p><strong><code>occupancy_grid_map_method:</code></strong> This argument determines the occupancy grid map method for perception stack. Please check <a href="https://autowarefoundation.github.io/autoware.universe/main/perception/probabilistic_occupancy_grid_map/">probabilistic_occupancy_grid_map</a> package for detailed information.
+<p><strong><code>occupancy_grid_map_method:</code></strong> This argument determines the occupancy grid map method for perception stack. Please check <a href="https://autowarefoundation.github.io/autoware.universe/main/perception/autoware_probabilistic_occupancy_grid_map/">probabilistic_occupancy_grid_map</a> package for detailed information.
   The default probabilistic occupancy grid map method is <code>pointcloud_based_occupancy_grid_map</code>.
   If you want to change it to the <code>laserscan_based_occupancy_grid_map</code>, you can change it here:</p>
 <div class="highlight"><pre><span></span><code><span class="gd">- &lt;arg name="occupancy_grid_map_method" default="pointcloud_based_occupancy_grid_map" description="options: pointcloud_based_occupancy_grid_map, laserscan_based_occupancy_grid_map"/&gt;</span>
@@ -7638,7 +7638,7 @@ Here are some predefined perception launch arguments:</p>
 <ul>
 <li>
 <p><strong><code>detected_objects_filter_method:</code></strong> This argument determines the filter method for detected objects.
-  Please check <a href="https://autowarefoundation.github.io/autoware.universe/main/perception/detected_object_validation/">detected_object_validation</a> package for detailed information about lanelet and position filter.
+  Please check <a href="https://autowarefoundation.github.io/autoware.universe/main/perception/autoware_detected_object_validation/">detected_object_validation</a> package for detailed information about lanelet and position filter.
   The default detected object filter method is <code>lanelet_filter</code>.
   If you want to change it to the <code>position_filter</code>, you can change it here:</p>
 <div class="highlight"><pre><span></span><code><span class="gd">- &lt;arg name="detected_objects_filter_method" default="lanelet_filter" description="options: lanelet_filter, position_filter"/&gt;</span>
@@ -7649,7 +7649,7 @@ Here are some predefined perception launch arguments:</p>
 <ul>
 <li>
 <p><strong><code>detected_objects_validation_method:</code></strong> This argument determines the validation method for detected objects.
-  Please check <a href="https://autowarefoundation.github.io/autoware.universe/main/perception/detected_object_validation/">detected_object_validation</a> package for detailed information about validation methods.
+  Please check <a href="https://autowarefoundation.github.io/autoware.universe/main/perception/autoware_detected_object_validation/">detected_object_validation</a> package for detailed information about validation methods.
   The default detected object filter method is <code>obstacle_pointcloud</code>.
   If you want to change it to the <code>occupancy_grid</code>, you can change it here,
   but remember it requires <code>laserscan_based_occupancy_grid_map</code> method as <code>occupancy_grid_map_method</code>:</p>
@@ -7687,7 +7687,7 @@ we will apply these changes <code>tier4_perception_component.launch.xml</code> i
 <ul>
 <li>
 <p><strong><code>remove_unknown:</code></strong> This parameter determines the remove unknown objects at camera-lidar fusion.
-  Please check <a href="https://github.com/autowarefoundation/autoware.universe/blob/main/perception/image_projection_based_fusion/docs/roi-cluster-fusion.md">roi_cluster_fusion</a> node for detailed information.
+  Please check <a href="https://github.com/autowarefoundation/autoware.universe/blob/main/perception/autoware_image_projection_based_fusion/docs/roi-cluster-fusion.md">roi_cluster_fusion</a> node for detailed information.
   The default value is <code>true</code>.
   If you want to change it to the <code>false</code>,
   you can add this argument to <code>tier4_perception_component.launch.xml</code>,

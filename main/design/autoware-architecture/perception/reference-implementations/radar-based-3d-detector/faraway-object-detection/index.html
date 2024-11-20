@@ -7775,25 +7775,25 @@
 <h2 id="reference-implementation">Reference implementation<a class="headerlink" href="#reference-implementation" title="Permanent link">#</a></h2>
 <h3 id="crossing-filter">Crossing filter<a class="headerlink" href="#crossing-filter" title="Permanent link">#</a></h3>
 <ul>
-<li><a href="https://github.com/autowarefoundation/autoware.universe/tree/main/perception/radar_crossing_objects_noise_filter">radar_crossing_objects_noise_filter</a></li>
+<li><a href="https://github.com/autowarefoundation/autoware.universe/tree/main/perception/autoware_radar_crossing_objects_noise_filter">radar_crossing_objects_noise_filter</a></li>
 </ul>
 <p>This package can filter the noise objects crossing to the ego vehicle, which are most likely ghost objects.</p>
 <h3 id="velocity-filter">Velocity filter<a class="headerlink" href="#velocity-filter" title="Permanent link">#</a></h3>
 <ul>
-<li><a href="https://github.com/autowarefoundation/autoware.universe/tree/main/perception/object_velocity_splitter">object_velocity_splitter</a></li>
+<li><a href="https://github.com/autowarefoundation/autoware.universe/tree/main/perception/autoware_object_velocity_splitter">object_velocity_splitter</a></li>
 </ul>
 <p>Static objects include many noise like the objects reflected from ground.
 In many cases for radars, dynamic objects can be detected stably.
 To filter out static objects, <code>object_velocity_splitter</code> can be used.</p>
 <h3 id="range-filter">Range filter<a class="headerlink" href="#range-filter" title="Permanent link">#</a></h3>
 <ul>
-<li><a href="https://github.com/autowarefoundation/autoware.universe/tree/main/perception/object_range_splitter">object_range_splitter</a></li>
+<li><a href="https://github.com/autowarefoundation/autoware.universe/tree/main/perception/autoware_object_range_splitter">object_range_splitter</a></li>
 </ul>
 <p>For some radars, ghost objects sometimes occur for near objects.
 To filter these objects, <code>object_range_splitter</code> can be used.</p>
 <h3 id="vector-map-filter">Vector map filter<a class="headerlink" href="#vector-map-filter" title="Permanent link">#</a></h3>
 <ul>
-<li><a href="https://github.com/autowarefoundation/autoware.universe/blob/main/perception/detected_object_validation/object-lanelet-filter.md">object-lanelet-filter</a></li>
+<li><a href="https://github.com/autowarefoundation/autoware.universe/blob/main/perception/autoware_detected_object_validation/object-lanelet-filter.md">object-lanelet-filter</a></li>
 </ul>
 <p>In most cases, vehicles drive in drivable are.
 To filter objects that are out of drivable area, <code>object-lanelet-filter</code> can be used.
@@ -7801,11 +7801,11 @@ To filter objects that are out of drivable area, <code>object-lanelet-filter</co
 <p>Note that if you use <code>object-lanelet-filter</code> for radar faraway detection, you need to define drivable area in a vector map other than the area where autonomous car run.</p>
 <h3 id="radar-object-clustering">Radar object clustering<a class="headerlink" href="#radar-object-clustering" title="Permanent link">#</a></h3>
 <ul>
-<li><a href="https://github.com/autowarefoundation/autoware.universe/tree/main/perception/radar_object_clustering">radar_object_clustering</a></li>
+<li><a href="https://github.com/autowarefoundation/autoware.universe/tree/main/perception/autoware_radar_object_clustering">radar_object_clustering</a></li>
 </ul>
 <p>This package can combine multiple radar detections from one object into one and adjust class and size.
 It can suppress splitting objects in tracking module.</p>
-<p><img alt="radar_object_clustering" src="https://raw.githubusercontent.com/autowarefoundation/autoware.universe/main/perception/radar_object_clustering/docs/radar_clustering.drawio.svg"></p>
+<p><img alt="radar_object_clustering" src="https://raw.githubusercontent.com/autowarefoundation/autoware.universe/main/perception/autoware_radar_object_clustering/docs/radar_clustering.drawio.svg"></p>
 <h2 id="note">Note<a class="headerlink" href="#note" title="Permanent link">#</a></h2>
 <h3 id="parameter-tuning">Parameter tuning<a class="headerlink" href="#parameter-tuning" title="Permanent link">#</a></h3>
 <p>Detection performed only by Radar applies various strong noise processing.
