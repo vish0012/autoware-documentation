@@ -8021,14 +8021,14 @@ The current autoware sensing launch files design for <code>sensor_kit_launch</co
     Launch file flows over sensing.launch.xml launch file.
   </figcaption>
 </figure>
-<p>The <code>sensing.launch.xml</code> also launches <code>vehicle_velocity_converter</code> package
+<p>The <code>sensing.launch.xml</code> also launches <code>autoware_vehicle_velocity_converter</code> package
 for converting <code>autoware_auto_vehicle_msgs::msg::VelocityReport</code> message to <code>geometry_msgs::msg::TwistWithCovarianceStamped</code> for gyro_odometer node.
 So,
 be sure
 your vehicle_interface publishes <code>/vehicle/status/velocity_status</code> topic with <code>autoware_auto_vehicle_msgs::msg::VelocityReport</code> type,
 or you must update <code>input_vehicle_velocity_topic</code> at <code>sensing.launch.xml</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="w"> </span>   ...
-<span class="w"> </span>   &lt;include file="$(find-pkg-share vehicle_velocity_converter)/launch/vehicle_velocity_converter.launch.xml"&gt;
+<span class="w"> </span>   &lt;include file="$(find-pkg-share autoware_vehicle_velocity_converter)/launch/vehicle_velocity_converter.launch.xml"&gt;
 <span class="gd">-     &lt;arg name="input_vehicle_velocity_topic" value="/vehicle/status/velocity_status"/&gt;</span>
 <span class="gi">+     &lt;arg name="input_vehicle_velocity_topic" value="&lt;YOUR-VELOCITY-STATUS-TOPIC&gt;"/&gt;</span>
 <span class="w"> </span>     &lt;arg name="output_twist_with_covariance" value="/sensing/vehicle_velocity_converter/twist_with_covariance"/&gt;
