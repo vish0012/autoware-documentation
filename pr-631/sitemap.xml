@@ -861,6 +861,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/autoware-documentation/pr-631/design/autoware-interfaces/ad-api/types/autoware_adapi_v1_msgs/msg/ManualOperatorStatus/</loc>
+         <lastmod>2024-11-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/autoware-documentation/pr-631/design/autoware-interfaces/ad-api/types/autoware_adapi_v1_msgs/msg/MotionState/</loc>
          <lastmod>2024-11-27</lastmod>
          <changefreq>daily</changefreq>

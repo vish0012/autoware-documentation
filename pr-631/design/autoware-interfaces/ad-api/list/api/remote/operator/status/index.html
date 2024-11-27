@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#macro-rendering-error" class="md-skip">
+        <a href="#apiremoteoperatorstatus" class="md-skip">
           Skip to content
         </a>
       
@@ -7562,6 +7562,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    Status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message" class="md-nav__link">
+    Message
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -7578,23 +7607,38 @@
   
 
 
-<div><h1 id="macro-rendering-error"><em>Macro Rendering Error</em><a class="headerlink" href="#macro-rendering-error" title="Permanent link">#</a></h1>
-<p><em>File</em>: <code>design/autoware-interfaces/ad-api/list/api/remote/operator/status.md</code></p>
-<p><em>KeyError</em>: 'autoware_adapi_v1_msgs/msg/ManualOperatorStatus'</p>
-<div class="highlight"><pre><span></span><code>Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/mkdocs_macros/plugin.py", line 688, in render
-    return md_template.render(**page_variables)
-  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/jinja2/environment.py", line 1304, in render
-    self.environment.handle_exception()
-  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages/jinja2/environment.py", line 939, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "&lt;template&gt;", line 1, in top-level template code
-  File "/home/runner/work/autoware-documentation/autoware-documentation/docs/design/autoware-interfaces/templates/autoware-interface.jinja2", line 20, in top-level template code
-    | {{ field.name }} | {{ resolve_msg_field(type.name, field.name, 'msg') }} | {{ field.text }} |
-  File "/home/runner/work/autoware-documentation/autoware-documentation/main.py", line 25, in resolve_msg_field
-    type = specs[type][ext][field]
-KeyError: 'autoware_adapi_v1_msgs/msg/ManualOperatorStatus'
-</code></pre></div>
+<div><h1 id="apiremoteoperatorstatus">/api/remote/operator/status<a class="headerlink" href="#apiremoteoperatorstatus" title="Permanent link">#</a></h1>
+<h2 id="status">Status<a class="headerlink" href="#status" title="Permanent link">#</a></h2>
+<ul>
+<li>Latest Version: not released</li>
+<li>Method: realtime stream</li>
+<li>Data Type: <a href="../../../../../types/autoware_adapi_v1_msgs/msg/ManualOperatorStatus/">autoware_adapi_v1_msgs/msg/ManualOperatorStatus</a></li>
+</ul>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
+<p>The application needs to determine whether the operator is able to drive and send that information via this API.
+For details, see the <a href="../../../../../features/manual-control/">manual control</a>.</p>
+<h2 id="message">Message<a class="headerlink" href="#message" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stamp</td>
+<td>builtin_interfaces/msg/Time</td>
+<td>Timestamp when this message was sent.</td>
+</tr>
+<tr>
+<td>ready</td>
+<td>bool</td>
+<td>Whether the operator is able to continue driving.</td>
+</tr>
+</tbody>
+</table>
 <!-- prettier-ignore --></div>
 
 
