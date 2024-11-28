@@ -7717,7 +7717,7 @@
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
 <p>This API is used to manually control the vehicle, and provides the same interface for different operators: remote and local.
 For example, the local operator controls a vehicle without a driver's seat using a joystick, while the remote operator provides remote support when problems occur with autonomous driving.
-The command sent is used in <a href="../operation_mode/">operation modes</a> remote and local.</p>
+The command sent will be used when <a href="../operation_mode/">operation mode</a> is remote or local.</p>
 <h2 id="operator-status">Operator status<a class="headerlink" href="#operator-status" title="Permanent link">#</a></h2>
 <p>The application needs to determine whether the operator is able to drive and send that information via the operator status API.
 If the operator is unable to continue driving during manual operation, Autoware will perform MRM to bring the vehicle to a safe state.
