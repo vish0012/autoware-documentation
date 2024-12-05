@@ -7699,6 +7699,7 @@
 <li><a href="../../list/api/remote/operator/status/">/api/remote/operator/status</a></li>
 <li><a href="../../list/api/remote/command/pedal/">/api/remote/command/pedal</a></li>
 <li><a href="../../list/api/remote/command/acceleration/">/api/remote/command/acceleration</a></li>
+<li><a href="../../list/api/remote/command/velocity/">/api/remote/command/velocity</a></li>
 <li><a href="../../list/api/remote/command/steering/">/api/remote/command/steering</a></li>
 <li><a href="../../list/api/remote/command/gear/">/api/remote/command/gear</a></li>
 <li><a href="../../list/api/remote/command/turn_indicators/">/api/remote/command/turn_indicators</a></li>
@@ -7709,6 +7710,7 @@
 <li><a href="../../list/api/local/operator/status/">/api/local/operator/status</a></li>
 <li><a href="../../list/api/local/command/pedal/">/api/local/command/pedal</a></li>
 <li><a href="../../list/api/local/command/acceleration/">/api/local/command/acceleration</a></li>
+<li><a href="../../list/api/local/command/velocity/">/api/local/command/velocity</a></li>
 <li><a href="../../list/api/local/command/steering/">/api/local/command/steering</a></li>
 <li><a href="../../list/api/local/command/gear/">/api/local/command/gear</a></li>
 <li><a href="../../list/api/local/command/turn_indicators/">/api/local/command/turn_indicators</a></li>
@@ -7744,6 +7746,10 @@ For level 3 and below, the operator status is referenced even during autonomous 
 <td>acceleration</td>
 <td>This mode provides longitudinal control using the target acceleration.</td>
 </tr>
+<tr>
+<td>velocity</td>
+<td>This mode provides longitudinal control using the target velocity.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">#</a></h2>
@@ -7755,44 +7761,58 @@ For level 3 and below, the operator status is referenced even during autonomous 
 <th align="center">disabled</th>
 <th align="center">pedal</th>
 <th align="center">acceleration</th>
+<th align="center">velocity</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>pedal</td>
 <td align="center">-</td>
-<td align="center">✓</td>
+<td align="center">X</td>
+<td align="center">-</td>
 <td align="center">-</td>
 </tr>
 <tr>
 <td>acceleration</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td align="center">✓</td>
+<td align="center">X</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>velocity</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">X</td>
 </tr>
 <tr>
 <td>steering</td>
 <td align="center">-</td>
-<td align="center">✓</td>
-<td align="center">✓</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">X</td>
 </tr>
 <tr>
 <td>gear</td>
 <td align="center">-</td>
-<td align="center">✓</td>
-<td align="center">✓</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">X</td>
 </tr>
 <tr>
 <td>turn_indicators</td>
 <td align="center">-</td>
-<td align="center">✓</td>
-<td align="center">✓</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">X</td>
 </tr>
 <tr>
 <td>hazard_lights</td>
 <td align="center">-</td>
-<td align="center">✓</td>
-<td align="center">✓</td>
+<td align="center">X</td>
+<td align="center">X</td>
+<td align="center">X</td>
 </tr>
 </tbody>
 </table>
