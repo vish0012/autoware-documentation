@@ -56,11 +56,25 @@ ros2 launch autoware_launch planning_simulator.launch.xml map_path:=$HOME/autowa
 
     If `~` is used, the map will fail to load.
 
-![after-autoware-launch](images/planning/lane-following/after-autoware-launch.png)
+![after-autoware-launch](https://github.com/vish0012/autoware-documentation/blob/3d3ed61f1a835fba0acc94edc9d46c2de441a260/docs/tutorials/ad-hoc-simulation/images/planning/others/first-overview.png)
+
+If you encounter a situation where the simulation is running but the view is not visible in Autoware like below, please follow these steps:
+
+![after-autoware-launch-error](https://github.com/vish0012/autoware-documentation/blob/27844480495b187cca173191f48a4d9a14ba6c49/docs/tutorials/ad-hoc-simulation/images/planning/others/first%20error%20view.png)
+
+Double-Click on 'TopDownOrtho' View
+Navigate to the Views section on the right panel and double-click on the TopDownOrtho option to properly display the simulation.
+
+Manually Select the View (If Needed)
+If the view still does not appear, try the following:
+
+Go to the Views section.
+Select a different view (e.g., ThirdPersonFollower) and then re-select TopDownOrtho.
+By following these steps, the simulation view should load correctly.
 
 #### 2. Set an initial pose for the ego vehicle
 
-![set-initial-pose](images/planning/lane-following/set-initial-pose.png)
+![set-initial-pose](https://github.com/vish0012/autoware-documentation/blob/3d3ed61f1a835fba0acc94edc9d46c2de441a260/docs/tutorials/ad-hoc-simulation/images/planning/others/After%20Initializing%202D%20Pose.png)
 
 a) Click the `2D Pose estimate` button in the toolbar, or hit the `P` key.
 
@@ -78,7 +92,7 @@ a) Click the `2D Goal Pose` button in the toolbar, or hit the `G` key.
 
 b) In the 3D View pane, click and hold the left-mouse button, and then drag to set the direction for the goal pose. If done correctly, you will see a planned path from initial pose to goal pose.
 
-![set-goal-pose](images/planning/lane-following/set-goal-pose.png)
+![set-goal-pose](https://github.com/vish0012/autoware-documentation/blob/428c5b41b7c4d91cb17275b496627b2eb2fa77cd/docs/tutorials/ad-hoc-simulation/images/planning/others/goal%20pose.png)
 
 #### 4. Start the ego vehicle
 
@@ -92,18 +106,20 @@ ros2 service call /api/operation_mode/change_to_autonomous autoware_adapi_v1_msg
 
 After that, you can see `AUTONOMOUS` sign on `OperationMode` and `AUTO` button is grayed out.
 
-![start-driving](images/planning/lane-following/start-driving.png)
+![start-driving](https://github.com/vish0012/autoware-documentation/blob/a8fbf0ea404bed9126256c1a4eb09e9744c6ab35/docs/tutorials/ad-hoc-simulation/images/planning/others/start%20goal%20pose.png)
 
 ### Parking scenario
 
 1. Set an initial pose and a goal pose, and engage the ego vehicle.
 
-   ![after-set-goal-pose](images/planning/parking/after-set-goal-pose.png)
+   ![after-set-goal-pose](https://github.com/vish0012/autoware-documentation/blob/0914e979e43bb257ebcfa5b4c984a7acfb17785e/docs/tutorials/ad-hoc-simulation/images/planning/others/parking%20initial%20pose.png)
 
 2. When the vehicle approaches the goal, it will switch from lane driving mode to parking mode.
 3. After that, the vehicle will reverse into the destination parking spot.
 
-   ![parking-maneuver](images/planning/parking/parking-maneuver.png)
+   ![parking-maneuver](https://github.com/vish0012/autoware-documentation/blob/1bfab84885a0b932d45924ced8ac42bf390364b9/docs/tutorials/ad-hoc-simulation/images/planning/others/parking%20moving%201.png)
+   ![parking-maneuver 2](https://github.com/vish0012/autoware-documentation/blob/1bfab84885a0b932d45924ced8ac42bf390364b9/docs/tutorials/ad-hoc-simulation/images/planning/others/parking%20moving%202.png)
+   
 
 ### Pull out and pull over scenario
 
