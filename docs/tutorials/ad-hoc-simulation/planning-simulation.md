@@ -119,7 +119,6 @@ After that, you can see `AUTONOMOUS` sign on `OperationMode` and `AUTO` button i
 
    ![parking-maneuver](https://github.com/vish0012/autoware-documentation/blob/1bfab84885a0b932d45924ced8ac42bf390364b9/docs/tutorials/ad-hoc-simulation/images/planning/others/parking%20moving%201.png)
    ![parking-maneuver 2](https://github.com/vish0012/autoware-documentation/blob/1bfab84885a0b932d45924ced8ac42bf390364b9/docs/tutorials/ad-hoc-simulation/images/planning/others/parking%20moving%202.png)
-   
 
 ### Pull out and pull over scenario
 
