@@ -194,7 +194,6 @@ After that, you can see `AUTONOMOUS` sign on `OperationMode` and `AUTO` button i
 
    ![move-interactive-dummy-car](https://github.com/vish0012/autoware-documentation/blob/51e9413dcc21b3ac3c871d4f0a4e28b78863aacf/docs/tutorials/ad-hoc-simulation/images/planning/others/moving%20interactive%20demo%20.png)
 
-
 ### Traffic light recognition simulation
 
 By default, traffic lights on the map are all treated as if they are set to green. As a result, when a path is created that passed through an intersection with a traffic light, the ego vehicle will drive through the intersection without stopping.
