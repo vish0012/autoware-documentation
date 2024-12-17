@@ -124,7 +124,7 @@ After that, you can see `AUTONOMOUS` sign on `OperationMode` and `AUTO` button i
 
 1. In a pull out scenario, set the ego vehicle at the road shoulder.
 
-   ![pullover-pullout](images/planning/pullover-pullout/pullover-pullout.jpg)
+   ![pullover-pullout](https://github.com/vish0012/autoware-documentation/blob/3581b0b9b4bbdd680a3e85407fd24ee9a3a4cd3a/docs/tutorials/ad-hoc-simulation/images/planning/others/pull%20out%20scenario.png)
 
 2. Set a goal and then engage the ego vehicle.
 
@@ -146,25 +146,25 @@ After that, you can see `AUTONOMOUS` sign on `OperationMode` and `AUTO` button i
    ros2 launch autoware_launch planning_simulator.launch.xml map_path:=$HOME/autoware_map/nishishinjuku_autoware_map vehicle_model:=sample_vehicle sensor_model:=sample_sensor_kit
    ```
 
-   ![open-nishishinjuku-map](images/planning/lane-change/open-nishishinjuku-map.png)
+   ![open-nishishinjuku-map](https://github.com/vish0012/autoware-documentation/blob/760b51f1b543bdedf7a523ede91aca7f3f446872/docs/tutorials/ad-hoc-simulation/images/planning/others/nishi%20shinjuku%20map%20.png)
 
 3. Set an initial pose and a goal pose in adjacent lanes.
 
-   ![set-position-and-goal](images/planning/lane-change/set-position-and-goal.png)
+   ![set-position-and-goal](https://github.com/vish0012/autoware-documentation/blob/7cc6b96690ae21f933ba329285e8fb1b06d20d7a/docs/tutorials/ad-hoc-simulation/images/planning/others/nishishinjuku%20set%20pose%20.png)
 
 4. Engage the ego vehicle. It will make a lane change along the planned path.
 
-   ![lane-changing](images/planning/lane-change/lane-changing.png)
+   ![lane-changing](https://github.com/vish0012/autoware-documentation/blob/7cc6b96690ae21f933ba329285e8fb1b06d20d7a/docs/tutorials/ad-hoc-simulation/images/planning/others/nishi%20shinjuku%20lane%20change%20.png)
 
 ### Avoidance scenario
 
 1. Set an initial pose and a goal pose in the same lane. A path will be planned.
 
-   ![set-position-and-goal](images/planning/avoidance/set-position-and-goal.png)
+   ![set-position-and-goal](https://github.com/vish0012/autoware-documentation/blob/068fdb362f76b60a44b2c84e1572c0a53747fdb9/docs/tutorials/ad-hoc-simulation/images/planning/others/avoidence%20set%20goal.png)
 
 2. Set a "2D Dummy Bus" on the roadside. A new path will be planned.
 
-   ![set-dummy-bus](images/planning/avoidance/set-dummy-bus.png)
+   ![set-dummy-bus](https://github.com/vish0012/autoware-documentation/blob/65b8b8b6aa0fe5d141b9e33c4e86d581776fb849/docs/tutorials/ad-hoc-simulation/images/planning/others/2d%20dummy%20bus.png)
 
 3. Engage the ego vehicle. It will avoid the obstacle along the newly planned path.
 
@@ -180,19 +180,20 @@ After that, you can see `AUTONOMOUS` sign on `OperationMode` and `AUTO` button i
 
    Changes to the `velocity` parameter will only affect objects placed after the parameter is changed.
 
-   ![set-dummy-car](images/planning/lane-following/place-dummy-car.png)
+   ![set-dummy-car](https://github.com/vish0012/autoware-documentation/blob/4176dd22bdbd9220268c23514cb6716c4c3a3f98/docs/tutorials/ad-hoc-simulation/images/planning/others/advacnce%20dumy%20object%20.png)
 
 4. Delete any dummy objects placed in the view by clicking the `Delete All Objects` button in the toolbar.
 
 5. Click the `Interactive` button in the toolbar to make the dummy object interactive.
 
-   ![set-interactive-dummy-car](images/planning/lane-following/check-interactive.png)
+   ![set-interactive-dummy-car](https://github.com/vish0012/autoware-documentation/blob/95f0be14a5291ac8921cdb7ccac2e9c1c55c9b50/docs/tutorials/ad-hoc-simulation/images/planning/others/interactive%20dummy%20.png)
 
 6. For adding an interactive dummy object, press `SHIFT` and click the `right click`.
 7. For deleting an interactive dummy object, press `ALT` and click the `right click`.
 8. For moving an interactive dummy object, hold the `right click` drag and drop the object.
 
-   ![move-interactive-dummy-car](images/planning/lane-following/move-dummy-object.png)
+   ![move-interactive-dummy-car](https://github.com/vish0012/autoware-documentation/blob/51e9413dcc21b3ac3c871d4f0a4e28b78863aacf/docs/tutorials/ad-hoc-simulation/images/planning/others/moving%20interactive%20demo%20.png)
+
 
 ### Traffic light recognition simulation
 
