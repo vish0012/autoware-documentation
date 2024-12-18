@@ -207,11 +207,13 @@ The following steps explain how to set and reset traffic lights in order to test
 2. In `TrafficLightPublishPanel`, set the `ID` and color of the traffic light.
 
 3. Click the `SET` button.
-   ![set-traffic-light](images/planning/traffic-light/set-traffic-light.png)
+   ![set-traffic-light](https://github.com/vish0012/autoware-documentation/blob/08e809bf1283e3ac993b405a89c4c411ca4639a6/docs/tutorials/ad-hoc-simulation/images/planning/others/traffic%20light.png)
+   Then you can seen down left side
+   ![set-traffics-light 2](https://github.com/vish0012/autoware-documentation/blob/89c8929f870c70b1470a6c9eb5f549342833e7fa/docs/tutorials/ad-hoc-simulation/images/planning/others/traffic%20pannel%20down%20.png)
+   
+5. Finally, click the `PUBLISH` button to send the traffic light status to the simulator. Any planned path that goes past the selected traffic light will then change accordingly.
 
-4. Finally, click the `PUBLISH` button to send the traffic light status to the simulator. Any planned path that goes past the selected traffic light will then change accordingly.
-
-![send-traffic-light-color](images/planning/traffic-light/send-traffic-light-color.png)
+![send-traffic-light-color](https://github.com/vish0012/autoware-documentation/blob/637dfac7a5dae71db5ce0be458df98579d27e394/docs/tutorials/ad-hoc-simulation/images/planning/others/traffic%2023.png)
 
 By default, Rviz should display the ID of each traffic light on the map. You can have a closer look at the IDs by zooming in the region or by changing the View type.
 
@@ -223,13 +225,13 @@ b) Check the `traffic_light_id` checkbox.
 
 c) Reload the topic by clicking the `Map` checkbox twice.
 
-![see-traffic-light-ID](images/planning/traffic-light/see-traffic-light-ID.png)
+![see-traffic-light-ID](https://github.com/vish0012/autoware-documentation/blob/8cbd6c7c78f224b7bc514fa8f49d276b9883adfc/docs/tutorials/ad-hoc-simulation/images/planning/others/last%2045.png)
 
 #### Update/Reset traffic light
 
 You can update the color of the traffic light by selecting the next color (in the image it is `GREEN`) and clicking `SET` button. In the image the traffic light in front of the ego vehicle changed from `RED` to `GREEN` and the vehicle restarted.
 
-![after-traffic-light-color-update](images/planning/traffic-light/after-traffic-light-color-update.png)
+![after-traffic-light-color-update](https://github.com/vish0012/autoware-documentation/blob/e730cad28f0a4113624f0b3afe300dcee8af454b/docs/tutorials/ad-hoc-simulation/images/planning/others/traffic%20publish%20green%20.png)
 
 To remove a traffic light from `TrafficLightPublishPanel`, click the `RESET` button.
 
