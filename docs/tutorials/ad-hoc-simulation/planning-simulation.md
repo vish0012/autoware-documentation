@@ -210,8 +210,8 @@ The following steps explain how to set and reset traffic lights in order to test
    ![set-traffic-light](https://github.com/vish0012/autoware-documentation/blob/08e809bf1283e3ac993b405a89c4c411ca4639a6/docs/tutorials/ad-hoc-simulation/images/planning/others/traffic%20light.png)
    Then you can seen down left side
    ![set-traffics-light 2](https://github.com/vish0012/autoware-documentation/blob/89c8929f870c70b1470a6c9eb5f549342833e7fa/docs/tutorials/ad-hoc-simulation/images/planning/others/traffic%20pannel%20down%20.png)
-   
-5. Finally, click the `PUBLISH` button to send the traffic light status to the simulator. Any planned path that goes past the selected traffic light will then change accordingly.
+
+4. Finally, click the `PUBLISH` button to send the traffic light status to the simulator. Any planned path that goes past the selected traffic light will then change accordingly.
 
 ![send-traffic-light-color](https://github.com/vish0012/autoware-documentation/blob/637dfac7a5dae71db5ce0be458df98579d27e394/docs/tutorials/ad-hoc-simulation/images/planning/others/traffic%2023.png)
 
