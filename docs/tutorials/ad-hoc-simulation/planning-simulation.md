@@ -227,15 +227,8 @@ This section provides a step-by-step guide on using the Autoware Launch GUI for 
 ### Getting Started with Autoware Launch GUI
 
 1. **Installation:** Ensure you have installed the Autoware Launch GUI. [Installation instructions](https://github.com/autowarefoundation/autoware-launch-gui#installation).
-   <!-- This is a comment"ERROR: Cannot create report: [Errno 17] File exists: '/var/crash/nvidia-dkms-545.0.crash'
-Error! Bad return status for module build on kernel: 6.8.0-49-generic (x86_64)
-Consult /var/lib/dkms/nvidia/545.23.08/build/make.log for more information.
-dpkg: error processing package nvidia-dkms-545 (--configure):
- installed nvidia-dkms-545 package post-installation script subprocess returned error exit status 10
-" and will not be rendered in the final file -->
    
-
-3. **Launching the GUI:** Open the Autoware Launch GUI from your applications menu.
+2. **Launching the GUI:** Open the Autoware Launch GUI from your applications menu.
 
    ![GUI screenshot for launching the GUI](images/planning/launch-gui/launch_gui_main.png)
 
