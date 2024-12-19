@@ -245,7 +245,7 @@ This section provides a step-by-step guide on using the Autoware Launch GUI for 
 
 1. **Installation:** Ensure you have installed the Autoware Launch GUI. [Installation instructions](https://github.com/autowarefoundation/autoware-launch-gui#installation).
 
-2. **Launching the GUI:** Open the Autoware Launch GUI from your applications menu.
+3. **Launching the GUI:** Open the Autoware Launch GUI from your applications menu.
 
    ![GUI screenshot for launching the GUI](images/planning/launch-gui/launch_gui_main.png)
 
